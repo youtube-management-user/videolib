@@ -8,6 +8,9 @@ var http = require('http'),
 
 const PORT = 9000;
 
+const log = require('simple-node-logger').createSimpleFileLogger('project.log');
+
+
 http.createServer(function (req, res) {
   var path = req.url.split('/');
   var route = path[1];
@@ -34,7 +37,7 @@ http.createServer(function (req, res) {
       res.writeHead(200);
       res.end(contents);
     } else if (route == 'play' && filename=='') {
-      const files = glob.sync("./videos/*.mp4").map(file => { return file.split('/')[2].split('.')[0] });
+      const files = glob.sync("./videos/*.mp4").map(file => { return file.split('/')[2].replace('.mp4', '') });
       console.log(files)
       const contents = ejs.render(fs.readFileSync("./templates/index.ejs", 'UTF-8'), { files: files });
       res.setHeader("Content-Type", "text/html");
