@@ -1,5 +1,5 @@
+project.log
 node_modules
 .DS_Store
 .cache
 videos
-*.log

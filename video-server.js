@@ -4,9 +4,10 @@ var http = require('http'),
     querystring = require('querystring'),
     urllib = require('url'),
     ejs = require("ejs"),
-    glob = require("glob");
+    glob = require("glob"),
+    process = require("process");
 
-const PORT = 9300;
+const PORT = process.argv[2] || 9300;
 
 const log = require('simple-node-logger').createSimpleFileLogger('project.log');
 
