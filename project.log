@@ -1,0 +1,29 @@
+14:37:45.379 INFO  Access from undefined for play 
+20:21:41.808 INFO  Access from undefined for play 
+20:21:42.517 INFO  Access from undefined for favicon.ico 
+20:21:42.517 INFO  Route favicon.ico not found 
+20:21:43.970 INFO  Access from undefined for play 
+20:21:44.096 INFO  Access from undefined for video 
+20:21:44.129 INFO  Access from undefined for video 
+20:21:44.179 INFO  Access from undefined for video 
+20:21:46.489 INFO  Access from undefined for favicon.ico 
+20:21:46.489 INFO  Route favicon.ico not found 
+20:21:46.655 INFO  Access from undefined for video 
+20:24:31.063 INFO  Access from undefined for play 
+20:24:31.252 INFO  Access from undefined for video 
+20:24:31.324 INFO  Access from undefined for video 
+20:24:31.469 INFO  Access from undefined for video 
+20:24:35.231 INFO  Access from undefined for pla2y 
+20:24:35.231 INFO  Route pla2y not found 
+20:24:38.534 INFO  Access from undefined for play 
+20:24:38.668 INFO  Access from undefined for video 
+20:24:38.669 INFO  File sample2.mp4 not found 
+20:24:57.389 INFO  Client server: access from undefined for play 
+20:24:57.558 INFO  Video server: access from undefined for video 
+20:24:57.558 INFO  Video server: file sample2.mp4 not found 
+20:25:03.251 INFO  Client server: access from undefined for pla1y 
+20:25:03.251 INFO  Client server: route pla1y is not found 
+20:25:07.888 INFO  Client server: access from undefined for play 
+20:25:07.995 INFO  Video server: access from undefined for video 
+20:25:08.044 INFO  Video server: access from undefined for video 
+20:25:08.174 INFO  Video server: access from undefined for video 

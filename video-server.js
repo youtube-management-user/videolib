@@ -6,7 +6,7 @@ var http = require('http'),
     ejs = require("ejs"),
     glob = require("glob");
 
-const PORT = 9000;
+const PORT = 9300;
 
 const log = require('simple-node-logger').createSimpleFileLogger('project.log');
 
@@ -21,31 +21,12 @@ http.createServer(function (req, res) {
   }
   const referer = urllib.parse(req.headers.referer || '').hostname;
 
-  log.info(`Access from ${req.headers["x-forwarded-for"]} for ${route}`);
+  log.info(`Video server: access from ${req.headers["x-forwarded-for"]} for ${route}`);
 
-  // if (referer && referer !='8608b0611412.ngrok.io' && referer !='localhost') {
-  //   console.log(`Hotlinking attempt from ${referer}`);
-  //   res.writeHead(403);
-  //   res.end("");
-  // }
-  // else {
-
-    if (route == 'play' && filename!='') {
-      const contents = ejs.render(fs.readFileSync("./templates/play.ejs", 'UTF-8'), { filename: filename + ".mp4" });
-      res.setHeader("Content-Type", "text/html");
-      res.writeHead(200);
-      res.end(contents);
-    } else if (route == 'play' && filename=='') {
-      const files = glob.sync("./videos/*.mp4").map(file => { return file.split('/')[2].replace('.mp4', '') });
-      const contents = ejs.render(fs.readFileSync("./templates/index.ejs", 'UTF-8'), { files: files });
-      res.setHeader("Content-Type", "text/html");
-      res.writeHead(200);
-      res.end(contents);
-    }
-    else if (route == 'video') {
+  if (route == 'video') {
       var path = "videos/" + filename;
       if (!fs.existsSync(path)) {
-        log.info(`File ${filename} not found`);
+        log.info(`Video server: file ${filename} not found`);
         res.setHeader("Content-Type", "text/html");
         res.writeHead(404);
         res.end(`File ${filename} is not found`);
@@ -69,7 +50,7 @@ http.createServer(function (req, res) {
         }
       }
     } else {
-      log.info(`Route ${route} not found`);
+      log.info(`Video server: route ${route} not found`);
       res.setHeader("Content-Type", "text/html");
       res.writeHead(404);
       res.end(`Route ${route} not found`);
@@ -77,4 +58,4 @@ http.createServer(function (req, res) {
 
 }).listen(PORT);
 
-console.log(`Server is running on ${PORT}`)
+console.log(`Video server is running on ${PORT}`)
