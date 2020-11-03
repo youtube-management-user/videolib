@@ -3,3 +3,6 @@ node_modules
 .DS_Store
 .cache
 videos
+1.js
+YouTubeCache.json
+page.html
