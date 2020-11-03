@@ -33,8 +33,6 @@ async function getYouTubeURL(filename, log) {
 
   let video = JSON.parse(_.get(ytplayer, 'config.args.player_response')).streamingData.formats[0].url;
 
-  console.log(444, video)
-
   if (!video) {
     throw('Empty response from video');
   }
@@ -69,7 +67,7 @@ http.createServer(async function (req, res) {
     res.setHeader("Content-Type", "text/html");
     res.writeHead(200);
 
-    console.log(222, filename, req.url);
+//    console.log(222, filename, req.url);
 
     if (!filename.match(/^[a-zA-Z0-9_-]{6,11}$/)) {
       res.end(`Video ${filename} is not the YouTube video`);
