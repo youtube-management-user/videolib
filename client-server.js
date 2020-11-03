@@ -23,13 +23,6 @@ http.createServer(function (req, res) {
 
   log.info(`Client server: access from ${req.headers["x-forwarded-for"]} for ${route}`);
 
-  // if (referer && referer !='8608b0611412.ngrok.io' && referer !='localhost') {
-  //   console.log(`Hotlinking attempt from ${referer}`);
-  //   res.writeHead(403);
-  //   res.end("");
-  // }
-  // else {
-
     if (route == 'play' && filename!='') {
       const contents = ejs.render(fs.readFileSync("./templates/play.ejs", 'UTF-8'), { filename: filename + ".mp4" });
       res.setHeader("Content-Type", "text/html");

@@ -8,8 +8,11 @@
     "fs": "0.0.1-security",
     "glob": "^7.1.6",
     "http": "0.0.1-security",
+    "jssoup": "0.0.12",
+    "lodash": "^4.17.20",
     "querystring": "^0.2.0",
     "simple-node-logger": "^18.12.24",
+    "superagent": "^6.1.0",
     "url": "^0.11.0",
     "util": "^0.12.3"
   },
