@@ -161,3 +161,7 @@
 11:22:24.257 INFO  There is no cached version for __PodpcGy8A, trying to get it from the YouTube 
 11:22:32.917 INFO  Client server: access from undefined for favicon.ico 
 11:22:54.081 INFO  Client server: access from undefined for favicon.ico 
+11:31:03.515 INFO  Client server: access from undefined for play 
+11:31:03.516 ERROR Cannot access cache, will create a new file 
+11:31:03.517 INFO  There is no cached version for 9EAZknYYD8c, trying to get it from the YouTube 
+11:31:04.655 INFO  Client server: access from undefined for favicon.ico 
