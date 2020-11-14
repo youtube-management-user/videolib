@@ -5,5 +5,7 @@ node_modules
 videos
 1.js
 YouTubeCache.json
+.mp4
+.txt
 page.html
 .log

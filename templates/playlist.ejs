@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>videolib</title>
+
+</head>
+<body>
+
+<video width="600" controls controlsList="nodownload">
+  <source src="http://0680842e7650.ngrok.io/video/v1" type="video/mp4">
+</video>
+
+<!-- <p><a href="/play/">Back to the list</p> -->
+
+<!-- <ul>
+  <li><a href="/play/">Video 1</a></li>
+  <li><a href="/play/">Video 2</a></li>
+  <li><a href="/play/">Video 3</a></li>
+</ul> -->
+
+<script type="application/javascript">
+  const video = document.querySelector('video');
+
+  let current_video = 0;
+
+  const playlist = [
+    { id: 'v1' },
+    { id: 'v2' },
+    { id: 'v3' },
+    { id: 'v4' },
+    { id: 'v5' }
+  ]
+
+  const playNext = () => {
+    current_video++;
+    if (current_video >= playlist.length) {
+      current_video = 0;
+    }
+    video.setAttribute('src', 'http://0680842e7650.ngrok.io/video/' + playlist[current_video].id);
+    video.load();
+    video.play();
+  }
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+//    playNext();
+  });
+
+  // video.addEventListener('canplay', (event) => {
+  //   console.log('canplay');
+  // });
+
+  video.addEventListener('ended', (event) => {
+    playNext();
+  });
+
+  // video.addEventListener('seeked', (event) => {
+  //   console.log('seeked', video.currentTime, video.duration);
+  // });
+
+</script>
+
+</body>
+</html>

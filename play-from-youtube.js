@@ -12,12 +12,13 @@ var http = require('http'),
 const superagent = require('superagent');
 var JSSoup = require('jssoup').default;
 
-const PORT = 9000;
+const PORT = 9900;
 
 const log = require('simple-node-logger').createSimpleFileLogger('project.log');
 
 async function getYouTubeURL(filename, log) {
-  const _ = require('lodash')
+  const _ = require('lodash');
+  const superagent = require('superagent');
   if (!filename.match(/^[a-zA-Z0-9_-]{6,11}$/)) {
     throw(`Incorrect YouTube video ${filename}`);
   }
@@ -57,12 +58,12 @@ http.createServer(async function (req, res) {
   if (route == 'play' && filename!='') {
 
     let YouTubeCache = {};
-    try {
-      fs.accessSync('./YouTubeCache.json', fs.constants.R_OK | fs.constants.W_OK);
-      YouTubeCache = require('./YouTubeCache.json');
-    } catch (err) {
-      log.error(`Cannot access cache, will create a new file`);
-    }
+    // try {
+    //   fs.accessSync('./YouTubeCache.json', fs.constants.R_OK | fs.constants.W_OK);
+    //   YouTubeCache = require('./YouTubeCache.json');
+    // } catch (err) {
+    //   log.error(`Cannot access cache, will create a new file`);
+    // }
 
     res.setHeader("Content-Type", "text/html");
     res.writeHead(200);
@@ -88,6 +89,7 @@ http.createServer(async function (req, res) {
       }
 
       videoFileURL = YouTubeCache[filename];
+      console.log(111, videoFileURL)
 
       const contents = ejs.render(fs.readFileSync("./templates/play.ejs", 'UTF-8'), { video: videoFileURL });
       res.end(contents);
