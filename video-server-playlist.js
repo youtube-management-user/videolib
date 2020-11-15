@@ -22,11 +22,11 @@ const { getYouTubeURL } = require('./libs');
 // }
 
 const playlist = {
-  'v1': { type: 'youtube', url: 'hU3y2ZXQUxA', duration: 8.754 },
-  'v2': { type: 'remote',  url: 'http://velikanov.ru/play/acdc.mp4', duration: 170.859 },
-  'v3': { type: 'youtube', url: '6ENZsgHNyoE', duration: 8.754 },
-  'v4': { type: 'remote',  url: 'http://velikanov.ru/play/2cellos.mp4', duration: 170.859 },
-  'v5': { type: 'youtube', url: 'eLj4rnboetA', duration: 8.754 },
+  'v1': { type: 'youtube', url: 'hU3y2ZXQUxA' },
+  'v2': { type: 'remote',  url: 'http://velikanov.ru/play/acdc.mp4' },
+  'v3': { type: 'youtube', url: '6ENZsgHNyoE' },
+  'v4': { type: 'remote',  url: 'http://velikanov.ru/play/2cellos.mp4' },
+  'v5': { type: 'youtube', url: 'eLj4rnboetA' },
 }
 
 function getChunkHeader(range, total) {
@@ -94,27 +94,9 @@ http.createServer(async function (req, res) {
 
       } else if (playlist[filename].type == 'youtube') {
 
-
-      const path = await getYouTubeURL(playlist[filename].url);
-      //  console.log(222, path)
-
-        // const path = 'https://r2---sn-i5heen7z.googlevideo.com/videoplayback?expire=1605406565&ei=BTuwX_n8F4rQgAeC44rYAQ&ip=95.90.242.14&id=o-AEXbpzpHd8EM1PN8aJNNzpZnBW8TIcEZ1NklBw2PtCat&itag=18&source=youtube&requiressl=yes&mh=3g&mm=31%2C26&mn=sn-i5heen7z%2Csn-4g5e6nsz&ms=au%2Conr&mv=m&mvi=2&pl=23&initcwndbps=1316250&vprv=1&mime=video%2Fmp4&ns=PP3FhcN030jBW5tpNtVGHWQF&gir=yes&clen=825424&ratebypass=yes&dur=8.753&lmt=1600019644464084&mt=1605384883&fvip=2&c=WEB&txp=6210222&n=uP6VOz-pUMeLEKPDb&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgIzMBSXX6gRIwiZthfSe3sonAnP6Y2LzgbvjPDGHXan8CIQDT1TbkUKZjmdMexo9f80yHA6TsOUHklP8zDU-edsNVmQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhAMc_zReBeH2kSCW6e8jNejXQHRBBGau3FNRxbl_jeKEmAiEAnPecLKXT1Gd8zuJT4zef15wC5d2xjQqMxZJr7yHvZSk%3D';
-
+        const path = await getYouTubeURL(playlist[filename].url);
         const response = await superagent.get(path);
-        //  console.log(333, response)
-        //
         var total = response.headers["content-length"];
-//        console.log(444, total)
-//        var total = 2559700;
-
-//        log.info('dur ' + response.headers["x-content-duration"])
-//        path = "videos/sample.mp4"
-
-//          console.log(333, path)
-
-  //        const stream2 = fs.createWriteStream('stream.txt');
-
-//          res.writeHead(206, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' });
 
         if (req.headers['range']) {
           const chunkHeaders = getChunkHeader(req.headers.range, total);
