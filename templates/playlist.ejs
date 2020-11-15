@@ -8,7 +8,7 @@
 <body>
 
 <video width="600" controls controlsList="nodownload">
-  <source src="http://0680842e7650.ngrok.io/video/v1" type="video/mp4">
+  <source src="/video/v1" type="video/mp4">
 </video>
 
 <!-- <p><a href="/play/">Back to the list</p> -->
@@ -37,7 +37,7 @@
     if (current_video >= playlist.length) {
       current_video = 0;
     }
-    video.setAttribute('src', 'http://0680842e7650.ngrok.io/video/' + playlist[current_video].id);
+    video.setAttribute('src', '/video/' + playlist[current_video].id);
     video.load();
     video.play();
   }
