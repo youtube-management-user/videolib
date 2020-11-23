@@ -8,7 +8,7 @@ var http = require('http'),
 
 var superagent = require('superagent');
 
-var PORT = process.argv[2] || 9300;
+var PORT = process.env.PORT || process.argv[2] || 9300;
 
 var log = require('simple-node-logger').createSimpleFileLogger('project2.log');
 
