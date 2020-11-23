@@ -4,16 +4,15 @@ var http = require('http'),
     querystring = require('querystring'),
     urllib = require('url'),
     ejs = require("ejs"),
-    glob = require("glob"),
     process = require("process");
 
 const superagent = require('superagent');
 
 const PORT = process.argv[2] || 9300;
 
-const log = require('simple-node-logger').createSimpleFileLogger('project.log');
+const log = require('simple-node-logger').createSimpleFileLogger('project2.log');
 
-const { getYouTubeURL } = require('./libs');
+const getYouTubeURL = require('./libs').getYouTubeURL;
 
 // const playlist = {
 //   'v1': { type: 'youtube', url: 'ZznD_uEN_hM', duration: 8.754 },
@@ -22,11 +21,11 @@ const { getYouTubeURL } = require('./libs');
 // }
 
 const playlist = {
-  'v1': { type: 'youtube', url: 'hU3y2ZXQUxA' },
-  'v2': { type: 'remote',  url: 'http://velikanov.ru/play/acdc.mp4' },
-  'v3': { type: 'youtube', url: '6ENZsgHNyoE' },
-  'v4': { type: 'remote',  url: 'http://velikanov.ru/play/2cellos.mp4' },
-  'v5': { type: 'youtube', url: 'eLj4rnboetA' },
+  // 'v1': { type: 'youtube', url: 'P8gZvHldvcw' },
+  // 'v2': { type: 'remote',  url: 'http://velikanov.ru/play/acdc.mp4' },
+  'v1': { type: 'youtube', url: 'dVHC0ZG7ckg' },
+  'v2': { type: 'remote',  url: 'http://velikanov.ru/play/2cellos.mp4' },
+  'v3': { type: 'youtube', url: 'W_dg_06cDiM' },
 }
 
 function getChunkHeader(range, total) {
@@ -94,14 +93,26 @@ http.createServer(async function (req, res) {
 
       } else if (playlist[filename].type == 'youtube') {
 
-        const path = await getYouTubeURL(playlist[filename].url);
-        const response = await superagent.get(path);
-        var total = response.headers["content-length"];
+        try {
+          const videoData = await getYouTubeURL(playlist[filename].url);
+          const path = videoData.video;
+          log.info(`Got metadata about ${playlist[filename].url}`);
+          // const response = await superagent.head(path);
+          // var total = response.headers["content-length"];
+          var total = videoData.contentLength;
+          log.info(`Got file length ${total}`);
 
-        if (req.headers['range']) {
-          const chunkHeaders = getChunkHeader(req.headers.range, total);
-          res.writeHead(206, chunkHeaders.headers);
-          await superagent.get(path).set('Range', req.headers['range']).pipe(res);
+          if (req.headers['range']) {
+            const chunkHeaders = getChunkHeader(req.headers.range, total);
+            res.writeHead(206, chunkHeaders.headers);
+            log.info(`Streaming with range ${req.headers['range']}`);
+            await superagent.get(path).set('Range', req.headers['range']).buffer(true).pipe(res);
+          }
+        }
+        catch(ex) {
+          log.error(`Cannot retrieve video ${playlist[filename].url}, should be unlisted or public (${ex})`);
+          res.writeHead(404);
+          res.end(`Cannot retrieve video`);
         }
 
       } else {
