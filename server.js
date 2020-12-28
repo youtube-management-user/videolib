@@ -7,12 +7,19 @@ var http = require('http'),
     process = require("process");
 
 var superagent = require('superagent');
+var cookie = require('cookie');
 
-var PORT = process.env.PORT || process.argv[2] || 9300;
+var PORT = process.argv[2] || 9300;
 
 var log = require('simple-node-logger').createSimpleFileLogger('project2.log');
 
 var getYouTubeURL = require('./libs').getYouTubeURL;
+
+const { urlGoogle, getGoogleAccountFromCode, getAccessTokenFromCode, getGoogleUserInfo, parseCookies, setGoogleConfig } = require('./libs/google-utils.js');
+
+const playlistRoute     = require('./routes/playlist.js');
+const logoutRoute       = require('./routes/logout.js');
+const googleAuthRoute   = require('./routes/google-auth.js');
 
 // const playlist = {
 //   'v1': { type: 'youtube', url: 'ZznD_uEN_hM', duration: 8.754 },
@@ -21,11 +28,12 @@ var getYouTubeURL = require('./libs').getYouTubeURL;
 // }
 
 var playlist = {
-  'v1': { type: 'youtube', url: 'P8gZvHldvcw' },
-  'v2': { type: 'remote',  url: 'http://velikanov.ru/play/acdc.mp4' },
-  'v3': { type: 'youtube', url: '6ENZsgHNyoE' },
-  'v4': { type: 'remote',  url: 'http://velikanov.ru/play/2cellos.mp4' },
-  'v5': { type: 'youtube', url: 'eLj4rnboetA' },
+  'v1': { type: 'local', path: 'videos/sample.mp4' },
+  'v2': { type: 'youtube', url: 'P8gZvHldvcw' },
+  'v3': { type: 'remote',  url: 'http://velikanov.ru/play/acdc.mp4' },
+  'v4': { type: 'youtube', url: '6ENZsgHNyoE' },
+  'v5': { type: 'remote',  url: 'http://velikanov.ru/play/2cellos.mp4' },
+  'v6': { type: 'youtube', url: 'eLj4rnboetA' },
 }
 
 function getChunkHeader(range, total) {
@@ -40,12 +48,15 @@ function getChunkHeader(range, total) {
   return { headers: { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' }, start: start, end: end }
 }
 
-http.createServer(function (req, res) {
+http.createServer(async function (req, res) {
+
+  setGoogleConfig({domain: req.headers.host});
+
   var path = req.url.split('/');
   var route = path[1];
   var filename = path[2];
   var query = '';
-  if (filename && filename.indexOf('?')>0) {
+  if (filename && filename.indexOf('?')>=0) {
     query = querystring.parse(filename.split('?')[1]);
     filename = filename.split('?')[0];
   }
@@ -54,10 +65,11 @@ http.createServer(function (req, res) {
   log.info(`Video server: access from ${req.headers["x-forwarded-for"]} for ${route}, ${req.url}`);
 
   if (route == 'playlist') {
-    var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'));
-    res.setHeader("Content-Type", "text/html");
-    res.writeHead(200);
-    res.end(contents);
+    playlistRoute(req, res);
+  } else if (route == 'logout') {
+    logoutRoute(req, res);
+  } else if (route == 'google-auth') {
+    googleAuthRoute(req, res, query);
   } else if (route == 'video') {
 
       if (!playlist[filename]) {
@@ -140,7 +152,7 @@ http.createServer(function (req, res) {
 
 }).listen(PORT);
 
-console.log(`Video server is running on ${PORT}`)
+console.log(`Server is running on ${PORT}`)
 
 // When you call .end() then superagent takes over response stream pipe, collects all of its data in res.body, and waits for the pipe to finish sending data.
 // The callback in .end() is called after response stream pipe has finished and closed. At this point it's guaranteed that it's not possible to pipe anything anymore, because all pipes have ended and closed.
