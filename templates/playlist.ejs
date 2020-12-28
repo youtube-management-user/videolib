@@ -11,6 +11,15 @@
   <source src="/video/v1" type="video/mp4">
 </video>
 
+<p>
+<% if (user && user.email) { %>
+Вы вошли как <%= user.email %>
+<a href="/logout/">Выйти</a>
+<% } else { %>
+  <a href="<%= googleLink %>">Login</a>
+<% } %>
+<p>
+
 <!-- <p><a href="/play/">Back to the list</p> -->
 
 <!-- <ul>

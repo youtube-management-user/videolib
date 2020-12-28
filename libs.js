@@ -3,6 +3,8 @@ function getYouTubeURL(filename, onSuccess, onError) {
   var superagent = require('superagent');
   var fs = require('fs');
 
+//  console.log('getYouTubeURL')
+
   var JSSoup = require('jssoup').default;
 
   if (!filename.match(/^[a-zA-Z0-9_-]{6,11}$/)) {
@@ -17,21 +19,21 @@ function getYouTubeURL(filename, onSuccess, onError) {
 //      fs.writeFileSync('resp.html', scriptElementsFiltered[0].text)
 
       var window = {}, document = {};
-      document.createElement = function() {};
-      var video, contentLength;
+      document.createElement = function() { return {} };
+      document.getElementsByTagName = function() { return [{ appendChild: function() {} }] }
+     var video, contentLength;
       try {
-        eval((scriptElementsFiltered[0].text));
-        var data = JSON.parse(_.get(ytplayer, 'config.args.player_response')).streamingData.formats[0]
+        // const url = scriptElementsFiltered[0].text.match(/\"(https\:\/\/[^\"]+googlevideo[^\"]+)\"/)[1];
+//        let ytplayer = JSON.parse(json);
+        eval(scriptElementsFiltered[0].text)
+        var data = ytInitialPlayerResponse.streamingData.formats[0]
         video = data.url;
         contentLength = data.contentLength;
-        onSuccess({ video: video, contentLength: contentLength });
+        onSuccess({ video, contentLength });
       } catch(ex) {
+        console.log(ex)
         onError(ex);
       }
-
-      // if (!video) {
-      //   throw('Empty response from video');
-      // }
 
     });
   }
