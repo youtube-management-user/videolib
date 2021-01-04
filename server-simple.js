@@ -12,10 +12,12 @@ var log = require('simple-node-logger').createSimpleFileLogger('project2.log');
 
 const playlistRoute     = require('./routes/playlist.js');
 
-const playlist = {
-  '16c': { type: 'local', path: 'videos/sample.mp4' },
-  'v2': { type: 'local', path: 'videos/v2.mp4' }
+let playlist = {};
+
+try {
+  playlist = require('./playlist.json');
 }
+catch (ex) { console.log(ex) }
 
 function getChunkHeader(range, total) {
   var parts = range.replace(/bytes=/, "").split("-");
