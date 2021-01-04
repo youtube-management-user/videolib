@@ -1,4 +1,5 @@
 project.log
+project2.log
 node_modules
 .DS_Store
 .cache
@@ -10,3 +11,4 @@ YouTubeCache.json
 page.html
 .log
 .zip
+txt
