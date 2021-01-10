@@ -37,6 +37,14 @@ function buildPlaylist() {
   return playlist;
 }
 
+function parse(date) {
+  var parts = date.split(".");
+  var dt = new Date(parseInt(parts[2], 10),
+                    parseInt(parts[1], 10) - 1,
+                    parseInt(parts[0], 10));
+  return dt;
+}
+
 async function parsePaidUsersFile(id) {
 
   // const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
@@ -48,10 +56,11 @@ async function parsePaidUsersFile(id) {
     const body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
 
     let orders = csv(body);
-    console.log('body', id)
-  //  orders = orders.map(rec => { rec.begin = parse(rec.begin.split(' ')[0], 'DD.M.YYYY'); rec.end = parse(rec.end, 'DD.MM.YYYY'); return rec;  })
+//    console.log('body', id)
+    orders = orders
+    .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]); rec.end = parse(rec.end); return rec;  })
 
-    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
+    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 &&  (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
   } catch(ex) {
     console.log('err when get file', ex)
   };
