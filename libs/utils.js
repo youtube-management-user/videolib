@@ -13,7 +13,7 @@ function csv(file) {
 
   records = records.map(rec => {
     let res = {};
-    const values = rec.split('|');
+    let values = rec.replace(/[\n\r]+/g, '').split('|');
     values.forEach((val, ind) => res[fields[ind]] = values[ind]);
     return res;
   });
@@ -60,10 +60,12 @@ async function parsePaidUsersFile(id) {
 
     let orders = csv(body);
 //    console.log('body', id)
-    console.log(orders[orders.length-1])
+//    console.log(orders[orders.length-1])
     orders = orders
     .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]+ '.00.00'); rec.end = parse(rec.end.replace(/[\n\r\s]/, '')+ '.23.59'); return rec;  })
 //    console.log(new Date(), new Date(parse()) <= new Date() && new Date() <= new Date(order.end))
+
+    console.log(orders.find(order => order.id == id && parseInt(order.okl) === 1))
 
     currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
 //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
