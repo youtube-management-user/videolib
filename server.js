@@ -25,7 +25,7 @@ const playlistRoute     = require('./routes/playlist2.js');
 const logoutRoute       = require('./routes/logout.js');
 const googleAuthRoute   = require('./routes/google-auth.js');
 
-let playlist = buildPlaylist();
+let playlist = {};//buildPlaylist();
 
 function getChunkHeader(range, total) {
   var parts = range.replace(/bytes=/, "").split("-");
