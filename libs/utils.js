@@ -38,7 +38,6 @@ function buildPlaylist() {
 }
 
 function parse(date) {
-  console.log(111, date)
   var parts = date.split(".");
   var dt = new Date(parseInt(parts[2], 10),
                     parseInt(parts[1], 10) - 1,
@@ -59,10 +58,11 @@ async function parsePaidUsersFile(id) {
     let orders = csv(body);
 //    console.log('body', id)
     orders = orders
-    .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]); rec.end = parse(rec.end); return rec;  })
+    .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]); rec.end = parse(rec.end.replace(/[\n\r\s]/, '')); return rec;  })
+//    console.log(new Date(), new Date(parse()) <= new Date() && new Date() <= new Date(order.end))
 
-//    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
+    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+//    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
   } catch(ex) {
     console.log('err when get file', ex)
   };
