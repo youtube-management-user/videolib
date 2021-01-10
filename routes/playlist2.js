@@ -14,12 +14,13 @@ async function playlistRoute(req, res) {
   try {
     var lectures = fs.readFileSync("./txt/lectures.txt", 'UTF-8').split(/\n/).filter(l => l!='').map(l => { const [key, value] =  l.split('|'); let obj = {}; obj[key] = value; return obj; });
     let lecturesObj = {};
-    lectures.forEach(l => { lectures[Object.keys(l)[0]] = Object.values(l)[0] })
+    lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
+    console.log(111, lectures, lecturesObj)
     let course = req.currentOrder.course;
     const lecturesMapping = [ 'ФИ', 'ЯК', 'АЭ', 'ИО', 'HM' ];
     course = lecturesMapping.indexOf(course)+1;
     const key = '' + course + '-' + (req.currentOrder.number.length == 1? '0' + req.currentOrder.number: req.currentOrder.number);
-    lectureData = { title: lectures[key] }
+    lectureData = { title: lecturesObj[key] }
   } catch(ex) { console.log(ex) }
 
   var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: {}, googleLink: {}, filename, lectureData });
