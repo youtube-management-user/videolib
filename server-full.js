@@ -21,7 +21,7 @@ const { urlGoogle, getGoogleAccountFromCode, getAccessTokenFromCode, getGoogleUs
 
 const { buildPlaylist, csv, parsePaidUsersFile } = require('./libs/utils.js')
 
-const playlistRoute     = require('./routes/playlist2.js');
+const playlistRoute     = require('./routes/playlist.js');
 const logoutRoute       = require('./routes/logout.js');
 const googleAuthRoute   = require('./routes/google-auth.js');
 

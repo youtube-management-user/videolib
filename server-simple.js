@@ -1,7 +1,6 @@
 var http = require('http'),
     fs = require('fs'),
     util = require('util'),
-    querystring = require('querystring'),
     urllib = require('url'),
     ejs = require("ejs"),
     process = require("process");
@@ -34,13 +33,7 @@ function getChunkHeader(range, total) {
 http.createServer(async function (req, res) {
 
   var path = req.url.split('/');
-  var route = path[1];
-  var filename = path[2];
-  var query = '';
-  if (filename && filename.indexOf('?')>=0) {
-    query = querystring.parse(filename.split('?')[1]);
-    filename = filename.split('?')[0];
-  }
+  var [ route, ...filename ] = path;
   var referer = urllib.parse(req.headers.referer || '').hostname;
 
   log.info(`Video server: access from ${req.headers["x-forwarded-for"]} for ${route}, ${req.url}`);

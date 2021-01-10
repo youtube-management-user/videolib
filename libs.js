@@ -11,10 +11,13 @@ function getYouTubeURL(filename, onSuccess, onError) {
     onError(`Incorrect YouTube video ${filename}`);
   } else {
     superagent.get('https://www.youtube.com/watch?v=' + filename).then(response => {
+      console.log(111, filename)
       var soup = new JSSoup(response.text);
       var scriptElements = soup.findAll("script");
 
       var scriptElementsFiltered = scriptElements.filter(el => { return el.text.indexOf('videoplayback') >= 0 });
+
+      console.log(scriptElementsFiltered)
 
 //      fs.writeFileSync('resp.html', scriptElementsFiltered[0].text)
 

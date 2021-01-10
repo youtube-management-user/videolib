@@ -8,15 +8,33 @@
 <body>
 
 <video width="600" controls controlsList="nodownload">
-  <source src="/video/v1" type="video/mp4">
+  <source src="/video/<%= filename %>" type="video/mp4">
 </video>
 
 <p>
 <% if (user && user.email) { %>
-Вы вошли как <%= user.email %>
-<a href="/logout/">Выйти</a>
+
+  Вы вошли как <%= user.email %>
+  <a href="/logout/">Выйти</a>
+
+  <% if (lectures && lectures.length > 0) { %>
+
+  <p>Лекции, открытые для просмотра:</p>
+
+  <ul>
+    <% lectures.forEach(lecture => { %>
+    <li><a href="#" onClick="playVideo('<%= lecture.id %>')"><%= lecture.name %>
+  <% }) %>
+  </ul>
+
+  <% } else { %>
+
+    У вас пока лекций, открытых для просмотра.
+
+  <% } %>
+
 <% } else { %>
-  <a href="<%= googleLink %>">Login</a>
+<!--  <a href="<%= googleLink %>">Login</a> -->
 <% } %>
 <p>
 
@@ -62,6 +80,12 @@
   video.addEventListener('ended', (event) => {
     playNext();
   });
+
+  function playVideo(id) {
+    video.setAttribute('src', '/video/' + id);
+    video.load();
+    video.play();
+  }
 
   // video.addEventListener('seeked', (event) => {
   //   console.log('seeked', video.currentTime, video.duration);
