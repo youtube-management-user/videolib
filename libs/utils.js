@@ -38,7 +38,7 @@ function buildPlaylist() {
 }
 
 function parse(date) {
-//  console.log(111, date)
+  console.log(111, date)
   var parts = date.split(".");
   var dt = new Date(parseInt(parts[2], 10),
                     parseInt(parts[1], 10) - 1,
