@@ -41,7 +41,10 @@ function parse(date) {
   var parts = date.split(".");
   var dt = new Date(parseInt(parts[2], 10),
                     parseInt(parts[1], 10) - 1,
-                    parseInt(parts[0], 10));
+                    parseInt(parts[0], 10),
+                    parseInt(parts[3], 10),
+                    parseInt(parts[4], 10),
+                  );
   return dt;
 }
 
@@ -58,7 +61,7 @@ async function parsePaidUsersFile(id) {
     let orders = csv(body);
 //    console.log('body', id)
     orders = orders
-    .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]); rec.end = parse(rec.end.replace(/[\n\r\s]/, '')); return rec;  })
+    .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]+ '.00.00'); rec.end = parse(rec.end.replace(/[\n\r\s]/, '')+ '.23.59'); return rec;  })
 //    console.log(new Date(), new Date(parse()) <= new Date() && new Date() <= new Date(order.end))
 
     currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
