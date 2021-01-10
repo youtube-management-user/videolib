@@ -65,7 +65,7 @@ async function parsePaidUsersFile(id) {
     .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]); rec.end = parse(rec.end, 1); return rec;  })
 //    console.log(new Date(), new Date(parse()) <= new Date() && new Date() <= new Date(order.end))
 
-    console.log(orders.find(order => order.id == id && parseInt(order.okl) === 1))
+//    console.log(orders.find(order => order.id == id && parseInt(order.okl) === 1))
 
     currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
 //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
