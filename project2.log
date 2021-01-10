@@ -417,3 +417,529 @@
 11:28:58.777 INFO  Video server: access from undefined for video, /video/v1 
 11:28:58.850 INFO  Video server: access from undefined for video, /video/v1 
 11:28:58.968 INFO  Video server: access from undefined for video, /video/v1 
+12:34:44.113 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:34:45.278 INFO  Video server: access from undefined for video, /video/v1 
+12:34:45.334 INFO  Video server: access from undefined for video, /video/v1 
+12:34:45.432 INFO  Video server: access from undefined for video, /video/v1 
+16:43:04.902 INFO  Video server: access from undefined for playlist, /playlist 
+16:43:07.742 INFO  Video server: access from undefined for video, /video/v1 
+16:43:07.812 INFO  Video server: access from undefined for video, /video/v1 
+16:43:07.920 INFO  Video server: access from undefined for video, /video/v1 
+18:35:28.577 INFO  Video server: access from undefined for video, /video/v1 
+18:35:28.659 INFO  Video server: access from undefined for video, /video/v1 
+18:35:28.769 INFO  Video server: access from undefined for video, /video/v1 
+19:15:06.344 INFO  Video server: access from undefined for google-auth, /google-auth/?code=4%2F0AY0e-g6ZurFmPr0FZlDc89GyA2OuTnj3FQRoO8YCWGywV6twaRuOwAIPJs40SGOutr3k6w&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+19:15:08.598 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:15:09.492 INFO  Video server: access from undefined for video, /video/v1 
+19:15:09.567 INFO  Video server: access from undefined for video, /video/v1 
+19:15:09.661 INFO  Video server: access from undefined for video, /video/v1 
+19:30:52.049 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:30:57.999 INFO  Video server: access from undefined for video, /video/v1 
+19:30:58.045 INFO  Video server: access from undefined for video, /video/v1 
+19:30:58.145 INFO  Video server: access from undefined for video, /video/v1 
+19:31:24.482 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:31:54.813 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:31:55.817 INFO  Video server: access from undefined for video, /video/v1 
+19:31:55.876 INFO  Video server: access from undefined for video, /video/v1 
+19:31:55.972 INFO  Video server: access from undefined for video, /video/v1 
+19:32:05.163 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:32:19.084 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:34:51.274 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:34:51.643 INFO  Video server: access from undefined for video, /video/v1 
+19:34:51.695 INFO  Video server: access from undefined for video, /video/v1 
+19:34:51.781 INFO  Video server: access from undefined for video, /video/v1 
+19:35:14.855 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:35:35.718 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:38:12.439 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:38:15.901 INFO  Video server: access from undefined for video, /video/v1 
+19:38:15.953 INFO  Video server: access from undefined for video, /video/v1 
+19:38:16.036 INFO  Video server: access from undefined for video, /video/v1 
+19:38:51.112 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:38:51.792 INFO  Video server: access from undefined for video, /video/v1 
+19:38:51.847 INFO  Video server: access from undefined for video, /video/v1 
+19:38:51.941 INFO  Video server: access from undefined for video, /video/v1 
+19:39:10.684 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:43:20.331 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:43:20.753 INFO  Video server: access from undefined for video, /video/v1 
+19:43:20.795 INFO  Video server: access from undefined for video, /video/v1 
+19:43:20.900 INFO  Video server: access from undefined for video, /video/v1 
+19:44:17.959 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:44:18.557 INFO  Video server: access from undefined for video, /video/v1 
+19:44:18.593 INFO  Video server: access from undefined for video, /video/v1 
+19:44:18.701 INFO  Video server: access from undefined for video, /video/v1 
+19:44:49.157 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:44:49.574 INFO  Video server: access from undefined for video, /video/v1 
+19:44:49.621 INFO  Video server: access from undefined for video, /video/v1 
+19:44:49.729 INFO  Video server: access from undefined for video, /video/v1 
+19:45:17.153 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:45:21.332 INFO  Video server: access from undefined for video, /video/v1 
+19:45:21.391 INFO  Video server: access from undefined for video, /video/v1 
+19:45:21.481 INFO  Video server: access from undefined for video, /video/v1 
+19:45:46.490 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:46:12.065 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:46:12.734 INFO  Video server: access from undefined for video, /video/v1 
+19:46:12.789 INFO  Video server: access from undefined for video, /video/v1 
+19:46:12.874 INFO  Video server: access from undefined for video, /video/v1 
+19:46:24.261 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:46:51.203 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:46:52.518 INFO  Video server: access from undefined for video, /video/v1 
+19:46:52.574 INFO  Video server: access from undefined for video, /video/v1 
+19:46:52.679 INFO  Video server: access from undefined for video, /video/v1 
+19:47:05.768 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:47:27.755 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:47:28.403 INFO  Video server: access from undefined for video, /video/v1 
+19:47:28.448 INFO  Video server: access from undefined for video, /video/v1 
+19:47:28.556 INFO  Video server: access from undefined for video, /video/v1 
+19:47:31.022 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:47:40.417 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:48:00.982 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:48:02.154 INFO  Video server: access from undefined for video, /video/v1 
+19:48:02.215 INFO  Video server: access from undefined for video, /video/v1 
+19:48:02.264 INFO  Video server: access from undefined for video, /video/v1 
+19:48:21.863 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:49:20.226 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:49:20.838 INFO  Video server: access from undefined for video, /video/v1 
+19:49:20.891 INFO  Video server: access from undefined for video, /video/v1 
+19:49:20.985 INFO  Video server: access from undefined for video, /video/v1 
+19:49:37.956 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:50:58.072 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:51:00.856 INFO  Video server: access from undefined for video, /video/v1 
+19:51:00.912 INFO  Video server: access from undefined for video, /video/v1 
+19:51:00.997 INFO  Video server: access from undefined for video, /video/v1 
+19:51:18.535 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:51:52.884 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:51:53.676 INFO  Video server: access from undefined for video, /video/v1 
+19:51:53.731 INFO  Video server: access from undefined for video, /video/v1 
+19:51:53.820 INFO  Video server: access from undefined for video, /video/v1 
+19:54:19.705 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:54:20.589 INFO  Video server: access from undefined for video, /video/v1 
+19:54:20.642 INFO  Video server: access from undefined for video, /video/v1 
+19:54:20.745 INFO  Video server: access from undefined for video, /video/v1 
+19:54:32.963 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:54:58.657 INFO  Video server: access from undefined for playlist, /playlist/ 
+19:55:03.269 INFO  Video server: access from undefined for video, /video/v1 
+19:55:03.322 INFO  Video server: access from undefined for video, /video/v1 
+19:55:03.433 INFO  Video server: access from undefined for video, /video/v1 
+19:55:32.619 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:32:07.690 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:32:08.165 INFO  Video server: access from undefined for video, /video/v1 
+12:32:08.228 INFO  Video server: access from undefined for video, /video/v1 
+12:32:08.304 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+12:32:08.304 INFO  Video server: route favicon.ico not found 
+12:32:08.322 INFO  Video server: access from undefined for video, /video/v1 
+12:37:24.808 INFO  Video server: access from undefined for google-auth, /google-auth/?code=4%2F0AY0e-g77JwrNsY-Qyd8ycVBmIDnnXgbbuy_XGgwg2o9PRTEpWuJ-ziVNC6f0NcmAVMPLzQ&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+12:37:26.417 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:37:26.820 INFO  Video server: access from undefined for video, /video/v1 
+12:37:26.893 INFO  Video server: access from undefined for video, /video/v1 
+12:37:26.981 INFO  Video server: access from undefined for video, /video/v1 
+12:41:10.509 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:41:14.456 INFO  Video server: access from undefined for video, /video/v1 
+12:41:14.504 INFO  Video server: access from undefined for video, /video/v1 
+12:41:14.603 INFO  Video server: access from undefined for video, /video/v1 
+12:41:40.793 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:42:40.243 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:42:40.928 INFO  Video server: access from undefined for video, /video/v1 
+12:42:40.986 INFO  Video server: access from undefined for video, /video/v1 
+12:42:41.080 INFO  Video server: access from undefined for video, /video/v1 
+12:42:59.165 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:43:02.555 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:44:21.675 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:44:24.808 INFO  Video server: access from undefined for video, /video/v1 
+12:44:24.870 INFO  Video server: access from undefined for video, /video/v1 
+12:44:24.973 INFO  Video server: access from undefined for video, /video/v1 
+12:52:34.898 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:52:35.525 INFO  Video server: access from undefined for video, /video/v1 
+12:52:35.567 INFO  Video server: access from undefined for video, /video/v1 
+12:52:35.662 INFO  Video server: access from undefined for video, /video/v1 
+12:57:48.056 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:57:57.553 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:57:58.184 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:57:59.056 INFO  Video server: access from undefined for video, /video/v1 
+12:57:59.123 INFO  Video server: access from undefined for video, /video/v1 
+12:57:59.222 INFO  Video server: access from undefined for video, /video/v1 
+12:58:10.388 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:58:28.448 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:58:31.230 INFO  Video server: access from undefined for video, /video/v1 
+12:58:31.289 INFO  Video server: access from undefined for video, /video/v1 
+12:58:31.389 INFO  Video server: access from undefined for video, /video/v1 
+12:58:50.413 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:09:19.260 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:09:23.429 INFO  Video server: access from undefined for video, /video/v1 
+13:09:23.472 INFO  Video server: access from undefined for video, /video/v1 
+13:09:23.578 INFO  Video server: access from undefined for video, /video/v1 
+13:11:31.871 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:11:32.380 INFO  Video server: access from undefined for video, /video/v1 
+13:11:32.428 INFO  Video server: access from undefined for video, /video/v1 
+13:11:32.543 INFO  Video server: access from undefined for video, /video/v1 
+13:12:05.906 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:12:06.192 INFO  Video server: access from undefined for video, /video/v1 
+13:12:06.250 INFO  Video server: access from undefined for video, /video/v1 
+13:12:06.351 INFO  Video server: access from undefined for video, /video/v1 
+13:12:11.485 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:12:28.046 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:17:55.223 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:17:58.889 INFO  Video server: access from undefined for video, /video/v1 
+13:17:58.932 INFO  Video server: access from undefined for video, /video/v1 
+13:17:59.024 INFO  Video server: access from undefined for video, /video/v1 
+13:28:26.307 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:28:28.793 INFO  Video server: access from undefined for video, /video/v1 
+13:28:28.841 INFO  Video server: access from undefined for video, /video/v1 
+13:28:28.926 INFO  Video server: access from undefined for video, /video/v1 
+13:29:01.337 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:29:01.680 INFO  Video server: access from undefined for video, /video/v1 
+13:29:01.725 INFO  Video server: access from undefined for video, /video/v1 
+13:29:01.878 INFO  Video server: access from undefined for video, /video/v1 
+13:30:20.377 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:30:21.323 INFO  Video server: access from undefined for video, /video/v1 
+13:30:21.370 INFO  Video server: access from undefined for video, /video/v1 
+13:30:21.515 INFO  Video server: access from undefined for video, /video/v1 
+13:30:49.190 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:30:53.058 INFO  Video server: access from undefined for video, /video/v1 
+13:30:53.105 INFO  Video server: access from undefined for video, /video/v1 
+13:30:53.248 INFO  Video server: access from undefined for video, /video/v1 
+13:31:34.770 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:31:35.497 INFO  Video server: access from undefined for video, /video/v1 
+13:31:35.548 INFO  Video server: access from undefined for video, /video/v1 
+13:31:35.695 INFO  Video server: access from undefined for video, /video/v1 
+13:31:38.263 INFO  Video server: access from undefined for video, /video/%D0%A4%D0%98-22 
+13:31:38.263 INFO  Video server: file %D0%A4%D0%98-22 not found 
+13:33:54.566 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:33:59.793 INFO  Video server: access from undefined for video, /video/v1 
+13:33:59.841 INFO  Video server: access from undefined for video, /video/v1 
+13:34:00.004 INFO  Video server: access from undefined for video, /video/v1 
+13:34:01.371 INFO  Video server: access from undefined for video, /video/FI-22 
+13:34:01.371 INFO  Video server: file FI-22 not found 
+13:34:16.735 INFO  Video server: access from undefined for video, /video/FI-22 
+13:34:16.735 INFO  Video server: file FI-22 not found 
+13:35:06.382 INFO  Video server: access from undefined for video, /video/FI-22 
+13:35:06.382 INFO  Video server: file FI-22 not found 
+13:35:20.858 INFO  Video server: access from undefined for video, /video/FI-22 
+13:35:20.858 INFO  Video server: file FI-22 not found 
+13:36:27.728 INFO  Video server: access from undefined for video, /video/FI-22 
+13:36:27.728 INFO  Unknown file type FI-22 
+13:36:38.350 INFO  Video server: access from undefined for video, /video/FI-22 
+13:36:38.350 INFO  Unknown file type FI-22 
+13:36:43.312 INFO  Video server: access from undefined for video, /video/FI-22 
+13:36:43.312 INFO  Unknown file type FI-22 
+13:36:56.363 INFO  Video server: access from undefined for video, /video/FI-22 
+13:37:00.138 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:37:03.528 ERROR Cannot retrieve video 8R47f_pT6X4, should be unlisted or public 
+13:40:17.252 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:40:18.258 INFO  Video server: access from undefined for video, /video/v1 
+13:40:18.258 INFO  Video server: file v1 not found 
+13:40:23.808 INFO  Video server: access from undefined for google-auth, /google-auth/?code=4%2F0AY0e-g6ijh4ONt7gs34FxOo5iE1asE7ZvQDC3W6xBgJ89293c1tExzpL2D7ovaWeZ_sZbg&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+13:40:31.275 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:40:32.214 INFO  Video server: access from undefined for video, /video/v1 
+13:40:32.214 INFO  Video server: file v1 not found 
+13:40:44.810 INFO  Video server: access from undefined for video, /video/FI-22 
+13:40:48.234 ERROR Cannot retrieve video 8R47f_pT6X4, should be unlisted or public 
+13:41:48.641 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:41:49.465 INFO  Video server: access from undefined for video, /video/v1 
+13:41:49.465 INFO  Video server: file v1 not found 
+13:41:53.202 INFO  Video server: access from undefined for video, /video/FI-22 
+13:41:58.224 ERROR Cannot retrieve video 8R47f_pT6X4, should be unlisted or public 
+13:44:00.475 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:44:01.049 INFO  Video server: access from undefined for video, /video/v1 
+13:44:01.049 INFO  Video server: file v1 not found 
+13:44:02.311 INFO  Video server: access from undefined for video, /video/FI-15 
+13:44:08.324 ERROR Cannot retrieve video c_kHQv4am7E, should be unlisted or public 
+13:44:36.326 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:44:37.285 INFO  Video server: access from undefined for video, /video/v1 
+13:44:37.285 INFO  Video server: file v1 not found 
+13:44:42.337 INFO  Video server: access from undefined for playlist, /playlist/ 
+13:44:42.629 INFO  Video server: access from undefined for video, /video/v1 
+13:44:42.629 INFO  Video server: file v1 not found 
+13:44:44.122 INFO  Video server: access from undefined for video, /video/FI-15 
+13:44:52.702 ERROR Cannot retrieve video c_kHQv4am7E, should be unlisted or public 
+17:41:54.638 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:41:57.382 INFO  Video server: access from undefined for video, /video/v1 
+17:41:57.382 INFO  Video server: file v1 not found 
+17:41:57.529 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+17:41:57.529 INFO  Video server: route favicon.ico not found 
+17:42:53.723 INFO  Video server: access from undefined for google-auth, /google-auth/?code=4%2F0AY0e-g5x4EWWfDMOBiKQ73aTbM-02lJHw118awXPWm9qdfc7REv-R-UKs3JD8DmV3LHmOQ&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+17:42:54.672 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:42:58.750 INFO  Video server: access from undefined for video, /video/v1 
+17:42:58.750 INFO  Video server: file v1 not found 
+17:46:55.387 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:46:55.387 INFO  Video server: route playlist not found 
+17:46:58.339 INFO  Video server: access from undefined for , / 
+17:46:58.339 INFO  Video server: route  not found 
+17:49:41.733 INFO  Video server: access from undefined for , / 
+17:49:41.733 INFO  Video server: route  not found 
+17:49:53.808 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:49:53.957 INFO  Video server: access from undefined for video, /video/v1 
+17:49:53.957 INFO  Video server: file v1 not found 
+17:51:38.502 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:51:38.678 INFO  Video server: access from undefined for video, /video/v1 
+17:51:38.678 INFO  Video server: file v1 not found 
+17:51:59.127 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:51:59.283 INFO  Video server: access from undefined for video, /video/16c 
+17:51:59.331 INFO  Video server: access from undefined for video, /video/16c 
+17:51:59.476 INFO  Video server: access from undefined for video, /video/16c 
+17:52:01.474 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+17:52:01.474 INFO  Video server: route favicon.ico not found 
+17:52:01.655 INFO  Video server: access from undefined for video, /video/16c 
+17:53:32.052 INFO  Video server: access from undefined for playlist, /playlist/16c 
+17:53:32.255 INFO  Video server: access from undefined for video, /video/16c.mp4 
+17:53:32.255 INFO  Video server: file 16c.mp4 not found 
+17:53:43.875 INFO  Video server: access from undefined for playlist, /playlist/16c 
+17:53:44.041 INFO  Video server: access from undefined for video, /video/16c/ 
+17:53:44.094 INFO  Video server: access from undefined for video, /video/16c/ 
+17:53:44.268 INFO  Video server: access from undefined for video, /video/16c/ 
+17:54:18.125 INFO  Video server: access from undefined for playlist, /playlist/16c 
+17:54:18.508 INFO  Video server: access from undefined for video, /video/16c/ 
+17:54:18.597 INFO  Video server: access from undefined for video, /video/16c/ 
+17:54:18.757 INFO  Video server: access from undefined for video, /video/16c/ 
+17:54:21.364 INFO  Video server: access from undefined for playlist, /playlist/v2 
+17:54:21.567 INFO  Video server: access from undefined for video, /video/v2/ 
+17:54:22.833 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+17:54:22.833 INFO  Video server: route favicon.ico not found 
+17:54:22.889 INFO  Video server: access from undefined for video, /video/v2/ 
+18:07:01.893 INFO  Video server: access from undefined for playlist, /playlist/v2 
+18:07:02.061 INFO  Video server: access from undefined for video, /video/v2/ 
+18:07:02.061 INFO  Video server: file v2 not found 
+18:07:29.251 INFO  Video server: access from undefined for playlist, /playlist/v2 
+18:07:29.424 INFO  Video server: access from undefined for video, /video/v2/ 
+18:07:29.424 INFO  Video server: file v2 not found 
+18:07:35.866 INFO  Video server: access from undefined for playlist, /playlist/v2 
+18:07:36.035 INFO  Video server: access from undefined for video, /video/v2/ 
+18:07:36.035 INFO  Video server: file v2 not found 
+18:08:35.457 INFO  Video server: access from undefined for playlist, /playlist/v2 
+18:08:35.875 INFO  Video server: access from undefined for video, /video/v2/ 
+18:39:35.628 INFO  Video server: access from undefined for playlist, /playlist/v2 
+18:39:35.811 INFO  Video server: access from undefined for video, /video/v2/ 
+18:39:35.812 INFO  Video server: file v2 not found at C:\videos\4\16c.mp4 
+18:39:48.257 INFO  Video server: access from undefined for playlist, /playlist/16c 
+18:39:48.419 INFO  Video server: access from undefined for video, /video/16c/ 
+18:39:48.484 INFO  Video server: access from undefined for video, /video/16c/ 
+18:39:48.626 INFO  Video server: access from undefined for video, /video/16c/ 
+18:39:52.230 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+18:39:52.230 INFO  Video server: route favicon.ico not found 
+18:39:52.407 INFO  Video server: access from undefined for video, /video/16c/ 
+18:40:15.083 INFO  Video server: access from undefined for playlist, /playlist/16c 
+18:40:15.292 INFO  Video server: access from undefined for video, /video/16c/ 
+18:40:24.022 INFO  Video server: access from undefined for playlist, /playlist/16c 
+18:40:24.367 INFO  Video server: access from undefined for video, /video/16c/ 
+18:40:26.998 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+18:40:26.998 INFO  Video server: route favicon.ico not found 
+18:40:27.068 INFO  Video server: access from undefined for video, /video/16c/ 
+18:40:33.085 INFO  Video server: access from undefined for playlist, /playlist/16c 
+18:40:33.294 INFO  Video server: access from undefined for video, /video/16c/ 
+18:40:35.143 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+18:40:35.143 INFO  Video server: route favicon.ico not found 
+18:40:35.207 INFO  Video server: access from undefined for video, /video/16c/ 
+18:41:06.234 INFO  Video server: access from undefined for playlist, /playlist/16c 
+18:41:06.678 INFO  Video server: access from undefined for video, /video/16c/ 
+18:41:06.719 INFO  Video server: access from undefined for video, /video/16c/ 
+18:41:06.878 INFO  Video server: access from undefined for video, /video/16c/ 
+18:41:08.495 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+18:41:08.495 INFO  Video server: route favicon.ico not found 
+18:41:08.611 INFO  Video server: access from undefined for video, /video/16c/ 
+19:01:59.526 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:01:59.749 INFO  Video server: access from undefined for video, /video/16c/ 
+19:01:59.833 INFO  Video server: access from undefined for video, /video/16c/ 
+19:02:00.031 INFO  Video server: access from undefined for video, /video/16c/ 
+22:24:15.691 INFO  Video server: access from undefined for playlist, /playlist/16c 
+22:24:16.034 INFO  Video server: access from undefined for video, /video/16c/ 
+22:24:16.130 INFO  Video server: access from undefined for video, /video/16c/ 
+22:24:16.407 INFO  Video server: access from undefined for video, /video/16c/ 
+22:25:55.208 INFO  Video server: access from undefined for playlist, /playlist/16c 
+22:25:55.426 INFO  Video server: access from undefined for video, /video/16c/ 
+22:25:55.471 INFO  Video server: access from undefined for video, /video/16c/ 
+22:25:55.655 INFO  Video server: access from undefined for video, /video/16c/ 
+17:54:15.096 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:54:16.550 INFO  Video server: access from undefined for video, /video/v1 
+17:54:16.550 INFO  Video server: file v1 not found 
+17:54:16.689 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+17:54:16.689 INFO  Video server: route favicon.ico not found 
+17:54:22.471 INFO  Video server: access from undefined for google-auth, /google-auth/?code=4%2F0AY0e-g49NVB5HgJsb34YH80sJJsR3sxBDTgqT9JPMaGspQA9Cu3Q1ALIfjkmOeuVlGlHJw&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+17:54:23.451 INFO  Video server: access from undefined for playlist, /playlist/ 
+17:54:24.022 INFO  Video server: access from undefined for video, /video/v1 
+17:54:24.022 INFO  Video server: file v1 not found 
+19:14:44.813 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:14:45.113 INFO  Video server: access from undefined for video, /video/16c/ 
+19:14:45.173 INFO  Video server: access from undefined for video, /video/16c/ 
+19:14:45.281 INFO  Video server: access from undefined for video, /video/16c/ 
+19:14:46.962 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+19:14:46.962 INFO  Video server: route favicon.ico not found 
+19:14:47.133 INFO  Video server: access from undefined for video, /video/16c/ 
+19:14:49.640 INFO  Video server: access from undefined for playlist, /playlist/16cc 
+19:14:49.760 INFO  Video server: access from undefined for video, /video/16cc/ 
+19:14:49.760 INFO  Video server: file 16cc not found 
+19:14:51.627 INFO  Video server: access from undefined for video, /video/16c/ 
+19:24:50.448 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:24:55.093 INFO  Video server: access from undefined for video, /video/v1 
+19:24:55.093 INFO  Video server: file v1 not found 
+19:27:48.890 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:28:02.867 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:28:23.289 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:28:37.133 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:28:37.387 INFO  Video server: access from undefined for video, /video/v1 
+19:28:37.387 INFO  Video server: file v1 not found 
+19:30:30.946 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:30:31.564 INFO  Video server: access from undefined for video, /video/v1 
+19:30:31.564 INFO  Video server: file v1 not found 
+19:37:16.970 INFO  Video server: access from undefined for , /playlist/16c 
+19:37:16.970 INFO  Video server: route  not found 
+19:37:42.367 INFO  Video server: access from undefined for , /playlist/16c 
+19:37:42.367 INFO  Video server: route  not found 
+19:38:00.605 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:38:08.651 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:38:37.104 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:39:26.684 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:39:45.357 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:40:10.975 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:40:41.628 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:40:41.912 INFO  Video server: access from undefined for video, /video/v1 
+19:40:41.922 INFO  Video server: file v1 not found 
+19:41:00.223 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:41:00.371 INFO  Video server: access from undefined for video, /video/v1 
+19:41:00.382 INFO  Video server: file v1 not found 
+19:41:17.652 INFO  Video server: access from undefined for playlist, /playlist/16c 
+19:41:17.827 INFO  Video server: access from undefined for video, /video/v1 
+19:41:17.835 INFO  Video server: file v1 not found 
+19:49:47.796 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:50:21.446 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:50:30.758 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:50:44.579 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:51:20.035 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:51:20.296 INFO  Video server: access from undefined for video, /video/v1 
+19:53:20.309 INFO  Video server: access from undefined for video, /video/v1 
+19:53:27.449 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:53:27.667 INFO  Video server: access from undefined for video, /video/v1 
+19:53:27.674 INFO  Video server: file  not found 
+19:59:30.367 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:59:54.380 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+19:59:56.097 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:02:01.153 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:06:29.058 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:11:08.404 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:11:15.467 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:11:33.440 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:11:49.337 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:11:52.927 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:12:06.872 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:15:53.322 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:15:54.134 INFO  Video server: access from undefined for video, /video/v1 
+20:15:54.143 INFO  Video server: file  not found 
+20:19:57.356 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:19:57.483 INFO  Video server: access from undefined for video, /video/v1 
+20:20:33.274 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:20:34.135 INFO  Video server: access from undefined for video, /video/v1 
+20:20:50.656 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:20:50.943 INFO  Video server: access from undefined for video, /video/v1 
+20:22:24.423 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:22:25.225 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:22:25.237 INFO  Video server: file  not found 
+20:22:59.621 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:22:59.781 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:22:59.790 INFO  Video server: file  not found 
+20:23:15.341 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:23:40.274 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:23:40.564 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:23:40.574 INFO  Video server: file  not found 
+20:23:41.802 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:23:41.906 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:23:41.914 INFO  Video server: file  not found 
+20:26:47.741 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:26:48.469 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:26:48.479 INFO  Video server: file  not found 
+20:27:32.481 INFO  Video server: access from undefined for playlist, /playlist/1/15/dfra1otte 
+20:27:32.647 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:27:32.655 INFO  Video server: file  not found 
+20:28:11.726 INFO  Video server: access from undefined for playlist, /playlist/1/15/ga1sax5e0 
+20:28:11.878 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:28:11.890 INFO  Video server: file  not found 
+20:29:20.457 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:29:21.099 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:29:21.110 INFO  Video server: file  not found 
+20:29:48.280 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:29:48.454 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:29:48.463 INFO  Video server: file  not found 
+20:29:58.405 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:30:08.327 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:30:23.543 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:30:24.330 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:30:24.338 INFO  Video server: file  not found 
+20:30:50.426 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:31:06.872 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:31:07.145 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:31:07.158 INFO  Video server: file  not found 
+20:31:10.554 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:31:10.695 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:31:10.706 INFO  Video server: file  not found 
+20:31:17.050 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:31:17.172 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:31:17.180 INFO  Video server: file  not found 
+20:34:02.455 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:34:03.091 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:34:03.098 INFO  Video server: file  not found 
+20:34:33.580 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:34:33.735 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:34:56.097 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:34:56.269 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:34:56.277 INFO  Video server: file  not found 
+20:42:16.438 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:42:16.703 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:43:35.940 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:43:36.594 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:44:37.126 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:44:37.801 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:44:37.811 INFO  Video server: file ga1sax5e0 not found at videos/ФИ/5.mp4 
+20:44:48.622 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:44:48.811 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:44:48.820 INFO  Video server: file ga1sax5e0 not found at videos/ФИ/5.mp4 
+20:45:29.408 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:45:29.573 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:45:29.582 INFO  Video server: file ga1sax5e0 not found at videos/1/5.mp4 
+20:46:08.526 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:46:09.210 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:46:17.219 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:46:17.363 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:46:17.372 INFO  Video server: file ga1sax5e0 not found at videos/1/5.mp4 
+20:46:53.377 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:46:53.683 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:46:53.696 INFO  Video server: file ga1sax5e0 not found at videos/1/5.mp4 
+20:47:04.672 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:47:04.823 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:47:04.864 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:47:04.966 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:48:45.976 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
+20:48:46.155 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:48:46.376 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:48:48.334 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+20:48:48.334 INFO  Video server: route favicon.ico not found 
+20:48:48.424 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:50:54.998 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
+20:50:55.670 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:50:55.973 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:50:56.857 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+20:50:56.857 INFO  Video server: route favicon.ico not found 
+20:50:56.955 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:50:59.917 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte2 
+20:51:21.596 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte2 
+20:51:29.047 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte2 
+20:51:32.859 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
+20:51:32.983 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:51:33.172 INFO  Video server: access from undefined for video, /video/dfra1otte 
+20:51:36.258 INFO  Video server: access from undefined for playlist, /playlist/5/290/dfra1otte 
+20:51:48.350 INFO  Video server: access from undefined for playli2, /playli2 
+20:51:48.350 INFO  Video server: route playli2 not found 
+20:52:00.308 INFO  Video server: access from undefined for playlist, /playlist/5/29/ga1sax5e0 
+20:52:06.611 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:52:06.732 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:52:06.780 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:52:06.822 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:59:19.820 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:59:52.924 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+20:59:53.582 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:59:53.634 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+20:59:53.726 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+21:00:07.249 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+21:00:17.115 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+21:00:25.019 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+21:27:16.488 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+21:27:24.688 INFO  Video server: access from undefined for playlist, /playlist/5/29/ga1sax5e0 
+21:27:40.178 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
+21:27:40.339 INFO  Video server: access from undefined for video, /video/dfra1otte 
+21:27:40.588 INFO  Video server: access from undefined for video, /video/dfra1otte 
