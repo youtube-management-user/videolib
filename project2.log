@@ -1025,3 +1025,7 @@
 23:57:21.210 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
 23:57:21.314 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
 00:05:19.133 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+00:08:06.622 INFO  Video server: access from undefined for playlist, /playlist/1/05/ga1sax5e0 
+00:08:06.798 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+00:08:06.851 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
+00:08:07.016 INFO  Video server: access from undefined for video, /video/ga1sax5e0 
