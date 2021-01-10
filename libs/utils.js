@@ -1,6 +1,6 @@
 
 const fs = require('fs');
-const { parse } = require('fecha');
+//const { parse } = require('fecha');
 const fetch = require('node-fetch');
 
 function csv(file) {
@@ -46,7 +46,7 @@ async function parsePaidUsersFile(id) {
   const body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
 
   let orders = csv(body);
-  orders = orders.map(rec => { rec.begin = parse(rec.begin.split(' ')[0], 'DD.M.YYYY'); rec.end = parse(rec.end, 'DD.MM.YYYY'); return rec;  })
+//  orders = orders.map(rec => { rec.begin = parse(rec.begin.split(' ')[0], 'DD.M.YYYY'); rec.end = parse(rec.end, 'DD.MM.YYYY'); return rec;  })
 
   let currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
   return currentOrder;
