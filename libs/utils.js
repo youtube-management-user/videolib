@@ -45,13 +45,15 @@ async function parsePaidUsersFile(id) {
 
   let currentOrder = null;
   try {
-    const body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
+    const body = fs.readFileSync('./txt/paid_h.txt', 'UTF-16')
 
     let orders = csv(body);
   //  orders = orders.map(rec => { rec.begin = parse(rec.begin.split(' ')[0], 'DD.M.YYYY'); rec.end = parse(rec.end, 'DD.MM.YYYY'); return rec;  })
 
     currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
-  } catch(ex) {};
+  } catch(ex) {
+    console.log('err when get file', ex)
+  };
 
   return currentOrder;
 

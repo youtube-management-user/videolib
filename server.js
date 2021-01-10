@@ -67,6 +67,8 @@ http.createServer(async function (req, res) {
 
     if (currentOrder) {
       req.currentOrder = currentOrder;
+    } else {
+      console.log('err no currentOrder')
     }
 
     if (route == 'video') {
