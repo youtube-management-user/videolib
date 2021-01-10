@@ -9,7 +9,7 @@ function csv(file) {
 
   if (!records || records.length < 1) return null;
 
-  fields = fields.split('|');
+  fields = fields.replace(/[\n\r\s]+/g, '').split('|');
 
   records = records.map(rec => {
     let res = {};
@@ -51,7 +51,7 @@ async function parsePaidUsersFile(id) {
     console.log('body', id)
   //  orders = orders.map(rec => { rec.begin = parse(rec.begin.split(' ')[0], 'DD.M.YYYY'); rec.end = parse(rec.end, 'DD.MM.YYYY'); return rec;  })
 
-    currentOrder = orders.find(order => order.id == id);
+    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
   } catch(ex) {
     console.log('err when get file', ex)
   };
