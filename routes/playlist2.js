@@ -12,7 +12,7 @@ async function playlistRoute(req, res) {
 
   let lectureData = {};
   try {
-    var lectures = fs.readFileSync("./txt/lectures.txt", 'UTF-8').split(/\n/).filter(l => l!='').map(l => { const [key, value] =  l.split('|'); let obj = {}; obj[key] = value; return obj; });
+    var lectures = fs.readFileSync("./txt/lectures.txt", 'UTF-8').split(/\n/).filter(l => l!='').map(l => { let [key, value] =  l.split('|'); key = key.replace(/[^\d-]+/, ''); let obj = {}; obj[key] = value; return obj; });
     let lecturesObj = {};
     lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
     console.log(111, lectures, lecturesObj)
