@@ -37,13 +37,13 @@ function buildPlaylist() {
   return playlist;
 }
 
-function parse(date) {
+function parse(date, daysToAdd) {
   var parts = date.split(".");
   var dt = new Date(parseInt(parts[2], 10),
                     parseInt(parts[1], 10) - 1,
-                    parseInt(parts[0], 10),
-                    parseInt(parts[3], 10),
-                    parseInt(parts[4], 10),
+                    parseInt(parts[0], 10) + (daysToAdd || 0),
+                    // parseInt(parts[3], 10),
+                    // parseInt(parts[4], 10),
                   );
   return dt;
 }
@@ -61,8 +61,8 @@ async function parsePaidUsersFile(id) {
     let orders = csv(body);
 //    console.log('body', id)
 //    console.log(orders[orders.length-1])
-    // orders = orders
-    // .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]+ '.00.00'); rec.end = parse(rec.end.replace(/[\n\r\s]/, '')+ '.23.59'); return rec;  })
+    orders = orders
+    .map(rec => { rec.begin = parse(rec.begin.split(' ')[0]); rec.end = parse(rec.end, 1); return rec;  })
 //    console.log(new Date(), new Date(parse()) <= new Date() && new Date() <= new Date(order.end))
 
     console.log(orders.find(order => order.id == id && parseInt(order.okl) === 1))
