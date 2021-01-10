@@ -68,7 +68,7 @@ http.createServer(async function (req, res) {
     if (currentOrder) {
       req.currentOrder = currentOrder;
     } else {
-      console.log('err no currentOrder')
+      console.log(`err no currentOrder for ${id} (link expired?)`);
     }
 
     if (route == 'video') {
