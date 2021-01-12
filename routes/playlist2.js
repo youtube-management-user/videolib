@@ -36,7 +36,7 @@ async function playlistRoute(req, res) {
     // lectureData = { title: lecturesObj[key] }
   } catch(ex) { console.log(ex) }
 
-  var contents = ejs.render(fs.readFileSync("./templates/playlist2.ejs", 'UTF-8'), { user: {}, googleLink: {}, filename, lectureData });
+  var contents = ejs.render(fs.readFileSync("./templates/playlist3.ejs", 'UTF-8'), { user: {}, googleLink: {}, filename, lectureData });
 
   res.setHeader("Content-Type", "text/html");
   res.writeHead(200);
