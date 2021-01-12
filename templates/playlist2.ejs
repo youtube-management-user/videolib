@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Андрей Великанов</title>
+  <style>
+    body { font-family: Verdana, Arial, sans-serif; }
+  </style>
+
+</head>
+<body>
+
+  <hr size="2">
+
+  <p>Курс <a href="http://velikanov.ru/lecture14.asp" class="p"><%= lectureData.courseHeader %></a>. Лекция <%= lectureData.number %></p>
+
+  <p><b><%= lectureData.title %></b></p>
+
+  <p><%= lectureData.description %></p>
+
+  <p><%= lectureData.date %></p>
+  <p>Архив лекций курса «Философия искусства»  — <a href="http://velikanov.ru/lecture14.asp">http://velikanov.ru/lecture14.asp</a></p>
+
+  <video width="600" controls disablepictureinpicture controlsList="nodownload">
+    <source src="/video/<%= filename %>" type="video/mp4">
+  </video>
+
+</body>
+</html>
