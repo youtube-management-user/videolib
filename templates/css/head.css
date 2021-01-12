@@ -1,0 +1,14 @@
+/*стиль заголовка*/
+
+a {
+   FONT-FAMILY: Verdana, Arial, sans-serif;
+   font-size:26px;
+   color: white;
+
+
+   text-decoration: none;
+   }
+   a:hover {
+
+   text-decoration: none;
+   }

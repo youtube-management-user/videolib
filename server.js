@@ -54,6 +54,13 @@ http.createServer(async function (req, res) {
   let course, number, id;
   const lecturesMapping = [ 'ФИ', 'ЯК', 'АЭ', 'ИО', 'HM' ];
 
+  if (route == 'css') {
+    console.log(111)
+    res.setHeader("Content-Type", "text/css");
+    res.writeHead(200);
+    res.end(fs.readFileSync('./templates/css/'+token[0]));
+  }
+
   if (route == 'playlist' || route == 'video') {
 
     if (route == 'playlist') {
