@@ -12,18 +12,31 @@ async function playlistRoute(req, res) {
 
   let lectureData = {};
   try {
-    var lectures = fs.readFileSync("./txt/lectures.txt", 'UTF-8').split(/\n/).filter(l => l!='').map(l => { let [key, value] =  l.split('|'); key = key.replace(/[^\d-]+/, ''); let obj = {}; obj[key] = value; return obj; });
-    let lecturesObj = {};
-    lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
-    console.log(111, lectures, lecturesObj)
-    let course = req.currentOrder.course;
+    let { course, number } = req.currentOrder;
     const lecturesMapping = [ 'ФИ', 'ЯК', 'АЭ', 'ИО', 'HM' ];
     course = lecturesMapping.indexOf(course)+1;
-    const key = '' + course + '-' + (req.currentOrder.number.length == 1? '0' + req.currentOrder.number: req.currentOrder.number);
-    lectureData = { title: lecturesObj[key] }
+    number = number.length == 1? '0'+number: ''+number;
+//    console.log(111, course, number)
+    var data = fs.readFileSync(`./txt/${course}/${number}.txt`, 'UTF-8').split(/\r\n\r\n/).filter(l => l!='');
+    data.forEach(part => {
+      let [key, ...value] = part.split(/\r\n/);
+      value = value.filter(v => v!='');
+      if (value.length == 1) value = value[0];
+      lectureData[key] = value;
+    });
+    lectureData.courseHeader = "Homo Mutabilis";
+    lectureData.number = number;
+    console.log(111, lectureData)
+//    console.log(lectureData)
+    // let lecturesObj = {};
+    // lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
+    // let course = req.currentOrder.course;
+    // course = lecturesMapping.indexOf(course)+1;
+    // const key = '' + course + '-' + (req.currentOrder.number.length == 1? '0' + req.currentOrder.number: req.currentOrder.number);
+    // lectureData = { title: lecturesObj[key] }
   } catch(ex) { console.log(ex) }
 
-  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: {}, googleLink: {}, filename, lectureData });
+  var contents = ejs.render(fs.readFileSync("./templates/playlist2.ejs", 'UTF-8'), { user: {}, googleLink: {}, filename, lectureData });
 
   res.setHeader("Content-Type", "text/html");
   res.writeHead(200);
