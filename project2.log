@@ -1140,3 +1140,17 @@
 10:00:06.022 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
 10:00:19.963 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
 10:00:39.316 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
+10:42:31.762 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+10:42:32.041 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+10:42:35.923 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+10:42:39.132 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0y 
+11:07:36.327 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+11:07:36.557 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+11:07:36.853 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+17:29:56.977 INFO  Video server: access from undefined for playlist, /playlist/5/29/dfra1otte 
+17:30:00.324 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+17:30:00.468 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+17:30:00.626 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+17:36:35.074 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+17:36:35.814 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+17:36:36.055 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
