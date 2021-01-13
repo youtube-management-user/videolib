@@ -53,20 +53,15 @@
 }
 
 
-
-
-
+html, body, nav { height: 100%; }
 
 #maintext {
     FONT-FAMILY: Verdana, Arial, sans-serif;
 	font-size: 14px;
     background-color: #f1f1f1;
 	padding: 15px;
+	height: 100%;
 }
-
-
-
-
 
 /*preloader*/
 .preloader {

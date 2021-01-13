@@ -14,6 +14,8 @@ async function playlistRoute(req, res) {
   try {
     let { course, number } = req.currentOrder;
     const lecturesMapping = [ 'ФИ', 'ЯК', 'АЭ', 'ИО', 'HM' ];
+
+    const lecturesHeadersMapping = [ 'Философия искусства', 'Языки культуры', 'Анаморфическая энциклопедия', 'Идеи и образы', 'Homo mutabilis' ];
     course = lecturesMapping.indexOf(course)+1;
     number = number.length == 1? '0'+number: ''+number;
 //    console.log(111, course, number)
@@ -24,9 +26,10 @@ async function playlistRoute(req, res) {
       if (value.length == 1) value = value[0];
       lectureData[key] = value;
     });
-    lectureData.courseHeader = "Homo Mutabilis";
+    lectureData.courseHeader = lecturesHeadersMapping[course-1];
+    lectureData.courseNum = course+13;
     lectureData.number = number;
-    console.log(111, lectureData)
+//    console.log(111, lectureData)
 //    console.log(lectureData)
     // let lecturesObj = {};
     // lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
