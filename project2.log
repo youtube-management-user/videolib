@@ -1223,3 +1223,116 @@
 22:15:40.018 INFO  Video server: access from undefined for css, /css/head.css 
 22:15:40.018 INFO  Video server: route css not found 
 22:15:40.125 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:43:02.798 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:43:02.958 INFO  Video server: access from undefined for css, /css/newold.css 
+15:43:02.959 INFO  Video server: route css not found 
+15:43:02.970 INFO  Video server: access from undefined for css, /css/head.css 
+15:43:02.971 INFO  Video server: route css not found 
+15:43:03.128 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:43:03.157 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:43:03.671 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:49:58.614 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:49:58.726 INFO  Video server: access from undefined for css, /css/newold.css 
+15:49:58.727 INFO  Video server: route css not found 
+15:49:58.731 INFO  Video server: access from undefined for css, /css/head.css 
+15:49:58.732 INFO  Video server: route css not found 
+15:49:58.816 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:49:58.848 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:49:59.018 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:50:15.425 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:50:15.552 INFO  Video server: access from undefined for css, /css/newold.css 
+15:50:15.553 INFO  Video server: route css not found 
+15:50:15.557 INFO  Video server: access from undefined for css, /css/head.css 
+15:50:15.557 INFO  Video server: route css not found 
+15:50:15.644 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:51:08.799 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:51:09.496 INFO  Video server: access from undefined for css, /css/newold.css 
+15:51:09.497 INFO  Video server: route css not found 
+15:51:09.505 INFO  Video server: access from undefined for css, /css/head.css 
+15:51:09.506 INFO  Video server: route css not found 
+15:51:09.575 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:51:09.611 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:51:09.755 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:51:09.775 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:51:09.845 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:52:05.707 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:52:05.801 INFO  Video server: access from undefined for css, /css/newold.css 
+15:52:05.802 INFO  Video server: route css not found 
+15:52:05.805 INFO  Video server: access from undefined for css, /css/head.css 
+15:52:05.806 INFO  Video server: route css not found 
+15:52:05.955 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:52:06.002 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:52:06.025 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:52:06.142 INFO  Video server: access from undefined for css, /css/newold.css 
+15:52:06.142 INFO  Video server: route css not found 
+15:52:06.148 INFO  Video server: access from undefined for css, /css/head.css 
+15:52:06.149 INFO  Video server: route css not found 
+15:52:06.230 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:52:06.243 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:52:06.502 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:52:14.002 INFO  Video server: access from undefined for playlist, /playlist/4/29/ryy3mk0ya 
+15:52:19.816 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:52:19.899 INFO  Video server: access from undefined for css, /css/newold.css 
+15:52:19.900 INFO  Video server: route css not found 
+15:52:19.905 INFO  Video server: access from undefined for css, /css/head.css 
+15:52:19.905 INFO  Video server: route css not found 
+15:52:20.089 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:52:20.120 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:53:42.215 INFO  Video server: access from undefined for css, /css/newold.css 
+15:53:42.215 INFO  Video server: route css not found 
+15:53:42.217 INFO  Video server: access from undefined for css, /css/head.css 
+15:53:42.217 INFO  Video server: route css not found 
+15:54:13.244 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:54:13.304 INFO  Video server: access from undefined for css, /css/newold.css 
+15:54:13.306 INFO  Video server: route css not found 
+15:54:13.311 INFO  Video server: access from undefined for css, /css/head.css 
+15:54:13.311 INFO  Video server: route css not found 
+15:54:13.388 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:54:13.416 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:54:13.692 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:54:15.191 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:54:15.254 INFO  Video server: access from undefined for css, /css/newold.css 
+15:54:15.254 INFO  Video server: route css not found 
+15:54:15.256 INFO  Video server: access from undefined for css, /css/head.css 
+15:54:15.257 INFO  Video server: route css not found 
+15:54:15.308 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:54:28.665 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:54:29.398 INFO  Video server: access from undefined for css, /css/newold.css 
+15:54:29.399 INFO  Video server: route css not found 
+15:54:29.401 INFO  Video server: access from undefined for css, /css/head.css 
+15:54:29.402 INFO  Video server: route css not found 
+15:54:29.450 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:54:33.377 INFO  Video server: access from undefined for css, /css/newold.css 
+15:54:33.377 INFO  Video server: route css not found 
+15:54:33.378 INFO  Video server: access from undefined for css, /css/head.css 
+15:54:33.378 INFO  Video server: route css not found 
+15:56:05.874 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:56:06.000 INFO  Video server: access from undefined for css, /css/newold.css 
+15:56:06.000 INFO  Video server: route css not found 
+15:56:06.005 INFO  Video server: access from undefined for css, /css/head.css 
+15:56:06.007 INFO  Video server: route css not found 
+15:56:06.132 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:56:06.161 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:56:06.575 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:56:50.051 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:56:50.822 INFO  Video server: access from undefined for css, /css/newold.css 
+15:56:50.822 INFO  Video server: route css not found 
+15:56:50.825 INFO  Video server: access from undefined for css, /css/head.css 
+15:56:50.826 INFO  Video server: route css not found 
+15:56:50.926 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:56:50.966 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:56:51.325 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:57:47.656 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:57:47.711 INFO  Video server: access from undefined for css, /css/newold.css 
+15:57:47.711 INFO  Video server: route css not found 
+15:57:47.714 INFO  Video server: access from undefined for css, /css/head.css 
+15:57:47.714 INFO  Video server: route css not found 
+15:57:47.810 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+15:57:47.850 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:57:52.499 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:57:53.203 INFO  Video server: access from undefined for css, /css/newold.css 
+15:57:53.204 INFO  Video server: route css not found 
+15:57:53.205 INFO  Video server: access from undefined for css, /css/head.css 
+15:57:53.205 INFO  Video server: route css not found 
+15:57:53.258 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+15:57:53.434 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 

@@ -62,7 +62,7 @@ async function parsePaidUsersFile(id) {
 //    console.log('body', id)
 //    console.log(orders[orders.length-1])
     orders = orders
-    .map(rec => { 
+    .map(rec => {
       rec.begin = parse(rec.begin.split(' ')[0]);
       rec.end = parse(rec.end, 1); return rec;
     })
