@@ -84,10 +84,28 @@
 <br>
 <span style="font-size:12px;"><%= lectureData.date %></span>
 
+<% if (lectureData.presentation!='') { %>
+  <br><br>
+  <a href="<%= lectureData.presentation %>" class="p" target="_blank">Презентация</a>
+<% } %>
 
+<% if (lectureData.literature!='') { %>
+  <br><br>
+  Литература:
+  <br>
+  <% lectureData.literature.forEach(line => { %>
+    <a href="<%=line[0]%>" class="p" target="_blank"><%=line[1]%></a><br>
+  <% }) %>
+<% } %>
 
-
-
+<% if (lectureData.movies!='') { %>
+  <br>
+  Фильмы:
+  <br>
+  <% lectureData.movies.forEach(line => { %>
+    <a href="<%=line[0]%>" class="p" target="_blank"><%=line[1]%></a><br>
+  <% }) %>
+<% } %>
 
 <br><br>
 <a href="http://velikanov.ru/lecture<%= lectureData.courseNum%>.asp" class="p">Заказать другие лекции курса «<%= lectureData.courseHeader%>»</a>

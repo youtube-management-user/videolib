@@ -1336,3 +1336,333 @@
 15:57:53.205 INFO  Video server: route css not found 
 15:57:53.258 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
 15:57:53.434 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+11:33:43.166 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:33:43.428 INFO  Video server: access from undefined for css, /css/newold.css 
+11:33:43.429 INFO  Video server: route css not found 
+11:33:43.434 INFO  Video server: access from undefined for css, /css/head.css 
+11:33:43.435 INFO  Video server: route css not found 
+11:33:43.567 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:33:43.603 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:33:43.691 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:33:43.789 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:34:14.587 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:34:14.651 INFO  Video server: access from undefined for css, /css/newold.css 
+11:34:14.652 INFO  Video server: route css not found 
+11:34:14.655 INFO  Video server: access from undefined for css, /css/head.css 
+11:34:14.656 INFO  Video server: route css not found 
+11:34:14.744 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:34:14.774 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:34:14.790 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:34:14.906 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:34:40.655 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:34:41.188 INFO  Video server: access from undefined for css, /css/newold.css 
+11:34:41.189 INFO  Video server: route css not found 
+11:34:41.193 INFO  Video server: access from undefined for css, /css/head.css 
+11:34:41.193 INFO  Video server: route css not found 
+11:34:41.299 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:35:45.322 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:35:45.862 INFO  Video server: access from undefined for css, /css/newold.css 
+11:35:45.863 INFO  Video server: route css not found 
+11:35:45.868 INFO  Video server: access from undefined for css, /css/head.css 
+11:35:45.868 INFO  Video server: route css not found 
+11:35:45.954 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:35:45.987 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:35:45.992 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:35:46.128 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:36:07.970 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:36:08.032 INFO  Video server: access from undefined for css, /css/newold.css 
+11:36:08.033 INFO  Video server: route css not found 
+11:36:08.036 INFO  Video server: access from undefined for css, /css/head.css 
+11:36:08.037 INFO  Video server: route css not found 
+11:36:08.143 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:36:29.583 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:36:29.633 INFO  Video server: access from undefined for css, /css/newold.css 
+11:36:29.634 INFO  Video server: route css not found 
+11:36:29.638 INFO  Video server: access from undefined for css, /css/head.css 
+11:36:29.639 INFO  Video server: route css not found 
+11:36:29.722 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:36:29.756 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:36:29.777 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:36:29.900 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:37:59.603 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:38:00.150 INFO  Video server: access from undefined for css, /css/newold.css 
+11:38:00.151 INFO  Video server: route css not found 
+11:38:00.155 INFO  Video server: access from undefined for css, /css/head.css 
+11:38:00.155 INFO  Video server: route css not found 
+11:38:00.243 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:38:00.275 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:38:00.291 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:38:00.420 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:41:24.634 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:41:24.699 INFO  Video server: access from undefined for css, /css/newold.css 
+11:41:24.699 INFO  Video server: route css not found 
+11:41:24.704 INFO  Video server: access from undefined for css, /css/head.css 
+11:41:24.704 INFO  Video server: route css not found 
+11:41:24.783 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:41:24.813 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:41:24.937 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:41:24.970 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:42:37.494 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:42:38.066 INFO  Video server: access from undefined for css, /css/newold.css 
+11:42:38.067 INFO  Video server: route css not found 
+11:42:38.072 INFO  Video server: access from undefined for css, /css/head.css 
+11:42:38.072 INFO  Video server: route css not found 
+11:42:38.159 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:42:38.199 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:42:38.255 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:42:38.399 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:46:48.955 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:46:49.484 INFO  Video server: access from undefined for css, /css/newold.css 
+11:46:49.485 INFO  Video server: route css not found 
+11:46:49.488 INFO  Video server: access from undefined for css, /css/head.css 
+11:46:49.489 INFO  Video server: route css not found 
+11:46:49.571 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:46:49.615 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:46:49.631 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:46:49.730 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:47:57.585 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:47:58.138 INFO  Video server: access from undefined for css, /css/newold.css 
+11:47:58.139 INFO  Video server: route css not found 
+11:47:58.142 INFO  Video server: access from undefined for css, /css/head.css 
+11:47:58.143 INFO  Video server: route css not found 
+11:47:58.226 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:47:58.234 INFO  Video server: file  not found 
+11:47:58.250 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:17.052 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:17.118 INFO  Video server: access from undefined for css, /css/newold.css 
+11:48:17.119 INFO  Video server: route css not found 
+11:48:17.123 INFO  Video server: access from undefined for css, /css/head.css 
+11:48:17.123 INFO  Video server: route css not found 
+11:48:17.210 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:48:17.217 INFO  Video server: file  not found 
+11:48:17.226 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:29.756 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:29.835 INFO  Video server: access from undefined for css, /css/newold.css 
+11:48:29.836 INFO  Video server: route css not found 
+11:48:29.841 INFO  Video server: access from undefined for css, /css/head.css 
+11:48:29.841 INFO  Video server: route css not found 
+11:48:29.924 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:48:29.930 INFO  Video server: file  not found 
+11:48:29.944 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:44.757 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:44.822 INFO  Video server: access from undefined for css, /css/newold.css 
+11:48:44.822 INFO  Video server: route css not found 
+11:48:44.826 INFO  Video server: access from undefined for css, /css/head.css 
+11:48:44.826 INFO  Video server: route css not found 
+11:48:44.929 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:48:44.932 INFO  Video server: file  not found 
+11:48:44.951 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:48.273 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:48:48.335 INFO  Video server: access from undefined for css, /css/newold.css 
+11:48:48.336 INFO  Video server: route css not found 
+11:48:48.338 INFO  Video server: access from undefined for css, /css/head.css 
+11:48:48.339 INFO  Video server: route css not found 
+11:48:48.374 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:48:48.377 INFO  Video server: file  not found 
+11:48:48.392 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:49:41.608 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:49:41.686 INFO  Video server: access from undefined for css, /css/newold.css 
+11:49:41.687 INFO  Video server: route css not found 
+11:49:41.691 INFO  Video server: access from undefined for css, /css/head.css 
+11:49:41.691 INFO  Video server: route css not found 
+11:49:41.775 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:49:41.778 INFO  Video server: file ezpfqzohr not found 
+11:49:41.794 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:50:03.806 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:50:03.872 INFO  Video server: access from undefined for css, /css/newold.css 
+11:50:03.873 INFO  Video server: route css not found 
+11:50:03.877 INFO  Video server: access from undefined for css, /css/head.css 
+11:50:03.878 INFO  Video server: route css not found 
+11:50:03.957 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:50:03.961 INFO  Video server: file ezpfqzohr not found 
+11:50:03.975 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:50:14.345 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:50:14.429 INFO  Video server: access from undefined for css, /css/newold.css 
+11:50:14.430 INFO  Video server: route css not found 
+11:50:14.434 INFO  Video server: access from undefined for css, /css/head.css 
+11:50:14.434 INFO  Video server: route css not found 
+11:50:14.580 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:50:14.589 INFO  Video server: file ezpfqzohr not found 
+11:50:14.604 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:53:25.451 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:53:26.021 INFO  Video server: access from undefined for css, /css/newold.css 
+11:53:26.022 INFO  Video server: route css not found 
+11:53:26.026 INFO  Video server: access from undefined for css, /css/head.css 
+11:53:26.026 INFO  Video server: route css not found 
+11:53:26.058 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:53:26.068 INFO  Video server: file ezpfqzohr not found 
+11:53:26.077 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:53:44.863 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:53:44.920 INFO  Video server: access from undefined for css, /css/newold.css 
+11:53:44.921 INFO  Video server: route css not found 
+11:53:44.925 INFO  Video server: access from undefined for css, /css/head.css 
+11:53:44.925 INFO  Video server: route css not found 
+11:53:45.007 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:53:45.014 INFO  Video server: file ezpfqzohr not found 
+11:53:45.027 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:53:49.346 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:53:49.413 INFO  Video server: access from undefined for css, /css/newold.css 
+11:53:49.414 INFO  Video server: route css not found 
+11:53:49.418 INFO  Video server: access from undefined for css, /css/head.css 
+11:53:49.419 INFO  Video server: route css not found 
+11:53:49.458 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:53:49.465 INFO  Video server: file ezpfqzohr not found 
+11:53:49.476 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:01.228 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:01.295 INFO  Video server: access from undefined for css, /css/newold.css 
+11:54:01.296 INFO  Video server: route css not found 
+11:54:01.300 INFO  Video server: access from undefined for css, /css/head.css 
+11:54:01.300 INFO  Video server: route css not found 
+11:54:01.399 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:54:01.409 INFO  Video server: file ezpfqzohr not found 
+11:54:01.438 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:16.817 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:16.841 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:16.921 INFO  Video server: access from undefined for css, /css/newold.css 
+11:54:16.923 INFO  Video server: route css not found 
+11:54:16.927 INFO  Video server: access from undefined for css, /css/head.css 
+11:54:16.927 INFO  Video server: route css not found 
+11:54:17.106 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:54:17.113 INFO  Video server: file ezpfqzohr not found 
+11:54:17.132 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:29.128 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:29.711 INFO  Video server: access from undefined for css, /css/newold.css 
+11:54:29.711 INFO  Video server: route css not found 
+11:54:29.715 INFO  Video server: access from undefined for css, /css/head.css 
+11:54:29.715 INFO  Video server: route css not found 
+11:54:29.758 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:54:29.790 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:54:38.778 INFO  Got metadata about 927LwAiCLzY 
+11:54:38.778 INFO  Got file length 393902698 
+11:54:38.778 INFO  Streaming with range bytes=0- 
+11:55:00.475 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:55:00.538 INFO  Video server: access from undefined for css, /css/newold.css 
+11:55:00.538 INFO  Video server: route css not found 
+11:55:00.542 INFO  Video server: access from undefined for css, /css/head.css 
+11:55:00.543 INFO  Video server: route css not found 
+11:55:00.629 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:55:00.659 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:55:04.990 INFO  Got metadata about 927LwAiCLzY 
+11:55:04.990 INFO  Got file length 393902698 
+11:55:04.990 INFO  Streaming with range bytes=0- 
+11:55:54.467 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:55:54.999 INFO  Video server: access from undefined for css, /css/newold.css 
+11:55:55.000 INFO  Video server: route css not found 
+11:55:55.005 INFO  Video server: access from undefined for css, /css/head.css 
+11:55:55.005 INFO  Video server: route css not found 
+11:55:55.092 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:55:55.124 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:55:59.002 INFO  Got metadata about 927LwAiCLzY 
+11:55:59.002 INFO  Got file length 393902698 
+11:55:59.003 INFO  Streaming with range bytes=0- 
+11:59:54.164 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+11:59:54.714 INFO  Video server: access from undefined for css, /css/newold.css 
+11:59:54.719 INFO  Video server: access from undefined for css, /css/head.css 
+11:59:54.806 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+11:59:54.832 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:00:01.476 INFO  Got metadata about 927LwAiCLzY 
+12:00:01.476 INFO  Got file length 393902698 
+12:00:01.477 INFO  Streaming with range bytes=0- 
+12:02:12.562 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:02:48.501 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:03:01.615 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:03:02.147 INFO  Video server: access from undefined for css, /css/newold.css 
+12:03:02.148 INFO  Video server: access from undefined for css, /css/head.css 
+12:03:02.235 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:03:02.257 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:07.925 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:08.508 INFO  Video server: access from undefined for css, /css/newold.css 
+12:06:08.509 INFO  Video server: access from undefined for css, /css/head.css 
+12:06:08.590 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:06:08.615 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:17.448 INFO  Got metadata about 927LwAiCLzY 
+12:06:17.448 INFO  Got file length 393902698 
+12:06:17.448 INFO  Streaming with range bytes=0- 
+12:06:21.655 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:06:21.714 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:21.777 INFO  Video server: access from undefined for css, /css/newold.css 
+12:06:21.781 INFO  Video server: access from undefined for css, /css/head.css 
+12:06:21.871 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:06:21.891 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:27.485 INFO  Got metadata about 927LwAiCLzY 
+12:06:27.485 INFO  Got file length 393902698 
+12:06:27.485 INFO  Streaming with range bytes=32768- 
+12:06:30.087 INFO  Got metadata about 927LwAiCLzY 
+12:06:30.087 INFO  Got file length 393902698 
+12:06:30.087 INFO  Streaming with range bytes=49152- 
+12:06:49.177 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:49.263 INFO  Video server: access from undefined for css, /css/newold.css 
+12:06:49.275 INFO  Video server: access from undefined for css, /css/head.css 
+12:06:49.420 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:06:49.452 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:50.852 INFO  Got metadata about 927LwAiCLzY 
+12:06:50.852 INFO  Got file length 393902698 
+12:06:50.852 INFO  Streaming with range bytes=0- 
+12:06:59.885 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:06:59.956 INFO  Video server: access from undefined for css, /css/newold.css 
+12:06:59.958 INFO  Video server: access from undefined for css, /css/head.css 
+12:07:00.120 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:07:00.158 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:07:01.774 INFO  Got metadata about 927LwAiCLzY 
+12:07:01.774 INFO  Got file length 393902698 
+12:07:01.775 INFO  Streaming with range bytes=0- 
+12:11:07.378 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:11:51.015 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:12:43.533 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:12:43.584 INFO  Video server: access from undefined for css, /css/newold.css 
+12:12:43.586 INFO  Video server: access from undefined for css, /css/head.css 
+12:12:43.626 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:12:43.653 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:13:03.755 INFO  Got metadata about 927LwAiCLzY 
+12:13:03.755 INFO  Got file length 393902698 
+12:13:03.755 INFO  Streaming with range bytes=0- 
+12:13:13.449 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:13:13.499 INFO  Video server: access from undefined for css, /css/newold.css 
+12:13:13.502 INFO  Video server: access from undefined for css, /css/head.css 
+12:13:13.587 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:13:13.606 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:13:26.814 INFO  Got metadata about 927LwAiCLzY 
+12:13:26.814 INFO  Got file length 393902698 
+12:13:26.814 INFO  Streaming with range bytes=0- 
+12:14:07.808 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:14:08.322 INFO  Video server: access from undefined for css, /css/newold.css 
+12:14:08.324 INFO  Video server: access from undefined for css, /css/head.css 
+12:14:08.413 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:14:08.432 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:14:17.731 INFO  Got metadata about 927LwAiCLzY 
+12:14:17.731 INFO  Got file length 393902698 
+12:14:17.731 INFO  Streaming with range bytes=0- 
+12:14:27.923 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:14:35.080 INFO  Got metadata about 927LwAiCLzY 
+12:14:35.080 INFO  Got file length 393902698 
+12:14:35.081 INFO  Streaming with range bytes=917504- 
+12:15:28.145 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:15:36.859 INFO  Got metadata about 927LwAiCLzY 
+12:15:36.859 INFO  Got file length 393902698 
+12:15:36.859 INFO  Streaming with range bytes=2588672- 
+12:16:34.519 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+12:20:41.960 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+12:20:42.015 INFO  Video server: access from undefined for css, /css/newold.css 
+12:20:42.017 INFO  Video server: access from undefined for css, /css/head.css 
+12:20:42.113 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+12:20:42.142 INFO  Video server: access from undefined for playlist, /playlist/5/29/ryy3mk0ya 
+12:20:42.449 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+12:20:46.385 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+12:20:46.385 INFO  Video server: route favicon.ico not found 
+12:20:46.465 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+12:20:49.535 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:20:50.841 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:20:50.891 INFO  Video server: access from undefined for css, /css/newold.css 
+12:20:50.892 INFO  Video server: access from undefined for css, /css/head.css 
+12:20:50.940 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:20:50.961 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:20:54.903 INFO  Got metadata about 927LwAiCLzY 
+12:20:54.904 INFO  Got file length 393902698 
+12:20:54.904 INFO  Streaming with range bytes=0- 
+12:20:57.723 INFO  Got metadata about 927LwAiCLzY 
+12:20:57.723 INFO  Got file length 393902698 
+12:20:57.723 INFO  Streaming with range bytes=0- 
+12:21:08.715 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+12:21:08.715 INFO  Video server: route favicon.ico not found 
+12:22:41.674 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+12:22:41.978 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
