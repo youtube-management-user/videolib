@@ -1666,3 +1666,7 @@
 12:21:08.715 INFO  Video server: route favicon.ico not found 
 12:22:41.674 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
 12:22:41.978 INFO  Video server: access from undefined for video, /video/ryy3mk0ya 
+12:25:14.583 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:25:22.465 INFO  Got metadata about 927LwAiCLzY 
+12:25:22.465 INFO  Got file length 393902698 
+12:25:22.465 INFO  Streaming with range bytes=0- 

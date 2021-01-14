@@ -28,7 +28,7 @@ function buildPlaylist() {
 
   let youtubeMapping = {};
   for (var i=1; i<=5; i++) {
-    const path = `./txt/local_id/local_${i}_id.txt`
+    const path = `./local_id/local_${i}_id.txt`
     if (fs.existsSync(path)) {
       let youtubeIds = fs.readFileSync(path, 'UTF-8').split(/[\n\r]+/).filter(l => l!='');
       youtubeMapping[lecturesMapping[i-1]] = youtubeIds;
