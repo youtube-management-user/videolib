@@ -1674,3 +1674,61 @@
 12:32:14.891 INFO  Got metadata about 927LwAiCLzY 
 12:32:14.891 INFO  Got file length 393902698 
 12:32:14.891 INFO  Streaming with range bytes=2588672- 
+12:51:56.217 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:51:56.739 INFO  Video server: access from undefined for css, /css/newold.css 
+12:51:56.740 INFO  Video server: access from undefined for css, /css/head.css 
+12:51:56.829 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+12:51:56.848 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+12:52:04.274 INFO  Got metadata about 927LwAiCLzY 
+12:52:04.274 INFO  Got file length 393902698 
+12:52:04.274 INFO  Streaming with range bytes=0- 
+13:28:21.941 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:28:22.044 INFO  Video server: access from undefined for css, /css/newold.css 
+13:28:22.046 INFO  Video server: access from undefined for css, /css/head.css 
+13:28:22.187 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+13:28:22.620 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:28:29.965 INFO  Got metadata about 927LwAiCLzY 
+13:28:29.965 INFO  Got file length undefined 
+13:28:29.965 INFO  Streaming with range bytes=0- 
+13:28:57.374 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:28:57.434 INFO  Video server: access from undefined for css, /css/newold.css 
+13:28:57.436 INFO  Video server: access from undefined for css, /css/head.css 
+13:28:57.481 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+13:28:57.513 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:29:01.073 INFO  Got metadata about 927LwAiCLzY 
+13:29:01.073 INFO  Got file length undefined 
+13:29:01.074 INFO  Streaming with range bytes=0- 
+13:29:19.629 INFO  Video server: access from undefined for css, /css/newold.css 
+13:29:19.630 INFO  Video server: access from undefined for css, /css/head.css 
+13:29:48.880 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:29:48.945 INFO  Video server: access from undefined for css, /css/newold.css 
+13:29:48.951 INFO  Video server: access from undefined for css, /css/head.css 
+13:29:49.049 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+13:29:49.078 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:29:53.119 INFO  Got metadata about 927LwAiCLzY 
+13:29:53.119 INFO  Got file length undefined 
+13:29:53.119 INFO  Streaming with range bytes=0- 
+13:30:46.652 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:30:46.728 INFO  Video server: access from undefined for css, /css/newold.css 
+13:30:46.736 INFO  Video server: access from undefined for css, /css/head.css 
+13:30:46.849 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+13:30:46.881 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:30:52.760 INFO  Got metadata about 927LwAiCLzY 
+13:30:52.760 INFO  Got file length undefined 
+13:30:52.760 INFO  Streaming with range bytes=0- 
+13:31:06.401 INFO  Video server: access from undefined for css, /css/newold.css 
+13:31:06.402 INFO  Video server: access from undefined for css, /css/head.css 
+13:32:05.776 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:32:06.386 INFO  Video server: access from undefined for css, /css/newold.css 
+13:32:06.388 INFO  Video server: access from undefined for css, /css/head.css 
+13:32:06.510 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+13:32:06.537 INFO  Video server: access from undefined for playlist, /playlist/1/05/ezpfqzohr 
+13:32:15.686 INFO  Got metadata about 927LwAiCLzY 
+13:32:15.686 INFO  Got file length 787805396 
+13:32:15.687 INFO  Streaming with range bytes=0- 
+13:32:19.577 INFO  Video server: access from undefined for video, /video/ezpfqzohr 
+13:32:21.310 INFO  Video server: access from undefined for favicon.ico, /favicon.ico 
+13:32:21.310 INFO  Video server: route favicon.ico not found 
+13:32:26.395 INFO  Got metadata about 927LwAiCLzY 
+13:32:26.395 INFO  Got file length 787805396 
+13:32:26.395 INFO  Streaming with range bytes=4194304- 
