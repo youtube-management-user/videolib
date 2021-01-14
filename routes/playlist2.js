@@ -17,11 +17,11 @@ async function playlistRoute(req, res) {
 
     const lecturesHeadersMapping = [ 'Философия искусства', 'Языки культуры', 'Анаморфическая энциклопедия', 'Идеи и образы', 'Homo mutabilis' ];
     course = lecturesMapping.indexOf(course)+1;
-    number = number.length == 1? '0'+number: ''+number;
+//    number = number.length == 1? '0'+number: ''+number;
 //    console.log(111, course, number)
-    var data = fs.readFileSync(`./txt/${course}/${number}.txt`, 'UTF-8').split(/\r\n\r\n/).filter(l => l!='');
+    var data = fs.readFileSync(`./txt/${course}/${number}.txt`, 'UTF-8').split(/\r\n\r\n|\n\n/).filter(l => l!='');
     data.forEach(part => {
-      let [key, ...value] = part.split(/\r\n/);
+      let [key, ...value] = part.split(/\r\n|\n/);
       value = value.filter(v => v!='');
       if (value.length == 1) value = value[0];
       lectureData[key] = value;
@@ -29,8 +29,13 @@ async function playlistRoute(req, res) {
     lectureData.courseHeader = lecturesHeadersMapping[course-1];
     lectureData.courseNum = course+13;
     lectureData.number = number;
-//    console.log(111, lectureData)
-//    console.log(lectureData)
+    if (lectureData.literature!='') {
+      lectureData.literature = lectureData.literature.map(l => l.split('|'));
+    }
+    if (lectureData.movies!='') {
+      lectureData.movies = lectureData.movies.map(l => l.split('|'));
+    }
+//    console.log(lectureData.literature)
     // let lecturesObj = {};
     // lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
     // let course = req.currentOrder.course;

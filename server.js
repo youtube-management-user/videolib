@@ -25,7 +25,7 @@ const playlistRoute     = require('./routes/playlist2.js');
 const logoutRoute       = require('./routes/logout.js');
 const googleAuthRoute   = require('./routes/google-auth.js');
 
-let playlist = {};//buildPlaylist();
+let playlist = buildPlaylist();
 
 function getChunkHeader(range, total) {
   var parts = range.replace(/bytes=/, "").split("-");
@@ -55,10 +55,10 @@ http.createServer(async function (req, res) {
   const lecturesMapping = [ 'ФИ', 'ЯК', 'АЭ', 'ИО', 'HM' ];
 
   if (route == 'css') {
-    console.log(111)
     res.setHeader("Content-Type", "text/css");
     res.writeHead(200);
     res.end(fs.readFileSync('./templates/css/'+token[0]));
+    return;
   }
 
   if (route == 'playlist' || route == 'video') {
@@ -81,9 +81,12 @@ http.createServer(async function (req, res) {
     if (route == 'video') {
       filename = id;
       number = currentOrder.number;
-      course = lecturesMapping.indexOf(currentOrder.course)+1;
-      const paddedNumber = number.length == 1? '0'+number: ''+number;
-      playlist[filename] = { "type": "local", "path": `videos/${course}/${paddedNumber}.mp4` };
+//      course = lecturesMapping.indexOf(currentOrder.course)+1;
+//      const paddedNumber = number.length == 1? '0'+number: ''+number;
+
+      const coursesLatinMapping = [ 'FI', 'YK', 'AE', 'IO', 'HM' ];
+
+      playlist[filename] = playlist[`${coursesLatinMapping[lecturesMapping.indexOf(currentOrder.course)]}-${number}`] // { "type": "local", "path": `videos/${course}/${paddedNumber}.mp4` };
     }
 
     if (route == 'playlist') {
@@ -104,6 +107,8 @@ http.createServer(async function (req, res) {
   } else if (route == 'google-auth') {
     googleAuthRoute(req, res, query);
   } else if (route == 'video') {
+
+//    console.log(222, playlist[filename], filename)
 
       if (!playlist[filename]) {
         log.info(`Video server: file ${filename} not found`);

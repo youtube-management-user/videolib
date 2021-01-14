@@ -28,11 +28,16 @@ function buildPlaylist() {
 
   let youtubeMapping = {};
   for (var i=1; i<=5; i++) {
-    let youtubeIds = fs.readFileSync(`./txt/youtube_${i}_id.txt`, 'UTF-8').split(/[\n\r]+/).filter(l => l!='');
-    youtubeMapping[lecturesMapping[i-1]] = youtubeIds;
-    youtubeIds.forEach((id,ind) => {
-      playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${ind}`] = { type: 'youtube', url: id }
-    })
+    const path = `./txt/local_id/local_${i}_id.txt`
+    if (fs.existsSync(path)) {
+      let youtubeIds = fs.readFileSync(path, 'UTF-8').split(/[\n\r]+/).filter(l => l!='');
+      youtubeMapping[lecturesMapping[i-1]] = youtubeIds;
+      youtubeIds.forEach((id,ind) => {
+        const [local, youtube] = id.split('|');
+        const type = local!=''? { type: 'local', path: './videos/' + local }: { type: 'youtube', url: youtube }
+        playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${ind+1}`] = type;
+      })
+    }
   }
   return playlist;
 }
@@ -70,7 +75,7 @@ async function parsePaidUsersFile(id) {
 
 //    console.log(orders.find(order => order.id == id && parseInt(order.okl) === 1))
 
-    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1 && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+    currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
 //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
   } catch(ex) {
     console.log('err when get file', ex)
