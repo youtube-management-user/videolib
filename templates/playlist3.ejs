@@ -89,7 +89,7 @@
   <a href="<%= lectureData.presentation %>" class="p" target="_blank">Презентация</a>
 <% } %>
 
-<% if (lectureData.literature) { %>
+<% if (lectureData.literature && lectureData.literature[0]) { %>
   <br><br>
   Литература:
   <br>
@@ -98,7 +98,7 @@
   <% }) %>
 <% } %>
 
-<% if (lectureData.movies) { %>
+<% if (lectureData.movies && lectureData.movies[0]) { %>
   <br>
   Фильмы:
   <br>
