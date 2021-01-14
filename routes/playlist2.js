@@ -22,6 +22,7 @@ async function playlistRoute(req, res) {
     var data = fs.readFileSync(`./txt/${course}/${number}.txt`, 'UTF-8').split(/\r\n\r\n|\n\n/).filter(l => l!='');
     data.forEach(part => {
       let [key, ...value] = part.split(/\r\n|\n/);
+      key = key.replace(/[^a-zA-Z+]/, '');
       value = value.filter(v => v!='');
       if (value.length == 1) value = value[0];
       lectureData[key] = value;
