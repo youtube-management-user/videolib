@@ -36,7 +36,7 @@ async function playlistRoute(req, res) {
     if (lectureData.movies!='') {
       lectureData.movies = lectureData.movies.map(l => l.split('|'));
     }
-    console.log(lectureData)
+//    console.log(lectureData)
     // let lecturesObj = {};
     // lectures.forEach(l => { lecturesObj[Object.keys(l)[0]] = Object.values(l)[0] })
     // let course = req.currentOrder.course;

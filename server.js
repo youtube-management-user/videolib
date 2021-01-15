@@ -19,7 +19,7 @@ var getYouTubeURL = require('./libs').getYouTubeURL;
 
 const { urlGoogle, getGoogleAccountFromCode, getAccessTokenFromCode, getGoogleUserInfo, parseCookies, setGoogleConfig } = require('./libs/google-utils.js');
 
-const { buildPlaylist, csv, parsePaidUsersFile } = require('./libs/utils.js')
+const { buildPlaylist, csv, parsePaidUsersFile, reloadPaidFile } = require('./libs/utils.js')
 
 const playlistRoute     = require('./routes/playlist2.js');
 const logoutRoute       = require('./routes/logout.js');
@@ -38,6 +38,8 @@ function getChunkHeader(range, total) {
   console.log(range, partialend, 'RANGE: ' + start + ' - ' + end + ' = ' + chunksize);
   return { headers: { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' }, start: start, end: end }
 }
+
+setInterval(reloadPaidFile, 1000 * 60 * 5);
 
 http.createServer(async function (req, res) {
 

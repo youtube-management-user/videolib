@@ -55,34 +55,51 @@ function parse(date, daysToAdd) {
 
 async function parsePaidUsersFile(id) {
 
-  // const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
-  // const body = await response.buffer();
-  // console.log(444, body.toString('utf16le'))
+  if (!fs.existsSync('./txt/orders.json')) {
+    try {
+      await reloadPaidFile();
+    } catch(ex) {
+      return null;
+    }
+  } else {
 
-  let currentOrder = null;
+    let currentOrder = null;
+    try {
+      const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
+      currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+      console.log(111, currentOrder)
+  //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
+    } catch(ex) {
+      console.log(ex)
+      return null;
+    };
+    return currentOrder;
+
+  }
+
+}
+
+async function reloadPaidFile() {
+
   try {
-    const body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
-
+    const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
+    let body = await response.buffer();
+    body = body.toString('utf16le');
     let orders = csv(body);
-//    console.log('body', id)
-//    console.log(orders[orders.length-1])
     orders = orders
     .map(rec => {
       rec.begin = parse(rec.begin.split(' ')[0]);
       rec.end = parse(rec.end, 1); return rec;
-    })
-//    console.log(new Date(), new Date(parse()) <= new Date() && new Date() <= new Date(order.end))
+    });
+    fs.writeFileSync('./txt/orders.json', JSON.stringify(orders));
+    return;
+  }
+  catch(ex) {
+    console.log('Error while fetching paid_h', ex);
+    return;
+  }
 
-//    console.log(orders.find(order => order.id == id && parseInt(order.okl) === 1))
-
-    currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-//    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
-  } catch(ex) {
-    console.log('err when get file', ex)
-  };
-
-  return currentOrder;
 
 }
 
-module.exports = { csv, buildPlaylist, parsePaidUsersFile }
+module.exports = { csv, buildPlaylist, parsePaidUsersFile, reloadPaidFile }
