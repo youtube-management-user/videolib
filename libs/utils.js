@@ -82,9 +82,10 @@ async function parsePaidUsersFile(id) {
 async function reloadPaidFile() {
 
   try {
-    const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
-    let body = await response.buffer();
-    body = body.toString('utf16le');
+    // const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
+    // let body = await response.buffer();
+    // body = body.toString('utf16le');
+    let body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8');
     let orders = csv(body);
     orders = orders
     .map(rec => {
