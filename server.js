@@ -39,7 +39,7 @@ function getChunkHeader(range, total) {
   return { headers: { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': 'video/mp4' }, start: start, end: end }
 }
 
-//setInterval(reloadPaidFile, 1000 * 60 * 5);
+setInterval(reloadPaidFile, 1000 * 60 * 5);
 
 http.createServer(async function (req, res) {
 

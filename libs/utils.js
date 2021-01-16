@@ -67,7 +67,7 @@ async function parsePaidUsersFile(id) {
     try {
       const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
       currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-      console.log(111, currentOrder)
+//      console.log(111, currentOrder)
   //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
     } catch(ex) {
       console.log(ex)
@@ -82,10 +82,10 @@ async function parsePaidUsersFile(id) {
 async function reloadPaidFile() {
 
   try {
-    // const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
-    // let body = await response.buffer();
-    // body = body.toString('utf16le');
-    let body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8');
+    const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
+    let body = await response.buffer();
+    body = body.toString('utf16le');
+    // let body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8');
     let orders = csv(body);
     orders = orders
     .map(rec => {
