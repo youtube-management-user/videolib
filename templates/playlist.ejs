@@ -20,6 +20,7 @@
 
 	<link rel="stylesheet" href="/css/newold.css">
   <link rel="stylesheet" href="/css/head.css">
+  <link rel="stylesheet" href="/css/app.css">
 
 </head>
 
@@ -48,16 +49,16 @@
 <div id="maintext">
 
 <hr size="2">
-<span style="font-size:12px;">
+<span class="user-panel">
   <% if (user && user.email) { %>
   Вы авторизованы как <b><%= user.email %></b>.
 
     <% if (openLectures && openLectures.length > 0) { %>
 
-      Вам доступны лекции:
+      <br/>Вам доступны лекции:
 
       <% openLectures.forEach((lecture, ind) => { %>
-      <a href="/playlist/<%= lecture.link %>/" class="p"><%= lecture.title %></a><% if (ind < openLectures.length-1) { %>, <% } %>
+      <br/><a href="/playlist/<%= lecture.link %>/" class="p"><%= lecture.courseLetters %>-<%= lecture.number %> <%= lecture.title %></a>
       <% }) %>
 
     <% } else { %>
@@ -69,7 +70,7 @@
     <br/><a class="p" href="/logout">Выйти</a>
 
   <% } else { %>
-   <a class="p" href="<%= googleLink %>">Авторизоваться</a>
+   <a class="p" href="<%= googleLink %>">Для просмотра вам необходимо авторизоваться с помощью адреса gmail, который вы указывали при заказе лекции >></a>
   <% } %>
 
 </span>
@@ -79,11 +80,12 @@
 
 <% if (lectureData) { %>
 
-  <% if (lectureData.courseNum && lectureData.courseHeader) { %>
-  Курс <a href="http://velikanov.ru/lecture<%= lectureData.courseNum%>.asp" class="p"><%= lectureData.courseHeader %></a>. Лекция <%= lectureData.number %>
+  <% if (lectureData.course && lectureData.courseHeader) { %>
+  Курс <a href="http://velikanov.ru/lecture<%= lectureData.courseGlobalNum %>.asp" class="p"><%= lectureData.courseHeader %></a>. Лекция <%= lectureData.number %>
   <% } %>
 
   <% if (lectureData.title) { %>
+    <br>
     <br>
     <b><%= lectureData.title %></b>
   <% } %>
