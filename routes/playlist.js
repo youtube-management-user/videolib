@@ -11,7 +11,7 @@ const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
 
 async function playlistRoute(req, res, course, number) {
 
-  let openOrders;
+  let openOrders = [];
 
   if (req.user && req.user.email) {
     openOrders = await getOpenOrders(req.user.email);
