@@ -98,7 +98,7 @@ async function getAccessToken(param) {
     return data;
   } catch(ex) {
     console.log(ex);
-    return ex.response.status;
+    return ex;
   }
 };
 
