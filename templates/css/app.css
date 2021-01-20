@@ -1,0 +1,10 @@
+.user-panel {
+	font-size: 12px;
+}
+
+.user-panel a {
+	font-size: 12px;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 1px 0px;
+}

@@ -11,18 +11,13 @@ const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
 
 async function playlistRoute(req, res, course, number) {
 
-  console.log(111);
-
   let openOrders = [];
 
   const userEmail = (req.user && req.user.email)? req.user.email: null;
 
   openOrders = await getOpenOrders(userEmail, { openById: [ 't33w2wn2b' ] });
 
-
   let openLectures = openOrders.map(order => { return lectures.find(l => l.courseLetters == order.course && l.number == order.number ) || order });
-
-//  console.log(openLectures)
 
   let lectureData = {};
 
