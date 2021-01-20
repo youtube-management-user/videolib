@@ -53,7 +53,7 @@ function parse(date, daysToAdd) {
   return dt;
 }
 
-async function parsePaidUsersFile(id) {
+async function getOpenOrders(email) {
 
   if (!fs.existsSync('./txt/orders.json')) {
     try {
@@ -66,41 +66,96 @@ async function parsePaidUsersFile(id) {
     let currentOrder = null;
     try {
       const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
-      currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+      let openOrders = orders.filter(order => order.gmail == email && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+//      currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
 //      console.log(111, currentOrder)
   //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
+      return openOrders;
     } catch(ex) {
       console.log(ex)
       return null;
     };
-    return currentOrder;
-
   }
-
 }
 
-async function reloadPaidFile() {
-
+async function fetchPaidFile() {
+  let orders = [];
   try {
     const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
     let body = await response.buffer();
     body = body.toString('utf16le');
-    // let body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8');
     let orders = csv(body);
     orders = orders
     .map(rec => {
       rec.begin = parse(rec.begin.split(' ')[0]);
       rec.end = parse(rec.end, 1); return rec;
     });
-    fs.writeFileSync('./txt/orders.json', JSON.stringify(orders));
-    return;
+    return orders;
   }
   catch(ex) {
     console.log('Error while fetching paid_h', ex);
     return;
   }
-
-
 }
 
-module.exports = { csv, buildPlaylist, parsePaidUsersFile, reloadPaidFile }
+async function reloadPaidFile() {
+  let orders = await fetchPaidFile();
+  if (orders && orders.length > 0) {
+    console.log('Writing new orders cache')
+    fs.writeFileSync('./txt/orders.json', JSON.stringify(orders));
+    return orders;
+  }
+  else return null;
+}
+
+let syncPaidFileStatusesRunning = false;
+
+async function syncPaidFileStatuses() {
+
+  // const domain = 'http://localhost:9300/test';
+  const domain = 'http://velikanov.ru';
+
+  try {
+    const response = await fetch(domain);
+  } catch(ex) {
+    console.error(`Domain ${domain} is unreachable, cannot sync orders status ${ex}`);
+    return;
+  }
+
+  if (syncPaidFileStatusesRunning === false) {
+    syncPaidFileStatusesRunning = true;
+//    let orders = await fetchPaidFile();
+    const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
+    let openOrders = orders.filter(order => (parseInt(order.okl) === 1) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+    let closedOrders = orders.filter(order => (parseInt(order.okl) === 1 || parseInt(order.okl) === 2) && (new Date(order.begin) > new Date() || new Date() > new Date(order.end)));
+
+    let openOrderLinks = openOrders.map(order => {
+  //    const id = orders.findIndex(o => o.id == order.id) + 2;
+      return  `${domain}/read_orders_hand6.asp?a=6&b=2&move=0&tid=${order.id}&pass=Bgt57140135`
+    });
+
+    let closedOrderLinks = closedOrders.map(order => {
+//      const id = orders.findIndex(o => o.id == order.id) + 2;
+      return  `${domain}/read_orders_hand6.asp?a=6&b=3&move=0&tid=${order.id}&pass=Bgt57140135`
+    });
+
+    let links = openOrderLinks.concat(closedOrderLinks);
+
+    for (const link of links) {
+      if (link!='' && link.indexOf('http')>=0) {
+        let linkText = link.replace(/(pass\=[^&]+)/g, '');
+        console.log(`Calling ${linkText}`)
+        try {
+          const response = await fetch(link);
+          console.log(`Response is ${response.status}`);
+        } catch(ex) {
+          console.log(`Error ${ex}`);
+        }
+      }
+    }
+
+    syncPaidFileStatusesRunning = false;
+  }
+}
+
+module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses }

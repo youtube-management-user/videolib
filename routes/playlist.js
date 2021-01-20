@@ -2,51 +2,30 @@
 const cookie = require('cookie');
 const ejs = require("ejs");
 const fs = require('fs');
-const _ = require('lodash');
 
-const { parse } = require('fecha');
+const { getOpenOrders } = require('../libs/utils.js');
 
-const { csv, buildPlaylist } = require('../libs/utils.js');
+const { urlGoogle } = require('../libs/google-utils.js');
 
-const { urlGoogle, getGoogleAccountFromCode, getAccessTokenFromCode, getGoogleUserInfo, parseCookies } = require('../libs/google-utils.js');
+const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
 
-async function playlistRoute(req, res) {
-  var cookies = cookie.parse(req.headers.cookie || '');
+async function playlistRoute(req, res, course, number) {
 
-  let lectures = [], playlist = buildPlaylist();
+  let openOrders;
 
-  console.log(playlist)
-
-  if (cookies.token) {
-    try {
-      const userData = await getGoogleUserInfo(cookies.token);
-      req.user = userData;
-
-      const coursesLatinMapping = { 'ФИ': 'FI', 'ЯК' : 'YK', 'АЭ': 'AE', 'ИО': 'IO', 'HM': 'HM' };
-
-      let paidUsers = csv(fs.readFileSync('./txt/paid_h.txt', 'UTF-8'));
-
-      paidUsers = paidUsers.map(rec => { rec.begin = parse(rec.begin.split(' ')[0], 'DD.M.YYYY'); rec.end = parse(rec.end, 'DD.MM.YYYY'); return rec;  })
-
-      const perimissions = paidUsers.filter(rec => rec.gmail == userData.email);
-
-      const openLectures = perimissions.filter(perm => {
-        return (new Date(perm.begin) <= new Date() && new Date() <= new Date(perm.end));
-      })
-
-      lectures = openLectures.map(l => {
-        const name = `${l.course} - ${l.number}`;
-        const courseLatin = coursesLatinMapping[l.course];
-        return { name, id: `${courseLatin}-${l.number}` }
-      })
-
-    } catch(ex) {
-      console.log(ex)
-    }
+  if (req.user && req.user.email) {
+    openOrders = await getOpenOrders(req.user.email);
   }
 
+  let openLectures = openOrders.map(order => { return lectures.find(l => l.courseLetters == order.course && l.number == order.number ) });
+
+  let lectureData = {};
+  lectureData = openLectures.find(l => l.course == course && l.number == number);
+
   const googleLink = urlGoogle();
-  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { googleLink, user: req.user, lectures });
+
+  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData });
+
   res.setHeader("Content-Type", "text/html");
   res.writeHead(200);
   res.end(contents);
