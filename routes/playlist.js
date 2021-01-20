@@ -23,6 +23,8 @@ async function playlistRoute(req, res, course, number) {
 
   lectureData = openLectures.find(l => l.course == course && l.number == number);
 
+  openLectures = openLectures.filter(l => l.course!=2 || l.number!=16);
+
   const googleLink = urlGoogle();
 
   var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData });
