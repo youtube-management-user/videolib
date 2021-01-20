@@ -97,7 +97,7 @@ async function getAccessToken(param) {
 //    console.log(data); // { access_token, expires_in, token_type, refresh_token }
     return data;
   } catch(ex) {
-    console.log(ex);
+    console.log(ex.response);
     return ex;
   }
 };
