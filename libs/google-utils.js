@@ -9,7 +9,7 @@ const setGoogleConfig = function(config) {
   googleConfig = {
     clientId: '278965369608-ej1da7f5p57a8r5evlljr2kh4vpo436n.apps.googleusercontent.com',
     clientSecret: 'h2HonRzO3ivPabWcancnJ-yG',
-    redirect: 'http://' + (config.domain || 'localhost:9000') + '/google-auth/'
+    redirect: 'http://' + (config.domain || 'localhost:9300') + '/google-auth/'
   }
 };
 
@@ -74,36 +74,47 @@ async function getGoogleAccountFromCode(code) {
   };
 }
 
-async function getAccessTokenFromCode(code) {
+async function getAccessToken(param) {
   try {
+    let payload = {
+      client_id: googleConfig.clientId,
+      client_secret: googleConfig.clientSecret,
+      redirect_uri: googleConfig.redirect,
+    }
+    if (param.code) {
+      payload.grant_type = 'authorization_code';
+      payload.code = param.code;
+    }
+    if (param.refresh_token) {
+      payload.grant_type = 'refresh_token';
+      payload.refresh_token = param.refresh_token;
+    }
     const { data } = await axios({
       url: `https://oauth2.googleapis.com/token`,
       method: 'post',
-      data: {
-        client_id: googleConfig.clientId,
-        client_secret: googleConfig.clientSecret,
-        redirect_uri: googleConfig.redirect,
-        grant_type: 'authorization_code',
-        code,
-      },
+      data: payload,
     });
-    console.log(data); // { access_token, expires_in, token_type, refresh_token }
-    return data.access_token;
+//    console.log(data); // { access_token, expires_in, token_type, refresh_token }
+    return data;
   } catch(ex) {
     return ex.response.status;
   }
 };
 
 async function getGoogleUserInfo(access_token) {
-  const { data } = await axios({
-    url: 'https://www.googleapis.com/oauth2/v2/userinfo',
-    method: 'get',
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-//  console.log(data); // { id, email, given_name, family_name }
-  return data;
+  try {
+    const { data } = await axios({
+      url: 'https://www.googleapis.com/oauth2/v2/userinfo',
+      method: 'get',
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+  //  console.log(data); // { id, email, given_name, family_name }
+    return data;
+  } catch(ex) {
+    return ex.response.data.error;
+  }
 };
 
 function parseCookies (request) {
@@ -118,4 +129,4 @@ function parseCookies (request) {
     return list;
 }
 
-module.exports = { urlGoogle, getGoogleAccountFromCode, getAccessTokenFromCode, getGoogleUserInfo, parseCookies, setGoogleConfig }
+module.exports = { urlGoogle, getGoogleAccountFromCode, getAccessToken, getGoogleUserInfo, parseCookies, setGoogleConfig }

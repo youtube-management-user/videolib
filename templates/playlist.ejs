@@ -1,99 +1,163 @@
-<!DOCTYPE html>
-<html>
+
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8" />
-  <title>videolib</title>
+	<!-- <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">  Кодировка -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<META http-equiv=Keywords content="Андрей Великанов, философия, искусство">
+
+	<title>Андрей Великанов. Заказ просмотра лекции</title>
+
+	<link rel="stylesheet" href="/css/newold.css">
+  <link rel="stylesheet" href="/css/head.css">
 
 </head>
+
 <body>
 
-<video width="600" controls disablepictureinpicture controlsList="nodownload">
-  <source src="/video/<%= filename %>" type="video/mp4">
-</video>
+<nav class="nav" style = "background: #282828;">
 
-<p><%- lectureData.title%></p>
+<table>
+<tr height = "10px">
+	<td></td>
+	<td></td>
+<tr>
+	<td width = "12px"></td>
+	<td>
+	<span class = head  style="margin-top: 15px;"><a href="http://velikanov.ru/default.asp">
+	<b>андрей великанов</b></a> </span>
+	<br>
+	<span style="FONT-FAMILY: Verdana, Arial, sans-serif; font-size:20px; color: #fff; ">
+	<span class="block">&nbsp;/Просмотр лекции</span></span> <br>
+	</td>
+</tr>
+</table>
 
-<p>
-<% if (user && user.email) { %>
+<br>
 
-  Вы вошли как <%= user.email %>
-  <a href="/logout/">Выйти</a>
+<div id="maintext">
 
-  <% if (lectures && lectures.length > 0) { %>
+<hr size="2">
+<span style="font-size:12px;">
+  <% if (user && user.email) { %>
+  Вы авторизованы как <b><%= user.email %></b>.
 
-  <p>Лекции, открытые для просмотра:</p>
+    <% if (openLectures && openLectures.length > 0) { %>
 
-  <ul>
-    <% lectures.forEach(lecture => { %>
-    <li><a href="#" onClick="playVideo('<%= lecture.id %>')"><%= lecture.name %>
-  <% }) %>
-  </ul>
+      Вам доступны лекции:
+
+      <% openLectures.forEach((lecture, ind) => { %>
+      <a href="/playlist/<%= lecture.link %>/" class="p"><%= lecture.title %></a><% if (ind < openLectures.length-1) { %>, <% } %>
+      <% }) %>
+
+    <% } else { %>
+
+      У вас пока нет лекций, открытых для просмотра.
+
+    <% } %>
+
+    <br/><a class="p" href="/logout">Выйти</a>
 
   <% } else { %>
-
-    У вас пока нет лекций, открытых для просмотра.
-
+   <a class="p" href="<%= googleLink %>">Авторизоваться</a>
   <% } %>
 
-<% } else { %>
-<!--  <a href="<%= googleLink %>">Login</a> -->
+</span>
+
+<hr size="2">
+<br>
+
+<% if (lectureData) { %>
+
+  <% if (lectureData.courseNum && lectureData.courseHeader) { %>
+  Курс <a href="http://velikanov.ru/lecture<%= lectureData.courseNum%>.asp" class="p"><%= lectureData.courseHeader %></a>. Лекция <%= lectureData.number %>
+  <% } %>
+
+  <% if (lectureData.title) { %>
+    <br>
+    <b><%= lectureData.title %></b>
+  <% } %>
+
+  <% if (lectureData.description) { %>
+    <br>
+    <%= lectureData.description %>
+    <br><br>
+  <% } %>
+
+  <% if (lectureData.video) { %>
+  <video width="600" controls disablepictureinpicture controlsList="nodownload">
+    <source src="/video/<%= lectureData.video %>" type="video/mp4">
+  </video>
+  <% } %>
+
+  <% if (lectureData.date) { %>
+    <br>
+    <span style="font-size:12px;"><%= lectureData.date %></span>
+  <% } %>
+
+  <% if (lectureData.presentation) { %>
+    <br><br>
+    <a href="<%= lectureData.presentation %>" class="p" target="_blank">Презентация</a>
+  <% } %>
+
+  <% if (lectureData.literature && lectureData.literature[0]) { %>
+    <br><br>
+    Литература:
+    <br>
+    <% lectureData.literature.forEach(line => { %>
+      <a href="<%=line[0]%>" class="p" target="_blank"><%=line[1]%></a><br>
+    <% }) %>
+  <% } %>
+
+  <% if (lectureData.movies && lectureData.movies[0]) { %>
+    <br>
+    Фильмы:
+    <br>
+    <% lectureData.movies.forEach(line => { %>
+      <a href="<%=line[0]%>" class="p" target="_blank"><%=line[1]%></a><br>
+    <% }) %>
+  <% } %>
+
+  <% if (lectureData.courseHeader) { %>
+    <br><br>
+    <a href="http://velikanov.ru/lecture<%= lectureData.courseGlobalNum%>.asp" class="p">Заказать другие лекции курса «<%= lectureData.courseHeader%>»</a>
+  <% } %>
+
 <% } %>
-<p>
 
-<!-- <p><a href="/play/">Back to the list</p> -->
+<hr size="2">
+<span style="font-size:12px;">&#169; А.Г.Великанов, 1998 — 2021
 
-<!-- <ul>
-  <li><a href="/play/">Video 1</a></li>
-  <li><a href="/play/">Video 2</a></li>
-  <li><a href="/play/">Video 3</a></li>
-</ul> -->
+</span>
 
-<script type="application/javascript">
-  const video = document.querySelector('video');
 
-  let current_video = 0;
+<hr size="2">
 
-  const playlist = [
-    { id: 'v1' },
-    { id: 'v2' },
-    { id: 'v3' },
-    { id: 'v4' },
-    { id: 'v5' }
-  ]
 
-  const playNext = () => {
-    current_video++;
-    if (current_video >= playlist.length) {
-      current_video = 0;
-    }
-    video.setAttribute('src', '/video/' + playlist[current_video].id);
-    video.load();
-    video.play();
-  }
 
-  window.addEventListener('DOMContentLoaded', (event) => {
-//    playNext();
-  });
 
-  // video.addEventListener('canplay', (event) => {
-  //   console.log('canplay');
-  // });
 
-  video.addEventListener('ended', (event) => {
-    playNext();
-  });
 
-  function playVideo(id) {
-    video.setAttribute('src', '/video/' + id);
-    video.load();
-    video.play();
-  }
 
-  // video.addEventListener('seeked', (event) => {
-  //   console.log('seeked', video.currentTime, video.duration);
-  // });
+	</div>
 
-</script>
+
+
+
+	</nav>
+
+
 
 </body>
+
 </html>
