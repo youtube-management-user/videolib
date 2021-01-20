@@ -53,7 +53,7 @@ function parse(date, daysToAdd) {
   return dt;
 }
 
-async function getOpenOrders(email) {
+async function getOpenOrders(email, params) {
 
   if (!fs.existsSync('./txt/orders.json')) {
     try {
@@ -66,7 +66,11 @@ async function getOpenOrders(email) {
     let currentOrder = null;
     try {
       const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
-      let openOrders = orders.filter(order => order.gmail == email && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+      let openOrders = [];
+      openOrders = orders.filter(order => order.gmail == email && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
+      if (params.openById) {
+        openOrders = openOrders.concat(orders.filter(o => params.openById.indexOf(o.id)>=0));
+      }
 //      currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
 //      console.log(111, currentOrder)
   //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
