@@ -3172,3 +3172,17 @@
 16:13:24.339 INFO  Video server: access from undefined for css, /css/newold.css 
 16:13:24.345 INFO  Video server: access from undefined for css, /css/head.css 
 16:13:24.427 INFO  Video server: access from undefined for video, /video/YK-16 
+16:22:22.500 INFO  Video server: access from undefined for playlist, /playlist/2/16/ 
+16:22:26.370 INFO  Video server: access from undefined for css, /css/newold.css 
+16:22:26.377 INFO  Video server: access from undefined for css, /css/head.css 
+16:22:26.455 INFO  Video server: access from undefined for video, /video/YK-16 
+16:22:30.420 INFO  Video server: access from undefined for logout, /logout 
+16:22:30.431 INFO  Video server: access from undefined for playlist, /playlist/ 
+16:22:44.902 INFO  Video server: access from undefined for playlist, /playlist/ 
+16:22:46.327 INFO  Video server: access from undefined for playlist, /playlist/ 
+16:22:54.658 INFO  Video server: access from undefined for css, /css/newold.css 
+16:22:54.664 INFO  Video server: access from undefined for css, /css/head.css 
+16:23:53.712 INFO  Video server: access from undefined for playlist, /playlist/2/16/ 
+16:23:57.340 INFO  Video server: access from undefined for css, /css/newold.css 
+16:23:57.344 INFO  Video server: access from undefined for css, /css/head.css 
+16:23:57.387 INFO  Video server: access from undefined for video, /video/YK-16 
