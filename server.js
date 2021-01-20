@@ -30,7 +30,7 @@ http.createServer(async function (req, res) {
   var [ none, route, ...token ] = path;
   var query;
   if (token[token.length-1] && token[token.length-1].indexOf('=')>=0) {
-    query = querystring.parse(token[token.length-1].replace('?', ''))
+    query = querystring.parse(req.url.split('?')[1])
   }
 
   log.info(`Video server: access from ${req.headers["x-forwarded-for"]} for ${route}, ${req.url}`);

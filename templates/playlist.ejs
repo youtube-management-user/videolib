@@ -70,7 +70,9 @@
     <br/><a class="p" href="/logout">Выйти</a>
 
   <% } else { %>
+    <% if (showAuthorisationLink) { %>
    <a class="p" href="<%= googleLink %>">Для просмотра вам необходимо авторизоваться с помощью адреса gmail, который вы указывали при заказе лекции >></a>
+   <%  } %>
   <% } %>
 
 </span>
