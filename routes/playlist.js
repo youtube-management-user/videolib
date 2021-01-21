@@ -31,7 +31,7 @@ async function playlistRoute(req, res, course, number) {
 
   var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData, showAuthorisationLink });
 
-  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.writeHead(200);
   res.end(contents);
 }
