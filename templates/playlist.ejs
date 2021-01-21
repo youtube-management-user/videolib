@@ -55,7 +55,7 @@
 
     <% if (openLectures && openLectures.length > 0) { %>
 
-      <br/>Вам доступны лекции:
+      Вам доступны лекции:
 
       <% openLectures.forEach((lecture, ind) => { %>
       <br/><a href="/playlist/<%= lecture.link %>/" class="p"><%= lecture.courseLetters %>-<%= lecture.number %> <%= lecture.title %></a>
@@ -71,7 +71,7 @@
 
   <% } else { %>
     <% if (showAuthorisationLink) { %>
-   <a class="p" href="<%= googleLink %>">Для просмотра вам необходимо авторизоваться с помощью адреса gmail, который вы указывали при заказе лекции >></a>
+   Для просмотра вам необходимо <a class="p" href="<%= googleLink %>">авторизоваться</a> с помощью адреса gmail, который вы указывали при заказе лекции
    <%  } %>
   <% } %>
 
