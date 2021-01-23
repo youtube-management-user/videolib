@@ -15,7 +15,8 @@ async function playlistRoute(req, res, course, number) {
 
   const userEmail = (req.user && req.user.email)? req.user.email: null;
 
-  openOrders = await getOpenOrders(userEmail, { openById: [ 't33w2wn2b' ] });
+  openOrders = await getOpenOrders(userEmail);
+//  openOrders = await getOpenOrders(userEmail, { openById: [ 't33w2wn2b' ] });
 
   let openLectures = openOrders.map(order => { return lectures.find(l => l.courseLetters == order.course && l.number == order.number ) || order });
 
@@ -23,9 +24,10 @@ async function playlistRoute(req, res, course, number) {
 
   lectureData = openLectures.find(l => l.course == course && l.number == number);
 
-  openLectures = openLectures.filter(l => l.course!=2 || l.number!=16);
+  //openLectures = openLectures.filter(l => l.course!=2 || l.number!=16);
 
-  let showAuthorisationLink = (course != 2 || number != 16);
+  let showAuthorisationLink = true;
+  //(course != 2 || number != 16);
 
   const googleLink = urlGoogle();
 
