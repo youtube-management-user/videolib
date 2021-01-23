@@ -15,7 +15,7 @@ async function playlistRoute(req, res, course, number) {
 
   const userEmail = (req.user && req.user.email)? req.user.email: null;
 
-  openOrders = await getOpenOrders(userEmail);
+  openOrders = await getOpenOrders(userEmail, {});
 //  openOrders = await getOpenOrders(userEmail, { openById: [ 't33w2wn2b' ] });
 
   let openLectures = openOrders.map(order => { return lectures.find(l => l.courseLetters == order.course && l.number == order.number ) || order });
