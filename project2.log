@@ -3338,3 +3338,8 @@
 20:49:57.375 INFO  Video server: access from undefined for css, /css/newold.css 
 20:49:57.381 INFO  Video server: access from undefined for css, /css/head.css 
 20:49:57.387 INFO  Video server: access from undefined for css, /css/app.css 
+21:00:13.637 INFO  Video server: access from undefined for playlist, /playlist/2/16/t33w2wn2b 
+21:00:14.459 INFO  Video server: access from undefined for css, /css/newold.css 
+21:00:14.465 INFO  Video server: access from undefined for css, /css/head.css 
+21:00:14.472 INFO  Video server: access from undefined for css, /css/app.css 
+21:00:14.549 INFO  Video server: access from undefined for video, /video/YK-16 
