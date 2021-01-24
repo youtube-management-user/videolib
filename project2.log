@@ -3571,3 +3571,4 @@
 19:13:32.712 INFO  Video server: access from undefined for css, /css/app.css 
 19:13:32.755 INFO  Video server: access from undefined for video, /video/HM-30 
 19:17:47.878 INFO  Video server: access from undefined for test, /test 
+19:29:23.308 INFO  Video server: access from undefined for test, /test 
