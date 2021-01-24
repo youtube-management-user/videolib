@@ -26,7 +26,7 @@ async function playlistRoute(req, res, course, number) {
 
   let showAuthorisationLink = true;
 
-  const googleLink = urlGoogle();
+  const googleLink = urlGoogle({ redirect: req.url });
 
   var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData, showAuthorisationLink });
 

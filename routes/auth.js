@@ -27,7 +27,7 @@ async function initAuth(req, res) {
             }))
             req.user = data;
           } else {
-            console.log('Fail to refresh', ex);
+            console.log('Fail to refresh');
             req.user = null;
           }
 
