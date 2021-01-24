@@ -43,7 +43,7 @@ http.createServer(async function (req, res) {
   if (route == 'playlist' && req.user && req.user.email) {
     log.info(`Access to ${route} (${req.url}) from user ${req.user.email}`);
     const content = fs.readFileSync('./logs/access-stats.csv', 'UTF-8');
-    fs.writeFileSync('./logs/access-stats.csv', content + `\n${new Date().toLocaleString()},${req.user.email},${req.url}`, 'UTF-8');
+    fs.writeFileSync('./logs/access-stats.csv', content + `\n\r${new Date().toLocaleString()},${req.user.email},${req.url}`, 'UTF-8');
   }
 
   if (route == 'css') {
