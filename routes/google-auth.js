@@ -1,10 +1,21 @@
 
 const { urlGoogle, getAccessToken, getGoogleUserInfo } = require('../libs/google-utils.js');
 var cookie = require('cookie');
+querystring = require('querystring');
 
 async function googleAuthRoute(req, res, query) {
 
-  console.log(222, query)
+  let redirect = null;
+  try {
+    redirect = JSON.parse(querystring.parse(req.url.split('?')[1]).state).redirect;
+  } catch(ex) {
+  }
+
+//  if (redirect.match(/\/playlist\/\d+\/\d+\//))
+
+  console.log(333, redirect)
+
+//  console.log(222, query)
   if (query.code) {
     const resp = await getAccessToken({ code: query.code});
 //    console.log(111, resp)
@@ -31,7 +42,7 @@ async function googleAuthRoute(req, res, query) {
       })]);
 
       res.statusCode = 302;
-      res.setHeader('Location', '/playlist/');
+      res.setHeader('Location', redirect || '/playlist/');
       res.end();
     }
   }

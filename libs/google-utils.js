@@ -30,11 +30,12 @@ function createConnection() {
   );
 }
 
-function getConnectionUrl(auth) {
+function getConnectionUrl(auth, params) {
   return auth.generateAuthUrl({
     access_type: 'offline',
     prompt: 'consent',
-    scope: defaultScope
+    scope: defaultScope,
+    state: JSON.stringify(params)
   });
 }
 
@@ -49,9 +50,9 @@ function getGooglePlusApi(auth) {
 /**
  * Part 1: Create a Google URL and send to the client to log in the user.
  */
-function urlGoogle() {
+function urlGoogle(params) {
   const auth = createConnection();
-  const url = getConnectionUrl(auth);
+  const url = getConnectionUrl(auth, params);
   return url;
 }
 
