@@ -7,7 +7,7 @@ async function googleAuthRoute(req, res, query) {
   console.log(222, query)
   if (query.code) {
     const resp = await getAccessToken({ code: query.code});
-    console.log(111, resp)
+//    console.log(111, resp)
     if (resp.access_token == 400 || resp.access_token == 401) {
       res.setHeader("Content-Type", "text/html");
       res.writeHead(200);

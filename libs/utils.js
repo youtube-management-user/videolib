@@ -2,6 +2,7 @@
 const fs = require('fs');
 //const { parse } = require('fecha');
 const fetch = require('node-fetch');
+const _ = require('lodash');
 
 function csv(file) {
   if (!file) return null;
@@ -53,7 +54,7 @@ function parse(date, daysToAdd) {
   return dt;
 }
 
-async function getOpenOrders(email, params) {
+async function getOpenOrders(email) {
 
   if (!fs.existsSync('./txt/orders.json')) {
     try {
@@ -67,13 +68,13 @@ async function getOpenOrders(email, params) {
     try {
       const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
       let openOrders = [];
-      openOrders = orders.filter(order => order.gmail == email && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-      if (params.openById) {
-        openOrders = openOrders.concat(orders.filter(o => params.openById.indexOf(o.id)>=0));
-      }
-//      currentOrder = orders.find(order => order.id == id && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 ) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-//      console.log(111, currentOrder)
-  //    currentOrder = orders.find(order => order.id == id && parseInt(order.okl) === 1);
+      openOrders = orders.filter(order => {
+        const isTime = new Date(order.begin) <= new Date() && new Date() <= new Date(order.end);
+        const isPersonalOrder = order.gmail == email && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2);
+        const isOpenForEveryone = parseInt(order.okl) === 4;
+        return (isPersonalOrder || isOpenForEveryone) && isTime;
+      });
+
       return openOrders;
     } catch(ex) {
       console.log(ex)
@@ -116,8 +117,8 @@ let syncPaidFileStatusesRunning = false;
 
 async function syncPaidFileStatuses() {
 
-  // const domain = 'http://localhost:9300/test';
-  const domain = 'http://velikanov.ru';
+  const domain = 'http://localhost:9300/test';
+  //const domain = 'http://velikanov.ru';
 
   try {
     const response = await fetch(domain);
@@ -131,7 +132,7 @@ async function syncPaidFileStatuses() {
 //    let orders = await fetchPaidFile();
     const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
     let openOrders = orders.filter(order => (parseInt(order.okl) === 1) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-    let closedOrders = orders.filter(order => (parseInt(order.okl) === 1 || parseInt(order.okl) === 2) && (new Date(order.begin) > new Date() || new Date() > new Date(order.end)));
+    let closedOrders = orders.filter(order => (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 || parseInt(order.okl) === 4) && (new Date(order.begin) > new Date() || new Date() > new Date(order.end)));
 
     let openOrderLinks = openOrders.map(order => {
   //    const id = orders.findIndex(o => o.id == order.id) + 2;

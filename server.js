@@ -1,5 +1,6 @@
 var http = require('http'),
     querystring = require('querystring'),
+    fs = require('fs'),
     process = require("process");
 
 var PORT = process.argv[2] || 9300;
@@ -24,7 +25,7 @@ setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
 http.createServer(async function (req, res) {
 
-  console.log('req', req.url)
+//  console.log('req', req.url)
 
   var path = req.url.split('/');
   var [ none, route, ...token ] = path;
@@ -37,6 +38,12 @@ http.createServer(async function (req, res) {
 
   if (route == 'playlist' || route == 'video') {
     await initAuth(req, res);
+  }
+
+  if (route == 'playlist' && req.user && req.user.email) {
+    log.info(`Access to ${route} (${req.url}) from user ${req.user.email}`);
+    const content = fs.readFileSync('./logs/access-stats.csv', 'UTF-8');
+    fs.writeFileSync('./logs/access-stats.csv', content + `\n${new Date().toLocaleString()},${req.user.email},${req.url}`, 'UTF-8');
   }
 
   if (route == 'css') {
