@@ -22,7 +22,11 @@ async function playlistRoute(req, res, course, number) {
 
   let lectureData = {};
 
-  lectureData = openLectures.find(l => l.course == course && l.number == number);
+  if (req.user && req.user.email) {
+    lectureData = openLectures.find(l => l.course == course && l.number == number);
+  }
+
+//  console.log(lectureData)
 
   let showAuthorisationLink = true;
 
