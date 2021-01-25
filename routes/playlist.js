@@ -29,7 +29,7 @@ async function playlistRoute(req, res, course, number) {
   let pageTitle = null;
   const currentLectureDataForTitle = openLectures.find(l => l.course == course && l.number == number);
   if (currentLectureDataForTitle) {
-    pageTitle = `${currentLectureDataForTitle.courseHeader} — ${currentLectureDataForTitle.number}. ${currentLectureDataForTitle.title}`;
+    pageTitle = `${currentLectureDataForTitle.courseHeader}.${currentLectureDataForTitle.number}. ${currentLectureDataForTitle.title}`;
   }
 
   console.log(currentLectureDataForTitle)

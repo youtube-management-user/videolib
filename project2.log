@@ -3951,3 +3951,14 @@
 12:14:06.827 INFO  Video server: access from undefined for css, /css/app.css 
 12:14:06.961 INFO  Video server: access from undefined for video, /video/HM-30 
 12:14:07.768 INFO  Video server: access from undefined for video, /video/HM-30 
+12:27:13.046 INFO  Video server: access from undefined for playlist, /playlist/5/ 
+12:27:13.639 INFO  Access to playlist (/playlist/5/) from user zanziver@gmail.com 
+12:27:13.706 INFO  Video server: access from undefined for css, /css/newold.css 
+12:27:13.709 INFO  Video server: access from undefined for css, /css/head.css 
+12:27:13.711 INFO  Video server: access from undefined for css, /css/app.css 
+12:29:02.893 INFO  Video server: access from undefined for playlist, /playlist/5/29/ 
+12:29:05.292 INFO  Access to playlist (/playlist/5/29/) from user zanziver@gmail.com 
+12:29:05.390 INFO  Video server: access from undefined for css, /css/newold.css 
+12:29:05.393 INFO  Video server: access from undefined for css, /css/head.css 
+12:29:05.394 INFO  Video server: access from undefined for css, /css/app.css 
+12:29:05.456 INFO  Video server: access from undefined for video, /video/HM-29 
