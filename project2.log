@@ -3886,3 +3886,46 @@
 11:55:37.895 INFO  Video server: access from undefined for css, /css/newold.css 
 11:55:37.897 INFO  Video server: access from undefined for css, /css/head.css 
 11:55:37.900 INFO  Video server: access from undefined for css, /css/app.css 
+11:59:21.202 INFO  Video server: access from undefined for playlist, /playlist/5/30/d1ydh5600 
+11:59:23.870 INFO  Access to playlist (/playlist/5/30/d1ydh5600) from user zanziver@gmail.com 
+11:59:36.860 INFO  Video server: access from undefined for playlist, /playlist/5/30/d1ydh5600 
+11:59:37.045 INFO  Access to playlist (/playlist/5/30/d1ydh5600) from user zanziver@gmail.com 
+11:59:37.108 INFO  Video server: access from undefined for css, /css/newold.css 
+11:59:37.113 INFO  Video server: access from undefined for css, /css/head.css 
+11:59:37.115 INFO  Video server: access from undefined for css, /css/app.css 
+11:59:37.191 INFO  Video server: access from undefined for video, /video/HM-30 
+11:59:37.645 INFO  Video server: access from undefined for video, /video/HM-30 
+11:59:44.037 INFO  Video server: access from undefined for logout, /logout 
+11:59:44.043 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:00:31.838 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:00:32.238 INFO  Video server: access from undefined for css, /css/newold.css 
+12:00:32.242 INFO  Video server: access from undefined for css, /css/head.css 
+12:00:32.244 INFO  Video server: access from undefined for css, /css/app.css 
+12:00:41.557 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:00:42.590 INFO  Video server: access from undefined for css, /css/newold.css 
+12:00:42.592 INFO  Video server: access from undefined for css, /css/head.css 
+12:00:42.592 INFO  Video server: access from undefined for css, /css/app.css 
+12:00:59.338 INFO  Video server: access from undefined for playlist, /playlist/5/30 
+12:00:59.787 INFO  Video server: access from undefined for css, /css/newold.css 
+12:00:59.794 INFO  Video server: access from undefined for css, /css/head.css 
+12:00:59.795 INFO  Video server: access from undefined for css, /css/app.css 
+12:01:06.274 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:01:06.475 INFO  Video server: access from undefined for css, /css/newold.css 
+12:01:06.477 INFO  Video server: access from undefined for css, /css/head.css 
+12:01:06.479 INFO  Video server: access from undefined for css, /css/app.css 
+12:03:03.218 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:03:11.433 INFO  Video server: access from undefined for css, /css/newold.css 
+12:03:11.435 INFO  Video server: access from undefined for css, /css/head.css 
+12:03:11.436 INFO  Video server: access from undefined for css, /css/app.css 
+12:03:25.291 INFO  Video server: access from undefined for google-auth, /google-auth/?state=%7B%22redirect%22%3A%22%2Fplaylist%2F5%2F30%2F%22%7D&code=4%2F0AY0e-g5n1_R8EP8RmxDK1DL5goNgxLqesl3_65rNU7aYKgkRBGDZNKxqAVWtDBLefU42Wg&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+12:03:27.154 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:03:29.901 INFO  Access to playlist (/playlist/5/30/) from user zanziver@gmail.com 
+12:03:29.993 INFO  Video server: access from undefined for css, /css/newold.css 
+12:03:29.995 INFO  Video server: access from undefined for css, /css/head.css 
+12:03:29.995 INFO  Video server: access from undefined for css, /css/app.css 
+12:03:30.133 INFO  Video server: access from undefined for video, /video/HM-30 
+12:04:59.057 INFO  Video server: access from undefined for logout, /logout 
+12:04:59.064 INFO  Video server: access from undefined for playlist, /playlist/ 
+12:04:59.399 INFO  Video server: access from undefined for css, /css/newold.css 
+12:04:59.400 INFO  Video server: access from undefined for css, /css/head.css 
+12:04:59.402 INFO  Video server: access from undefined for css, /css/app.css 

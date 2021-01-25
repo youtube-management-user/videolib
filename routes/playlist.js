@@ -26,13 +26,19 @@ async function playlistRoute(req, res, course, number) {
     lectureData = openLectures.find(l => l.course == course && l.number == number);
   }
 
+  let pageTitle = null;
+  const currentLectureDataForTitle = openLectures.find(l => l.course == course && l.number == number);
+  if (currentLectureDataForTitle) {
+    pageTitle = `${currentLectureDataForTitle.courseLetters}-${currentLectureDataForTitle.number}. ${currentLectureDataForTitle.title}`;
+  }
+
 //  console.log(lectureData)
 
   let showAuthorisationLink = true;
 
   const googleLink = urlGoogle({ redirect: req.url });
 
-  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData, showAuthorisationLink });
+  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData, pageTitle, showAuthorisationLink });
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.writeHead(200);
