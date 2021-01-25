@@ -3929,3 +3929,25 @@
 12:04:59.399 INFO  Video server: access from undefined for css, /css/newold.css 
 12:04:59.400 INFO  Video server: access from undefined for css, /css/head.css 
 12:04:59.402 INFO  Video server: access from undefined for css, /css/app.css 
+12:12:08.701 INFO  Video server: access from undefined for video, /video/HM-30 
+12:12:09.507 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:12:09.512 INFO  Video server: access from undefined for video, /video/HM-30 
+12:12:09.781 INFO  Video server: access from undefined for css, /css/newold.css 
+12:12:09.785 INFO  Video server: access from undefined for css, /css/head.css 
+12:12:09.786 INFO  Video server: access from undefined for css, /css/app.css 
+12:12:23.699 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:12:26.680 INFO  Video server: access from undefined for css, /css/newold.css 
+12:12:26.684 INFO  Video server: access from undefined for css, /css/head.css 
+12:12:26.685 INFO  Video server: access from undefined for css, /css/app.css 
+12:13:28.497 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:13:31.597 INFO  Video server: access from undefined for css, /css/newold.css 
+12:13:31.599 INFO  Video server: access from undefined for css, /css/head.css 
+12:13:31.600 INFO  Video server: access from undefined for css, /css/app.css 
+12:14:04.672 INFO  Video server: access from undefined for google-auth, /google-auth/?state=%7B%22redirect%22%3A%22%2Fplaylist%2F5%2F30%2F%22%7D&code=4%2F0AY0e-g55i_EyVmxdYgFd1KUVi_p3X9tlvnCp7w3t9S9k-hxSHk-atz0Q5t35CnR97NFjsQ&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent 
+12:14:06.560 INFO  Video server: access from undefined for playlist, /playlist/5/30/ 
+12:14:06.711 INFO  Access to playlist (/playlist/5/30/) from user zanziver@gmail.com 
+12:14:06.823 INFO  Video server: access from undefined for css, /css/newold.css 
+12:14:06.825 INFO  Video server: access from undefined for css, /css/head.css 
+12:14:06.827 INFO  Video server: access from undefined for css, /css/app.css 
+12:14:06.961 INFO  Video server: access from undefined for video, /video/HM-30 
+12:14:07.768 INFO  Video server: access from undefined for video, /video/HM-30 
