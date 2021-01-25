@@ -5,7 +5,7 @@ var http = require('http'),
 
 var PORT = process.argv[2] || 9300;
 
-var log = require('simple-node-logger').createSimpleFileLogger('project2.log');
+var log = require('simple-node-logger').createSimpleFileLogger('./logs/project2.log');
 
 const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses } = require('./libs/utils.js')
 
