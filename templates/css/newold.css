@@ -12,7 +12,7 @@
 
 }
 
-* A.p:hover
+* A.p:hover, A.active
 {   text-decoration: none;
     background-color: #000000;
     COLOR: #FFFFFF

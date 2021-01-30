@@ -4,8 +4,15 @@ const superagent = require('superagent');
 
 var { getYouTubeURL, getChunkHeader } = require('../libs/video.js');
 
-function local(req, res, item) {
-  var path = item.path;
+function local(req, res, item, quality) {
+  let path;
+  if (!quality || quality == 'q1') {
+    path = item.path;
+  } else if (quality == 'q2') {
+    path = item.medium;
+  } else if (quality == 'q3') {
+    path = item.low;
+  }
   if (fs.existsSync(path)) {
     var stat = fs.statSync(path);
     var total = stat.size;
@@ -59,10 +66,10 @@ function youtube(req, res, item) {
   getYouTubeURL(item.url, onSuccess, onError);
 }
 
-async function videoRoute(req, res, item) {
+async function videoRoute(req, res, item, quality) {
 
   if (item.type == 'local') {
-    local(req, res, item);
+    local(req, res, item, quality);
   } else if (item.type == 'remote') {
     remote(req, res, item);
   } else if (item.type == 'youtube') {
