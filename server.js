@@ -19,7 +19,9 @@ const initAuth          = require('./routes/auth.js');
 
 let playlist = buildPlaylist();
 
-setInterval(reloadPaidFile, 1000 * 60 * 5);
+console.log(playlist)
+
+reloadPaidFile()
 
 setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
@@ -51,13 +53,13 @@ http.createServer(async function (req, res) {
   } else if (route == 'test') {
     testRoute(req, res);
   } else if (route == 'playlist') {
-    playlistRoute(req, res, token[0], token[1]);
+    playlistRoute(req, res, token[0], token[1], playlist);
   } else if (route == 'logout') {
     logoutRoute(req, res);
   } else if (route == 'google-auth') {
     googleAuthRoute(req, res, query);
   } else if (route == 'video' && playlist[token[0]]) {
-    videoRoute(req, res, playlist[token[0]]);
+    videoRoute(req, res, playlist[token[0]], token[1]);
   } else {
     notFoundRoute(req, res, route);
   }

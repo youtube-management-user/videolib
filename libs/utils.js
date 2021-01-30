@@ -34,8 +34,8 @@ function buildPlaylist() {
       let youtubeIds = fs.readFileSync(path, 'UTF-8').split(/[\n\r]+/).filter(l => l!='');
       youtubeMapping[lecturesMapping[i-1]] = youtubeIds;
       youtubeIds.forEach((id,ind) => {
-        const [local, youtube] = id.split('|');
-        const type = local!=''? { type: 'local', path: './videos/' + local }: { type: 'youtube', url: youtube }
+        const [local, youtube, medium, low] = id.split('|');
+        const type = local!=''? { type: 'local', path: './videos/' + local, medium: medium? './videos/' + medium: null, low: low? './videos/' + low: null }: { type: 'youtube', url: youtube }
         playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${ind+1}`] = type;
       })
     }

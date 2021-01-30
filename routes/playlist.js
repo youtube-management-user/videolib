@@ -10,7 +10,7 @@ const { urlGoogle } = require('../libs/google-utils.js');
 
 const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
 
-async function playlistRoute(req, res, course, number) {
+async function playlistRoute(req, res, course, number, playlist) {
 
   let openOrders = [];
 
@@ -32,13 +32,14 @@ async function playlistRoute(req, res, course, number) {
     pageTitle = `${currentLectureDataForTitle.courseHeader}.${currentLectureDataForTitle.number}. ${currentLectureDataForTitle.title}`;
   }
 
-  console.log(currentLectureDataForTitle)
+  const playlistItem = playlist[lectureData.video]
+  console.log(444, lectureData)
 
   let showAuthorisationLink = true;
 
   const googleLink = urlGoogle({ redirect: req.url });
 
-  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, googleLink, lectureData, pageTitle, showAuthorisationLink });
+  var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, playlistItem, googleLink, lectureData, pageTitle, showAuthorisationLink });
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.writeHead(200);

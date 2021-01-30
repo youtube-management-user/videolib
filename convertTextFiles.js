@@ -20,9 +20,11 @@ for (var i=1; i<=5; i++) {
         var data = fs.readFileSync(path, 'UTF-8').split(/\r\n\r\n|\n\n/).filter(l => l!='');
 
         data.forEach(part => {
+          part = part.replace(/^[^a-zA-Z]+/, '');
           let [key, ...value] = part.split(/[\r]*\n/);
           key = key.replace(/[^a-zA-Z+]/, '');
           value = value.filter(v => v!='');
+//          console.log(222, key, value)
           if (value!='') {
             if (value.length == 1) {
               value = value[0];
