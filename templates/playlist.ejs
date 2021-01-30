@@ -156,7 +156,7 @@
 
     <td valign="top" id="playerQualityControls">
 
-    <% if (playlistItem) { %>
+    <% if (playlistItem && playlistItem.medium) { %>
       качество
       <a href="javascript:switchSource('q1');" id="q1" class="p active">3.0</a>
       <% if (playlistItem.medium) { %>
@@ -180,7 +180,7 @@
           video.setAttribute('src', '/video/<%= lectureData.video %>/'+quality+'/');
 
           video.addEventListener('loadedmetadata', function() {
-            video.currentTime = currentTime;            
+            video.currentTime = currentTime;
           });
 
           if (!isPaused) {
