@@ -22,6 +22,8 @@ function local(req, res, item, quality) {
       var file = fs.createReadStream(path, {start: chunkHeaders.start, end: chunkHeaders.end});
       file.pipe(res);
     }
+  } else {
+    console.log(`Missing video file ${path}`)
   }
 }
 
