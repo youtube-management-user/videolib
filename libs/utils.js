@@ -139,10 +139,14 @@ async function syncPaidFileStatuses() {
       return  `${domain}/read_orders_hand6.asp?a=6&b=2&move=0&tid=${order.id}&pass=Bgt57140135`
     });
 
+    console.log('openOrderLinks', openOrderLinks)
+
     let closedOrderLinks = closedOrders.map(order => {
 //      const id = orders.findIndex(o => o.id == order.id) + 2;
       return  `${domain}/read_orders_hand6.asp?a=6&b=3&move=0&tid=${order.id}&pass=Bgt57140135`
     });
+
+    console.log('closedOrderLinks', closedOrderLinks)
 
     let links = openOrderLinks.concat(closedOrderLinks);
 
