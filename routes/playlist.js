@@ -32,9 +32,9 @@ async function playlistRoute(req, res, course, number, playlist) {
     pageTitle = `${currentLectureDataForTitle.courseHeader}.${currentLectureDataForTitle.number}. ${currentLectureDataForTitle.title}`;
   }
 
-  const playlistItem;
+  let playlistItem;
 
-  if (lectureData.video)
+  if (lectureData && lectureData.video)
     playlistItem = playlist[lectureData.video]
 
   let showAuthorisationLink = true;
