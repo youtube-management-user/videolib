@@ -14,6 +14,7 @@ function local(req, res, item, quality) {
     path = item.low;
   }
   if (fs.existsSync(path)) {
+    console.log(`Playing file ${path}`);
     var stat = fs.statSync(path);
     var total = stat.size;
     if (req.headers['range']) {
@@ -23,7 +24,7 @@ function local(req, res, item, quality) {
       file.pipe(res);
     }
   } else {
-    console.log(`Missing video file ${path}`)
+    console.log(`Missing file ${path}`);
   }
 }
 
