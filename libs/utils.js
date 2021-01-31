@@ -129,6 +129,7 @@ async function syncPaidFileStatuses() {
 
   if (syncPaidFileStatusesRunning === false) {
     syncPaidFileStatusesRunning = true;
+    await reloadPaidFile();
 //    let orders = await fetchPaidFile();
     const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
     let openOrders = orders.filter(order => (parseInt(order.okl) === 1) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
