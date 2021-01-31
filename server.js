@@ -7,7 +7,7 @@ var PORT = process.argv[2] || 9300;
 
 var log = require('simple-node-logger').createSimpleFileLogger('./logs/project2.log');
 
-const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses } = require('./libs/utils.js')
+const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses, csvLogger } = require('./libs/utils.js')
 
 const playlistRoute     = require('./routes/playlist.js');
 const videoRoute        = require('./routes/video.js');
@@ -40,10 +40,11 @@ http.createServer(async function (req, res) {
     await initAuth(req, res);
   }
 
-  if (route == 'playlist' && req.user && req.user.email) {
+  if ((route == 'playlist' || route == 'video') && req.user && req.user.email) {
     log.info(`Access to ${route} (${req.url}) from user ${req.user.email}`);
     const content = fs.readFileSync('./logs/access-stats.csv', 'UTF-8');
-    fs.writeFileSync('./logs/access-stats.csv', content + `${new Date().toLocaleString().replace(',', ' ')},${req.user.email},${req.url}\r\n`, 'UTF-8');
+    let logUrl = req.url;//.replace(/\/[a-z9-9]+$/, '');
+    fs.writeFileSync('./logs/access-stats.csv', content + `${new Date().toLocaleString().replace(',', ' ')},${req.user.email},${logUrl}\r\n`, 'UTF-8');
   }
 
   if (route == 'css') {
