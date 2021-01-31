@@ -19,7 +19,7 @@ const initAuth          = require('./routes/auth.js');
 
 let playlist = buildPlaylist();
 
-setInterval(reloadPaidFile, 1000* 60 * 5);
+//setInterval(reloadPaidFile, 1000* 60 * 5);
 
 setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
