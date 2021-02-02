@@ -36,6 +36,7 @@ http.createServer(async function (req, res) {
 
   res.on('finish', reduceConn);
   res.on('end', reduceConn);
+  res.on('abort', reduceConn);
 
 //  console.log({connectionsCount})
 
