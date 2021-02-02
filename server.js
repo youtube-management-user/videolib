@@ -28,17 +28,20 @@ setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
 let connectionsCount = 0;
 
-http.createServer(async function (req, res) {
+const server = http.createServer(async function (req, res) {
 
-  connectionsCount++;
+//  connectionsCount++;
 
-  function reduceConn() { connectionsCount--; };
+  function countConn() {
+    server.getConnections(function(err, count) { connectionsCount = count; });
+//    connectionsCount--;
+  };
 
-  res.on('finish', reduceConn);
-  res.on('end', reduceConn);
-  res.on('abort', reduceConn);
+  countConn();
 
-//  console.log({connectionsCount})
+  // res.on('finish', countConn);
+  // res.on('end', countConn);
+  // req.on('abort', countConn);
 
 //  console.log('req', req.url)
 
