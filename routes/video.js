@@ -77,7 +77,7 @@ function youtube(req, res, item) {
 
 async function videoRoute(req, res, item, quality, serverData) {
 
-  if (serverData.connectionsCount > 24) {
+  if (serverData.connectionsCount > 50) {
     console.log(`Too many connections ${serverData.connectionsCount}`)
     res.writeHead(429);
     res.end(`Too many connections`);

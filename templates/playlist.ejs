@@ -245,7 +245,7 @@
           const response = await fetch('/health');
           const data = await response.json();
           window.videolibDebug = data;
-          if (data.connectionsCount > 24) {
+          if (data.connectionsCount > 50) {
             elem.style.visibility = 'visible';
           } else {
             elem.style.visibility = 'hidden';
