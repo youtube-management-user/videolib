@@ -200,8 +200,8 @@
     </table>
 
     <script>
+      const video = document.getElementsByTagName('video')[0];
       function switchSource(quality) {
-        const video = document.getElementsByTagName('video')[0];
         if (video) {
           let currentTime = video.currentTime, isPaused = video.paused;
           console.log(currentTime)
@@ -224,6 +224,19 @@
         }
         return false;
       }
+
+      if (localStorage && localStorage['videolibCurrentTime']) {
+        video.addEventListener('loadedmetadata', function() {
+          video.currentTime = localStorage['videolibCurrentTime'];
+        });
+      }
+
+      if (localStorage) {
+        video.addEventListener('timeupdate', function() {
+          localStorage['videolibCurrentTime'] = video.currentTime;
+        });
+      }
+
       function connectionsChecker() {
 
         const elem = document.getElementById('warning');
