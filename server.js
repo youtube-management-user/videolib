@@ -32,7 +32,9 @@ http.createServer(async function (req, res) {
 
   connectionsCount++;
 
-  res.on('finish', function () { connectionsCount--; }).on('close', function () { connectionsCount--; });
+  function reduceConn() { connectionsCount--; };
+
+  res.on('finish', reduceConn);
 
 //  console.log({connectionsCount})
 
