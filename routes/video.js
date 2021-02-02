@@ -75,9 +75,12 @@ function youtube(req, res, item) {
   getYouTubeURL(item.url, onSuccess, onError);
 }
 
-async function videoRoute(req, res, item, quality) {
+async function videoRoute(req, res, item, quality, serverData) {
 
-  if (item.type == 'local') {
+  if (serverData.connectionsCount > 10) {
+    res.writeHead(429);
+    res.end(`Too many connections`);
+  } else if (item.type == 'local') {
     local(req, res, item, quality);
   } else if (item.type == 'remote') {
     remote(req, res, item);

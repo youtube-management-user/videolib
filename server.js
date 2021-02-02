@@ -13,8 +13,11 @@ const playlistRoute     = require('./routes/playlist.js');
 const videoRoute        = require('./routes/video.js');
 const logoutRoute       = require('./routes/logout.js');
 const googleAuthRoute   = require('./routes/google-auth.js');
-const staticsRoute      = require('./routes/statics.js');
+const cssRoute          = require('./routes/css.js');
+const imgRoute          = require('./routes/img.js');
 const notFoundRoute     = require('./routes/not-found.js');
+const healthRoute       = require('./routes/health.js');
+
 const initAuth          = require('./routes/auth.js');
 
 const playlist = buildPlaylist();
@@ -23,7 +26,15 @@ setInterval(convertTextFiles, 1000* 60 * 5);
 
 setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
+let connectionsCount = 0;
+
 http.createServer(async function (req, res) {
+
+  connectionsCount++;
+
+  res.on('finish', function () { connectionsCount--; }).on('close', function () { connectionsCount--; });
+
+//  console.log({connectionsCount})
 
 //  console.log('req', req.url)
 
@@ -47,10 +58,16 @@ http.createServer(async function (req, res) {
     fs.writeFileSync('./logs/access-stats.csv', content + `${new Date().toLocaleString().replace(',', ' ')},${req.user.email},${logUrl}\r\n`, 'UTF-8');
   }
 
+  let serverData = { connectionsCount };
+
   if (route == 'css') {
-    staticsRoute(req, res, token[0]);
+    cssRoute(req, res, token[0]);
+  } else if (route == 'img') {
+    imgRoute(req, res, token[0]);
   } else if (route == 'test') {
     testRoute(req, res);
+  } else if (route == 'health') {
+    healthRoute(req, res, serverData);
   } else if (route == 'playlist') {
     playlistRoute(req, res, token[0], token[1], playlist);
   } else if (route == 'logout') {
@@ -58,7 +75,7 @@ http.createServer(async function (req, res) {
   } else if (route == 'google-auth') {
     googleAuthRoute(req, res, query);
   } else if (route == 'video' && playlist[token[0]]) {
-    videoRoute(req, res, playlist[token[0]], token[1]);
+    videoRoute(req, res, playlist[token[0]], token[1], serverData);
   } else {
     notFoundRoute(req, res, route);
   }
