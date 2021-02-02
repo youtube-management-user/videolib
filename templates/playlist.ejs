@@ -14,6 +14,26 @@
   <link rel="stylesheet" href="/css/head.css">
   <link rel="stylesheet" href="/css/app.css">
 
+  <style type="text/css">
+  .videoBox {
+    position: relative;
+    margin: 0px; padding: 0px;
+  }
+  #warning {
+    width:400px;
+    height:61px;
+    background:url(/img/too-much-connections.png) no-repeat;
+    visibility: hidden;
+    position: absolute;
+    left: 90px;
+    top: 120px;
+    z-index: 2;
+  }
+  video {
+    z-index: 1;
+  }
+  </style>
+
 </head>
 
 <body>
@@ -120,9 +140,15 @@
     <tr>
     <td>
 
+    <div class="videoBox">
+
+    <div id="warning">&nbsp;</div>
+
     <video width="600" controls disablepictureinpicture controlsList="nodownload">
       <source src="/video/<%= lectureData.video %>" type="video/mp4">
     </video>
+
+   </div>
 
     <% if (lectureData.date) { %>
       <br>
@@ -198,6 +224,28 @@
         }
         return false;
       }
+      function connectionsChecker() {
+
+        const elem = document.getElementById('warning');
+
+        async function ping() {
+          const response = await fetch('/health');
+          const data = await response.json();
+          window.videolibDebug = data;
+          if (data.connectionsCount > 10) {
+            elem.style.visibility = 'visible';
+          } else {
+            elem.style.visibility = 'hidden';
+          }
+//          elem.innerText = data.connectionsCount;
+        }
+
+        ping();
+
+        setInterval(ping, 3000);
+
+      }
+      connectionsChecker();
     </script>
 
   <% } %>
