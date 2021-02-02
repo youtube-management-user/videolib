@@ -5,6 +5,7 @@ const superagent = require('superagent');
 var { getYouTubeURL, getChunkHeader } = require('../libs/video.js');
 
 function local(req, res, item, quality) {
+
   let path;
   if (!quality || quality == 'q1') {
     path = item.path;
@@ -13,6 +14,11 @@ function local(req, res, item, quality) {
   } else if (quality == 'q3') {
     path = item.low;
   }
+
+  if (!path) {
+    path = item.medium;
+  }
+
   if (fs.existsSync(path)) {
     console.log(`Playing file ${path}`);
     var stat = fs.statSync(path);
