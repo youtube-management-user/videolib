@@ -7,7 +7,7 @@ var PORT = process.argv[2] || 9300;
 
 var log = require('simple-node-logger').createSimpleFileLogger('./logs/project2.log');
 
-const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses, csvLogger } = require('./libs/utils.js')
+const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses, csvLogger, convertTextFiles } = require('./libs/utils.js')
 
 const playlistRoute     = require('./routes/playlist.js');
 const videoRoute        = require('./routes/video.js');
@@ -17,9 +17,9 @@ const staticsRoute      = require('./routes/statics.js');
 const notFoundRoute     = require('./routes/not-found.js');
 const initAuth          = require('./routes/auth.js');
 
-let playlist = buildPlaylist();
+const playlist = buildPlaylist();
 
-//setInterval(reloadPaidFile, 1000* 60 * 5);
+setInterval(convertTextFiles, 1000* 60 * 5);
 
 setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
