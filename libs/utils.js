@@ -36,7 +36,8 @@ function buildPlaylist() {
       youtubeIds.forEach((id,ind) => {
         const [youtube, local, medium, low] = id.split('|');
         const type = (local!='' || medium!='')? { type: 'local', path: local? './videos/' + local: null, medium: medium? './videos/' + medium: null, low: low? './videos/' + low: null }: { type: 'youtube', url: youtube }
-        playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${ind+1}`] = type;
+        const paddedNum = ind+1 < 10? `0${ind+1}`: ind+1
+        playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${paddedNum}`] = type;
       })
     }
   }
