@@ -204,7 +204,7 @@
       function switchSource(quality) {
         if (video) {
           let currentTime = video.currentTime, isPaused = video.paused;
-          console.log(currentTime)
+
           video.setAttribute('src', '/video/<%= lectureData.video %>/'+quality+'/');
 
           video.addEventListener('loadedmetadata', function() {
@@ -225,15 +225,15 @@
         return false;
       }
 
-      if (localStorage && localStorage['videolibCurrentTime']) {
+      if (localStorage && localStorage['VL-<%= lectureData.video %>']) {
         video.addEventListener('loadedmetadata', function() {
-          video.currentTime = localStorage['videolibCurrentTime'];
+          video.currentTime = localStorage['VL-<%= lectureData.video %>'];
         });
       }
 
       if (localStorage) {
         video.addEventListener('timeupdate', function() {
-          localStorage['videolibCurrentTime'] = video.currentTime;
+          localStorage['VL-<%= lectureData.video %>'] = video.currentTime;
         });
       }
 
