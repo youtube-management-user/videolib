@@ -182,7 +182,7 @@
 
     <td valign="top" id="playerQualityControls">
 
-    <% if (playlistItem && playlistItem.medium) { %>
+    <% if (playlistItem && (playlistItem.path || playlistItem.medium || playlistItem.low)) { %>
       качество
       <% if (playlistItem.path) { %>
         <a href="javascript:switchSource('q1');" id="q1" class="p active">3.0</a>,
