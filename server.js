@@ -22,6 +22,10 @@ const initAuth          = require('./routes/auth.js');
 
 const playlist = buildPlaylist();
 
+//console.log(playlist)
+
+setTimeout(convertTextFiles, 1000);
+
 setInterval(convertTextFiles, 1000* 60 * 5);
 
 setInterval(syncPaidFileStatuses, 1000* 60 * 5);

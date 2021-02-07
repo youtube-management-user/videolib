@@ -35,7 +35,8 @@ function buildPlaylist() {
       youtubeMapping[lecturesMapping[i-1]] = youtubeIds;
       youtubeIds.forEach((id,ind) => {
         const [youtube, local, medium, low] = id.split('|');
-        const type = (local!='' || medium!='')? { type: 'local', path: local? './videos/' + local: null, medium: medium? './videos/' + medium: null, low: low? './videos/' + low: null }: { type: 'youtube', url: youtube }
+//        console.log(111, local, youtube)
+        const type = (youtube=='' && (local!='' || medium!=''))? { type: 'local', path: local? './videos/' + local: null, medium: medium? './videos/' + medium: null, low: low? './videos/' + low: null }: { type: 'youtube', url: youtube }
         const paddedNum = ind+1 < 10? `0${ind+1}`: ind+1
         playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${paddedNum}`] = type;
       })
@@ -211,7 +212,8 @@ function convertTextFiles() {
           lectureData.course = parseInt(course);
           lectureData.courseLetters = lecturesMapping[course-1];
           lectureData.link = `${course}/${number}`;
-          lectureData.video = `${coursesLatinMapping[course-1]}-${number}`;
+          const paddedNum = parseInt(number) > 9? number: 0+''+parseInt(number);
+          lectureData.video = `${coursesLatinMapping[course-1]}-${paddedNum}`;
           lectureData.courseGlobalNum = parseInt(course) + 13;
           lectureData.number = parseInt(number);
           if (lectureData.literature) {

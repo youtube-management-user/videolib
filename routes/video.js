@@ -62,7 +62,7 @@ function youtube(req, res, item) {
     // const response = await superagent.head(path);
     // var total = response.headers["content-length"];
     var total = videoData.contentLength;
-//      console.log(`Got file length ${total}`);
+    console.log(`Got file length ${total}`);
 
     if (req.headers['range']) {
       var chunkHeaders = getChunkHeader(req.headers.range, total);
