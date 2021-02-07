@@ -40,7 +40,7 @@ function getYouTubeURL(filename, onSuccess, onError) {
         // const url = scriptElementsFiltered[0].text.match(/\"(https\:\/\/[^\"]+googlevideo[^\"]+)\"/)[1];
 //        let ytplayer = JSON.parse(json);
         eval(scriptElementsFiltered[0].text)
-        var data = ytInitialPlayerResponse.streamingData.formats[1]
+        var data = ytInitialPlayerResponse.streamingData.formats[0]
         video = data.url;
         contentLength = data.contentLength || 393902698 * 2;
 //        console.log(222, contentLength)
