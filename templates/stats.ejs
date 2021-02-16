@@ -13,10 +13,9 @@
 
   <% lecturesStat.forEach(lecture => { %>
 
-    <p><b><%= lecture.title %></b>
+    <p><b><%= lecture.title %></b><br/>просмотров: <%= lecture.users.length %></p>
+
       <% if (lecture.users && lecture.users.length > 0) {  %>
-        <br/>просмотров: <%= lecture.users.length %>
-        </p>
         <p>
         <% lecture.users.forEach(user => { %>
           <%= user.name %> (<%= user.firstPlay %>)<br/>
