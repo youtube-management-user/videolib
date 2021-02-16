@@ -36,14 +36,14 @@ async function statsRoute(req, res) {
     if (view.url) {
       if (view.url.match(/playlist\/\d+\/\d+\//)) {
         let [c, l] = view.url.split('playlist/')[1].split('/');
-        const url = `${c}/${l}`;
+        const url = `${parseInt(c)}/${parseInt(l)}`;
         add(viewsByUsers, view.user, url, view.date);
         add(viewsByLectures, url, view.user, view.date);
         if (!lecturesByUrl[url]) {
           let lecture = lectures.find(ll => ll.course == parseInt(c) && ll.number == parseInt(l)) || { title: url };
           lecturesByUrl[url] = lecture;
         }
-      }      
+      }
     }
 
 //    add(viewsByUsers, view.user, view);
@@ -57,7 +57,8 @@ async function statsRoute(req, res) {
   Object.keys(viewsByUsers).forEach(email => { usersDataByEmail[email] = orders.find(o => o.gmail == email); })
 //  console.log(usersDataByEmail)
 
-  let lecturesStat = Object.keys(viewsByLectures).map(url => {
+  let lecturesStat = _.uniq(Object.keys(viewsByLectures)).map(url => {
+    console.log(url)
     let obj = lecturesByUrl[url];
     obj.users = Object.keys(viewsByLectures[url]).map(email => {
       let views = viewsByLectures[url][email];
@@ -65,9 +66,12 @@ async function statsRoute(req, res) {
       return { name: usersDataByEmail[email]? usersDataByEmail[email].name + ` <${email}>`: email, time: parseInt(playingLength), firstPlay: longDate(new Date(views[views.length-1])) };
     });
     obj.users = obj.users.filter(user => { return  user.time > 10 });
+    obj.url = url;
 //    console.log(111, obj.users )
     return obj;
   })
+
+  console.log(lecturesStat.length, _.uniq(Object.keys(viewsByLectures)).length)
 
 //   let lecturesStat = _.uniq(data.map(rec => {
 //     if (rec.url.match(/playlist\/\d+\/\d+\//)) {
@@ -96,6 +100,7 @@ async function statsRoute(req, res) {
   // })
 
   const times = data.map(rec => new Date(rec.date).getTime());
+  console.log(times)
 //  console.log(Math.max(times))
   let period = shortDate(new Date(Math.min(...times))) + ' - ' + shortDate(new Date(Math.max(...times)));
 
@@ -125,6 +130,8 @@ async function statsRoute(req, res) {
 
 //  let period = '';
 //  let lecturesStat = [];
+
+//console.log(lecturesStat)
 
   var contents = ejs.render(fs.readFileSync("./templates/stats.ejs", 'UTF-8'), { lecturesStat, period });
 
