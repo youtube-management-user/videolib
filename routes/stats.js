@@ -45,17 +45,10 @@ async function statsRoute(req, res) {
         }
       }
     }
-
-//    add(viewsByUsers, view.user, view);
-//    viewsByUsers[view.email].push(rec);
   })
-
-
-//console.log(viewsByLectures)
 
   let usersDataByEmail = {};
   Object.keys(viewsByUsers).forEach(email => { usersDataByEmail[email] = orders.find(o => o.gmail == email); })
-//  console.log(usersDataByEmail)
 
   let lecturesStat = _.uniq(Object.keys(viewsByLectures)).map(url => {
     console.log(url)
@@ -67,70 +60,14 @@ async function statsRoute(req, res) {
     });
     obj.users = obj.users.filter(user => { return  user.time > 10 });
     obj.url = url;
-//    console.log(111, obj.users )
     return obj;
   })
 
-  console.log(lecturesStat.length, _.uniq(Object.keys(viewsByLectures)).length)
-
-//   let lecturesStat = _.uniq(data.map(rec => {
-//     if (rec.url.match(/playlist\/\d+\/\d+\//)) {
-//       const [c, l] = rec.url.split('playlist/')[1].split('/');
-//       const url = `${c}/${l}`;
-//       // if (!ff.user) {
-//       //   ff.user = []
-//       // }
-//       // console.log(rec)
-//
-//       let lecture = lectures.find(ll => ll.course == parseInt(c) && ll.number == parseInt(l)) || { title: url };
-//
-// //      data.find(v => { v. })
-//
-//       lecture.users = Object.keys(viewsByLectures[url]);
-//       return lecture;
-//     } else {
-//       return null
-//     }
-//   })).filter(d => d!=null);
-
-//  console.log(viewsByLectures)
-
-  // lecturesStat = lecturesStat.map(l => {
-  //   let views  = data.filter(rec => rec.user == )
-  // })
-
   const times = data.filter(rec => parseInt(rec.date)>0).map(rec => new Date(rec.date).getTime());
-//  console.log(Math.max(times))
   let period = shortDate(new Date(Math.min(...times))) + ' - ' + shortDate(new Date(Math.max(...times)));
-
-//  let lecturesStat = [];
-  // let lecturesStat = data.map(rec => {
-  //   return rec;
-  // })
 
   let usersByEmail = {};
   orders.forEach(order => usersByEmail[order.gmail] = order.nameo);
-
-//  console.log(lectures)
-
-//  const views
-
-  // Статистика по лекциям
-  // Название
-  // Общее число просмотров за период ...
-  // Просмотры по участникам:
-  //
-  // Статистика по участникам
-  // Имя
-  // Просмотрено лекций: ...
-
-
-//  console.log(orders)
-
-//  let period = '';
-//  let lecturesStat = [];
-
-//console.log(lecturesStat)
 
   var contents = ejs.render(fs.readFileSync("./templates/stats.ejs", 'UTF-8'), { lecturesStat, period });
 
