@@ -29,6 +29,7 @@ function add(obj, key1, key2, elem) {
 async function statsRoute(req, res) {
 
   const data = csv(fs.readFileSync('./logs/access-stats.csv', 'UTF-8'));
+  console.log(data)
 
 //  console.log(lectures.find(ll => ll.course == 1 && ll.number == 15))
 
