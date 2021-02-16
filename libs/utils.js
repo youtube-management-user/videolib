@@ -10,11 +10,11 @@ function csv(file) {
 
   if (!records || records.length < 1) return null;
 
-  fields = fields.replace(/[\n\r\s]+/g, '').split('|');
+  fields = fields.replace(/[\n\r\s]+/g, '').split(/[|,]/);
 
   records = records.map(rec => {
     let res = {};
-    let values = rec.replace(/[\n\r]+/g, '').split('|');
+    let values = rec.replace(/[\n\r]+/g, '').split(/[|,]/);
     values.forEach((val, ind) => res[fields[ind]] = values[ind]);
     return res;
   });
