@@ -99,7 +99,7 @@ async function statsRoute(req, res) {
   //   let views  = data.filter(rec => rec.user == )
   // })
 
-  const times = data.map(rec => new Date(rec.date).getTime());
+  const times = data.filter(rec => parseInt(rec.date)>0).map(rec => new Date(rec.date).getTime());
   console.log(times)
 //  console.log(Math.max(times))
   let period = shortDate(new Date(Math.min(...times))) + ' - ' + shortDate(new Date(Math.max(...times)));
