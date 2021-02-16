@@ -29,24 +29,21 @@ function add(obj, key1, key2, elem) {
 async function statsRoute(req, res) {
 
   const data = csv(fs.readFileSync('./logs/access-stats.csv', 'UTF-8'));
-  console.log(data)
-
-//  console.log(lectures.find(ll => ll.course == 1 && ll.number == 15))
-
-  let ff = [];
 
   let viewsByUsers = {}, viewsByLectures = {}, lecturesByUrl = {};
   data.forEach(view => {
 
-    if (view.url.match(/playlist\/\d+\/\d+\//)) {
-      let [c, l] = view.url.split('playlist/')[1].split('/');
-      const url = `${c}/${l}`;
-      add(viewsByUsers, view.user, url, view.date);
-      add(viewsByLectures, url, view.user, view.date);
-      if (!lecturesByUrl[url]) {
-        let lecture = lectures.find(ll => ll.course == parseInt(c) && ll.number == parseInt(l)) || { title: url };
-        lecturesByUrl[url] = lecture;
-      }
+    if (view.url) {
+      if (view.url.match(/playlist\/\d+\/\d+\//)) {
+        let [c, l] = view.url.split('playlist/')[1].split('/');
+        const url = `${c}/${l}`;
+        add(viewsByUsers, view.user, url, view.date);
+        add(viewsByLectures, url, view.user, view.date);
+        if (!lecturesByUrl[url]) {
+          let lecture = lectures.find(ll => ll.course == parseInt(c) && ll.number == parseInt(l)) || { title: url };
+          lecturesByUrl[url] = lecture;
+        }
+      }      
     }
 
 //    add(viewsByUsers, view.user, view);
