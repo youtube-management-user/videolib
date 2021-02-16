@@ -17,6 +17,7 @@ const cssRoute          = require('./routes/css.js');
 const imgRoute          = require('./routes/img.js');
 const notFoundRoute     = require('./routes/not-found.js');
 const healthRoute       = require('./routes/health.js');
+const statsRoute        = require('./routes/stats.js');
 
 const initAuth          = require('./routes/auth.js');
 
@@ -85,6 +86,8 @@ const server = http.createServer(async function (req, res) {
     logoutRoute(req, res);
   } else if (route == 'google-auth') {
     googleAuthRoute(req, res, query);
+  } else if (route == 'stats') {
+    statsRoute(req, res, query);
   } else if (route == 'video' && playlist[token[0]]) {
     videoRoute(req, res, playlist[token[0]], token[1], serverData);
   } else {

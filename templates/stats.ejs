@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>videolib stats</title>
+
+</head>
+<body>
+
+  <h2>Статистика по лекциям</h2>
+
+  Статистика за период <%= period %>
+
+  <% lecturesStat.forEach(lecture => { %>
+
+    <p><b><%= lecture.title %></b>
+      <% if (lecture.users && lecture.users.length > 0) {  %>
+        <br/>просмотров: <%= lecture.users.length %>
+        </p>
+        <p>
+        <% lecture.users.forEach(user => { %>
+          <%= user.name %> (<%= user.firstPlay %>)<br/>
+        <% }) %>
+        </p>
+      <% } %>
+  <% }) %>
+
+  <!--<h2>Статистика по участникам</h2>-->
+  <!-- // Имя
+  // Просмотрено лекций: ... -->
+
+
+</body>
+</html>
