@@ -46,6 +46,9 @@ for (var i=1; i<=5; i++) {
           lectureData.literature = lectureData.literature.map(l => l.split('|'));
         }
         if (lectureData.movies) {
+          if (typeof lectureData.movies == 'string') {
+            lectureData.movies = [ lectureData.movies ]
+          }
           lectureData.movies = lectureData.movies.map(l => l.split('|'));
         }
 
