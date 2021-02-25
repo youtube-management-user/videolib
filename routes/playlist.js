@@ -4,11 +4,16 @@ const ejs = require("ejs");
 const fs = require('fs');
 const _ = require('lodash');
 
-const { getOpenOrders } = require('../libs/utils.js');
+const { getOpenOrders, convertTextFiles } = require('../libs/utils.js');
 
 const { urlGoogle } = require('../libs/google-utils.js');
 
-const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
+const lecturesPath = './txt/lectures.json';
+if (!fs.existsSync(lecturesPath)) {
+  convertTextFiles();
+}
+
+const lectures = JSON.parse(fs.readFileSync(lecturesPath, 'UTF-8'));
 
 async function playlistRoute(req, res, course, number, playlist) {
 
