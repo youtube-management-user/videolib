@@ -1,0 +1,24 @@
+﻿title
+Античная философия. Натурфилософы. Элеаты. Сократ
+
+description
+Лекция посвящена первым древнегреческим философам, — от Фалеса до Сократа. Искусство наших дней в качестве своего источника имеет скорее их идеи (а также более поздние философские концепции), чем формальные связи с древними эстетическими практиками.
+
+date
+Образовательный центр музея «Гараж». 2.11.2014
+
+presentation
+https://yadi.sk/d/M8MipisJ3t0MYw?w=1
+
+literature
+http://www.psylib.org.ua/books/rassb01/index.htm|Бертран Рассел. История западной философии
+http://www.theosophy.ru/lib/apologia.htm|Платон. Апология Сократа
+http://ancientrome.ru/antlitr/t.htm?a=1348106000|Ксенофонт. Защита Сократа на суде
+http://ancientrome.ru/antlitr/t.htm?a=1348107000|Ксенофонт. Пир
+http://www.lib.ru/POEEAST/PLATO/pir.txt|Платон. Пир
+http://www.theosophy.ru/lib/parmenid.htm|Платон. Парменид
+http://youtu.be/1RNhSvHgxGo|Денис Салтыков. Проблемы языка: Бертран Рассел против Парменида
+
+movies
+https://ru.wikipedia.org/wiki/Жизнь_Дэвида_Гейла|Алан Паркер. Жизнь Дэвида Гейла / The Life of David Gale. (США, Германия, 2002) 
+http://youtu.be/EGdm_zS8lUc|Роберто Росселлини. Сократ. (Италия, 1971)
