@@ -19,6 +19,7 @@
   "homepage": "https://github.com/youtube-management-user/videolib#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "chokidar": "^3.5.1",
     "cookie": "^0.4.1",
     "ejs": "^3.1.5",
     "glob": "^7.1.6",

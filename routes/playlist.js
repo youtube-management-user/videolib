@@ -8,14 +8,14 @@ const { getOpenOrders, convertTextFiles } = require('../libs/utils.js');
 
 const { urlGoogle } = require('../libs/google-utils.js');
 
-const lecturesPath = './txt/lectures.json';
-if (!fs.existsSync(lecturesPath)) {
-  convertTextFiles();
-}
-
-const lectures = JSON.parse(fs.readFileSync(lecturesPath, 'UTF-8'));
-
 async function playlistRoute(req, res, course, number, playlist) {
+
+  const lecturesPath = './txt/lectures.json';
+  if (!fs.existsSync(lecturesPath)) {
+    convertTextFiles();
+  }
+
+  const lectures = JSON.parse(fs.readFileSync(lecturesPath, 'UTF-8'));
 
   let openOrders = [];
 
