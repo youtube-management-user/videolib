@@ -179,7 +179,7 @@ function convertTextFiles() {
   const coursesLatinMapping = [ 'FI', 'YK', 'AE', 'IO', 'HM' ];
 
   const result = [];
-  var files = glob.sync(`./txt/[1-5]*/*.txt`);
+  var files = glob.sync(`./data/[1-5]*/*.txt`);
   files.forEach(path => {
     const pathArr = path.split('/');
     const course = pathArr[pathArr.length-2];

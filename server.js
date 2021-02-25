@@ -1,7 +1,8 @@
 var http = require('http'),
     querystring = require('querystring'),
     fs = require('fs'),
-    process = require("process");
+    process = require("process"),
+    chokidar = require("chokidar");
 
 var PORT = process.argv[2] || 9300;
 
@@ -21,13 +22,20 @@ const statsRoute        = require('./routes/stats.js');
 
 const initAuth          = require('./routes/auth.js');
 
-const playlist = buildPlaylist();
-
 //console.log(playlist)
 
-setTimeout(convertTextFiles, 1000);
+chokidar.watch('./data/*/*.txt').on('all', (event, path) => {
+  if (event == 'add' || event == 'change') {
+    console.log('Generating new data cache...');
+    convertTextFiles();
+  }
+});
 
-setInterval(convertTextFiles, 1000* 60 * 5);
+const playlist = buildPlaylist();
+
+// setTimeout(convertTextFiles, 1000);
+//
+// setInterval(convertTextFiles, 1000* 60 * 5);
 
 //setInterval(syncPaidFileStatuses, 1000* 60 * 5);
 
