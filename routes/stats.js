@@ -3,9 +3,14 @@ const ejs = require("ejs");
 const fs = require('fs');
 const _  = require('lodash');
 
-const { csv } = require('../libs/utils.js');
+const { csv, reloadPaidFile } = require('../libs/utils.js');
 
-const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
+let orders = [];
+try {
+  orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
+} catch(ex) {
+  reloadPaidFile();
+}
 
 const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
 
