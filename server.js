@@ -24,6 +24,8 @@ const initAuth          = require('./routes/auth.js');
 
 //console.log(playlist)
 
+let playlist;
+
 chokidar.watch('./data/*/*.txt').on('all', (event, path) => {
   if (event == 'add' || event == 'change') {
     console.log('Generating new data cache...');
@@ -31,7 +33,12 @@ chokidar.watch('./data/*/*.txt').on('all', (event, path) => {
   }
 });
 
-const playlist = buildPlaylist();
+chokidar.watch('./local_id/*.txt').on('all', (event, path) => {
+  if (event == 'add' || event == 'change') {
+    console.log('Generating new playlist cache...');
+    playlist = buildPlaylist();
+  }
+});
 
 // setTimeout(convertTextFiles, 1000);
 //
