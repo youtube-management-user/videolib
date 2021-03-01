@@ -81,8 +81,8 @@ async function statsRoute(req, res, query) {
 
   let data = csv(fs.readFileSync('./logs/access-stats.csv', 'UTF-8'));
 
-  if (query.from && query.to) {
-    data = data.filter(record => { return new Date(record.date) >= new Date(query.from) && new Date(record.date) <= new Date(query.to) });    
+  if (query && query.from && query.to) {
+    data = data.filter(record => { return new Date(record.date) >= new Date(query.from) && new Date(record.date) <= new Date(query.to) });
   }
 
   let lecturesStat = getLecturesStats(data);
@@ -90,7 +90,10 @@ async function statsRoute(req, res, query) {
 //  console.log(data[30].date, new Date(data[30].date) >= new Date(query.from))
 
   const times = data.filter(rec => parseInt(rec.date)>0).map(rec => new Date(rec.date).getTime());
-  let period = shortDate(new Date(query.from)) + ' - ' + shortDate(new Date(query.to));
+  let period;
+  if (query && query.from && query.to) {
+    period = shortDate(new Date(query.from)) + ' - ' + shortDate(new Date(query.to));
+  }
 //  let period = shortDate(new Date(Math.min(...times))) + ' - ' + shortDate(new Date(Math.max(...times)));
 
   // let usersByEmail = {};
