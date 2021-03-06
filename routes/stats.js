@@ -104,7 +104,7 @@ async function statsRoute(req, res, query) {
 
   let data = csv(fs.readFileSync('./logs/access-stats.csv', 'UTF-8'));
 
-  data = data.filter(rec => _.get(rec, 'url').match(/video\/(\w+)\-(\d+)/));
+  data = data.filter(rec => _.get(rec, 'url')? rec.url.match(/video\/(\w+)\-(\d+)/): false );
 
   const times = data.filter(rec => parseInt(rec.date)>0).map(rec => new Date(rec.date).getTime());
 
