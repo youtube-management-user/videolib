@@ -1,33 +1,109 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>videolib stats</title>
+<style>
+table {
+  border-collapse: collapse;
+}
+
+BODY
+{
+    FONT-FAMILY: Verdana, Arial, sans-serif;
+    FONT-SIZE: 8pt
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+  	FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, sans-serif;
+}
+
+th {
+  font-weight: bold;
+  background-color: #E6E6E6;
+  	FONT-SIZE: 8pt; FONT-FAMILY: Verdana, Arial, sans-serif;
+}
+
+A {
+	CURSOR: hand; COLOR: black; TEXT-DECORATION: none
+}
+A:active {
+	CURSOR: hand; COLOR: black; TEXT-DECORATION: none
+}
+A:hover {
+	CURSOR: hand; COLOR: red; TEXT-DECORATION: none
+}
+
+A.p
+{
+	Font-Size: 11px;
+	background-color: #EFEFEF;
+	text-decoration: none
+
+}
+
+A.p:hover
+{   text-decoration: none;
+    background-color: #000000;
+    COLOR: #FFFFFF
+}
+A.p:active
+{
+    COLOR: #555555
+}
+
+
+</style>
+<meta charset="windows-1251">
+
+<script src="./JQuery/javaup.js"></script>
 
 </head>
-<body>
 
-  <h2>Статистика по лекциям</h2>
+<b>Статистика</b>
+<br><br><br>
 
   <p>
-    С: <input type="date" id="start" name="date-start" value="<%= date_today %>" min="<%= date_start %>" max="<%= date_end %>" />
-    По: <input type="date" id="end" name="date-end" value="<%= date_today %>" min="<%= date_start %>" max="<%= date_end %>" /> &nbsp;
-    <input type="button" value="Показать" id="changeRangeButton" />
+    С: <input type="date" id="start" name="date-start" value="<%= date_start %>" min="<%= pickerStart %>" max="<%= pickerEnd %>" />
+    По: <input type="date" id="end" name="date-end" value="<%= date_end %>" min="<%= pickerStart %>" max="<%= pickerEnd %>" /> &nbsp;
+    <input type="button" value=">>>" id="changeRangeButton" />
   </p>
 
-  Статистика за период <%= period %>
+<!--  Статистика за период <%= period %> -->
 
-  <% lecturesStat.forEach(lecture => { %>
+<table>
+<tr>
+	<td>date</td>
+	<td>name</td>
+	<td>gmail</td>
+	<td>lecture</td>
+	<td>total min</td>
+</tr>
 
-    <p><b><%= lecture.title %></b><br/>просмотров: <%= lecture.users.length %></p>
 
-      <% if (lecture.users && lecture.users.length > 0) {  %>
-        <p>
-        <% lecture.users.forEach(user => { %>
-          <%= user.name %> (<%= user.firstPlay %>)<br/>
-        <% }) %>
-        </p>
-      <% } %>
+  <% lecturesStat.forEach(day => { %>
+
+    <tr bgcolor='#E0E0E0'>
+      <td><%= day.day %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= day.totalmin %></td>
+    </tr>
+
+    <% day.data.forEach(rec => { %>
+
+          <tr>
+            <td></td>
+            <td><%= rec.name %></td>
+            <td><%= rec.email %></td>
+            <td><%= rec.lectureAbbr %></td>
+            <td><%= rec.totalmin %></td>
+          </tr>
+
+    <% }) %>
+
   <% }) %>
 
   <!--<h2>Статистика по участникам</h2>-->
