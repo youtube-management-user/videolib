@@ -32,7 +32,7 @@ function longDate(d) {
 function shortDate2(d) {
   const h = pad(d.getHours());
   const m = pad(d.getMinutes());
-  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${d.getDate()}`;
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 }
 
 function add(obj, key1, key2, elem) {
@@ -41,68 +41,102 @@ function add(obj, key1, key2, elem) {
   obj[key1][key2].push(elem);
 }
 
-function getLecturesStats(data) {
-  let viewsByUsers = {}, viewsByLectures = {}, lecturesByUrl = {};
-  data.forEach(view => {
+function parseViewUrl(view) {
+  const coursesLatinMapping = { 'FI': 1, 'YK': 2, 'AE': 3, 'IO': 4, 'HM': 5 };
+  let url, c, l;
 
-    if (view.url) {
-      if (view.url.match(/playlist\/\d+\/\d+\//)) {
-        let [c, l] = view.url.split('playlist/')[1].split('/');
-        const url = `${parseInt(c)}/${parseInt(l)}`;
-        add(viewsByUsers, view.user, url, view.date);
-        add(viewsByLectures, url, view.user, view.date);
-        if (!lecturesByUrl[url]) {
-          let lecture = lectures.find(ll => ll.course == parseInt(c) && ll.number == parseInt(l)) || { title: url };
-          lecturesByUrl[url] = lecture;
-        }
-      }
-    }
+  [noop, c, l] = view.url.match(/video\/(\w+)\-(\d+)/);
+  c = coursesLatinMapping[c];
+  url = `${parseInt(c)}/${parseInt(l)}`;
+
+  return [c, l, url];
+}
+
+function groupBy( array , f )
+{
+  var groups = {};
+  array.forEach( function( o )
+  {
+    var group = JSON.stringify( f(o) );
+    groups[group] = groups[group] || [];
+    groups[group].push( o );
+  });
+  return Object.keys(groups).map( function( group )
+  {
+    return groups[group];
+  })
+}
+
+function getLecturesStats(data) {
+
+  data = data.map(rec => {
+    let [c, l, parsedUrl] = parseViewUrl(rec);
+    return { c, l, parsedUrl, ...rec }
   });
 
-  let usersDataByEmail = {};
-  Object.keys(viewsByUsers).forEach(email => { usersDataByEmail[email] = orders.find(o => o.gmail == email); })
+  let grouped = groupBy(data, rec => { return [rec.parsedUrl, rec.user] });
 
-  let lecturesStat = _.uniq(Object.keys(viewsByLectures)).map(url => {
-//    console.log(url)
-    let obj = lecturesByUrl[url];
-    obj.users = Object.keys(viewsByLectures[url]).map(email => {
-      let views = viewsByLectures[url][email];
-      let playingLength = ((new Date(views[views.length-1]).getTime() - new Date(views[0]).getTime())/60000);
-      return { name: usersDataByEmail[email]? usersDataByEmail[email].name + ` <${email}>`: email, time: parseInt(playingLength), firstPlay: longDate(new Date(views[views.length-1])) };
-    });
-    obj.users = obj.users.filter(user => { return  user.time > 10 });
-    obj.url = url;
-    return obj;
-  })
-return lecturesStat;
+  let usersDataByEmail = {};
+  orders.forEach(o => { if (!usersDataByEmail[o.gmail]) usersDataByEmail[o.gmail] = o.name });
+
+  let lecturesByUrl = {};
+  lectures.forEach(l => { const url = `${l.course}/${l.number}`; if (!lecturesByUrl[url]) lecturesByUrl[url] = l });
+
+  grouped = grouped.map(user => {
+    let email = user[0].user;
+    let name = usersDataByEmail[email] || email;
+    let lecture = lecturesByUrl[user[0].parsedUrl] || { title: user[0].parsedUrl, courseLetters: 'AAA', number: 111 };
+    let times = user.map(rec => rec.date);
+    let totalmin = parseInt((new Date(times[times.length-1]).getTime() - new Date(times[0]).getTime())/60000);
+
+    return { name, email, totalmin, lectureTitle: lecture.title, lectureAbbr: `${lecture.courseLetters}-${lecture.number}` };
+
+    return user.map(rec => rec.date).join(',')
+  });
+
+  grouped = grouped.filter(rec => rec.totalmin>1)
+
+  return grouped;
+
 }
 
 async function statsRoute(req, res, query) {
 
   let data = csv(fs.readFileSync('./logs/access-stats.csv', 'UTF-8'));
 
-  if (query && query.from && query.to) {
-    data = data.filter(record => { return new Date(record.date) >= new Date(query.from) && new Date(record.date) <= new Date(query.to) });
-  }
-
-  let lecturesStat = getLecturesStats(data);
-
-//  console.log(data[30].date, new Date(data[30].date) >= new Date(query.from))
+  data = data.filter(rec => rec.url.match(/video\/(\w+)\-(\d+)/));
 
   const times = data.filter(rec => parseInt(rec.date)>0).map(rec => new Date(rec.date).getTime());
+
+  if (query && query.from && query.to) {
+    data = data.filter(record => { return new Date(record.date) >= new Date(query.from) && new Date(record.date) <= new Date(query.to  + ' 23:59:00') });
+  }
+
+  let lecturesStat = _.uniq(data.map(d => shortDate2(new Date(d.date)))).map(day => {
+    let thisDayData = data.filter(r => { return shortDate2(new Date(r.date)) == shortDate2(new Date(day)) });
+    let recs = getLecturesStats(thisDayData);
+    let totalmin = recs.reduce((acc, curr) => { return acc + curr.totalmin }, 0);
+    return { data: recs, day: shortDate(new Date(day)), totalmin };
+  });
+
+  lecturesStat = lecturesStat.filter(l => l.totalmin > 0);
+
+//  console.log(lecturesStat[lecturesStat.length-1])
+
   let period;
   if (query && query.from && query.to) {
     period = shortDate(new Date(query.from)) + ' - ' + shortDate(new Date(query.to));
   }
-//  let period = shortDate(new Date(Math.min(...times))) + ' - ' + shortDate(new Date(Math.max(...times)));
 
-  // let usersByEmail = {};
-  // orders.forEach(order => usersByEmail[order.gmail] = order.nameo);
-//  <input id="party" type="datetime-local" name="partydate" value="2017-06-01T08:30">
+  let date_start = (query && query.from)? query.from: shortDate2(new Date(Math.min(...times)));
+  let date_end = (query && query.to)? query.to: shortDate2(new Date(Math.max(...times)));
 
-  let [ date_start, date_today, date_end ] = [ shortDate2(new Date(Math.min(...times))), shortDate2(new Date()), shortDate2(new Date(Math.max(...times))) ];
+  let pickerStart = shortDate2(new Date(Math.min(...times)));
+  let pickerEnd = shortDate2(new Date(Math.max(...times)));
 
-  var contents = ejs.render(fs.readFileSync("./templates/stats.ejs", 'UTF-8'), { lecturesStat, period, date_start, date_today, date_end });
+  let date_today = shortDate2(new Date());
+
+  var contents = ejs.render(fs.readFileSync("./templates/stats.ejs", 'UTF-8'), { lecturesStat, period, date_start, date_today, date_end, pickerStart, pickerEnd });
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.writeHead(200);
