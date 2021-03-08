@@ -72,7 +72,7 @@ async function getOpenOrders(email) {
       let openOrders = [];
       openOrders = orders.filter(order => {
         const isTime = new Date(order.begin) <= new Date() && new Date() <= new Date(order.end);
-        const isPersonalOrder = order.gmail.toLowerCase() == email.toLowerCase() && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2);
+        const isPersonalOrder = order.gmail && email && order.gmail.toLowerCase() == email.toLowerCase() && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2);
         const isOpenForEveryone = parseInt(order.okl) === 4;
         return (isPersonalOrder || isOpenForEveryone) && isTime;
       });
