@@ -90,7 +90,7 @@ async function getOpenOrders(email) {
         const isTime = new Date(order.begin) <= new Date() && new Date() <= new Date(order.end);
         const isPersonalOrder = order.gmail && email && order.gmail.toLowerCase() == email.toLowerCase() && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 || parseInt(order.okl) === 6);
         const isOpenForEveryone = parseInt(order.okl) === 4;
-        const isOpenForGroup = order.name.indexOf('group') == 0 && emailInGroup(groups.filter(group => group.title == order.name), email, order.nameo);
+        const isOpenForGroup = order.name.indexOf('group') == 0 && parseInt(order.okl) === 1 && parseInt(order.okl) === 2 && emailInGroup(groups.filter(group => group.title == order.name), email, order.nameo);
 //        if (isTime) console.log(order.nameo.indexOf('group') == 0)
         return (isPersonalOrder || isOpenForEveryone || isOpenForGroup) && isTime;
       });
