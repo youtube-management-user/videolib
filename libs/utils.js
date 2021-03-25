@@ -4,13 +4,17 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const _ = require('lodash');
 
-function csv(file) {
-  if (!file) return null;
-  let [fields, ...records] = file.split(/\n/).filter(l => l!='');
+function csv(file, fields) {
+  if (!file) { console.error('empty file'); return null; }
+  let records;
+  if (!fields) {
+    [fields, ...records] = file.split(/\n/).filter(l => l!='');
+    fields = fields.replace(/[\n\r\s]+/g, '').split(/[|,]/);
+  } else {
+    records = file.split(/\n/).filter(l => l!='');
+  }
 
   if (!records || records.length < 1) return null;
-
-  fields = fields.replace(/[\n\r\s]+/g, '').split(/[|,]/);
 
   records = records.map(rec => {
     let res = {};
@@ -58,9 +62,17 @@ function parse(date, daysToAdd) {
 
 async function getOpenOrders(email) {
 
-  if (!fs.existsSync('./txt/orders.json')) {
+  function emailInGroup(groups, email, statuses) {
+    statuses = statuses.split('');
+    if (!groups || !groups[0]) { console.error('emailInGroup group cache is empty'); return false; }
+    if (!email) { console.error('emailInGroup email is empty'); return false; }
+    return groups[0].members.filter(m => m.email == email && parseInt(statuses[parseInt(m.num)-1]) == 1).length > 0;
+  }
+
+  if (!fs.existsSync('./txt/orders.json') || !fs.existsSync('./txt/groups.json')) {
     try {
       await reloadPaidFile();
+      await convertGroupFiles();
     } catch(ex) {
       return null;
     }
@@ -69,12 +81,18 @@ async function getOpenOrders(email) {
     let currentOrder = null;
     try {
       const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
+      const groups = JSON.parse(fs.readFileSync('./txt/groups.json', 'UTF-8'));
+
+//      console.log(orders.filter(o => o.name.indexOf('group') >=0))
+
       let openOrders = [];
       openOrders = orders.filter(order => {
         const isTime = new Date(order.begin) <= new Date() && new Date() <= new Date(order.end);
         const isPersonalOrder = order.gmail && email && order.gmail.toLowerCase() == email.toLowerCase() && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2);
         const isOpenForEveryone = parseInt(order.okl) === 4;
-        return (isPersonalOrder || isOpenForEveryone) && isTime;
+        const isOpenForGroup = order.name.indexOf('group') == 0 && emailInGroup(groups.filter(group => group.title == order.name), email, order.nameo);
+//        if (isTime) console.log(order.nameo.indexOf('group') == 0)
+        return (isPersonalOrder || isOpenForEveryone || isOpenForGroup) && isTime;
       });
 
       return openOrders;
@@ -230,4 +248,19 @@ function convertTextFiles() {
   fs.writeFileSync('./txt/lectures.json', JSON.stringify(result, null, 2));
 }
 
-module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses, convertTextFiles }
+function convertGroupFiles() {
+  const fs = require('fs');
+  const glob = require('glob');
+  var files = glob.sync(`./groups/group*.txt`);
+  var groups = [];
+  files.forEach(path => {
+    var data = fs.readFileSync(path, 'UTF-8');//.split().split(/\r\n\r\n|\n\n/).filter(l => l!='');
+    var title = path.split('/'); title = title[title.length-1].split('.')[0];
+    groups.push({ title: title, members: csv(data, ['num','lastname','firstname','email'])});
+//    data.map(l => l.split('|'))
+//    groups.push();
+  })
+  fs.writeFileSync('./txt/groups.json', JSON.stringify(groups, null, 2));
+}
+
+module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses, convertTextFiles, convertGroupFiles }

@@ -8,7 +8,7 @@ var PORT = process.argv[2] || 9300;
 
 var log = require('simple-node-logger').createSimpleFileLogger('./logs/project2.log');
 
-const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses, csvLogger, convertTextFiles } = require('./libs/utils.js')
+const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses, csvLogger, convertTextFiles, convertGroupFiles } = require('./libs/utils.js')
 
 const playlistRoute     = require('./routes/playlist.js');
 const videoRoute        = require('./routes/video.js');
@@ -37,6 +37,13 @@ chokidar.watch('./local_id/*.txt').on('all', (event, path) => {
   if (event == 'add' || event == 'change') {
     console.log('Generating new playlist cache...');
     playlist = buildPlaylist();
+  }
+});
+
+chokidar.watch('./groups/*.txt').on('all', (event, path) => {
+  if (event == 'add' || event == 'change') {
+    console.log('Generating new groups cache...');
+    convertGroupFiles();
   }
 });
 
