@@ -66,7 +66,7 @@ async function getOpenOrders(email) {
     statuses = statuses.split('');
     if (!groups || !groups[0]) { console.error('emailInGroup group cache is empty'); return false; }
     if (!email) { console.error('emailInGroup email is empty'); return false; }
-    return groups[0].members.filter(m => m.email == email && parseInt(statuses[parseInt(m.num)-1]) == 1).length > 0;
+    return groups[0].members.filter(m => m.email.toLowerCase() == email.toLowerCase() && parseInt(statuses[parseInt(m.num)-1]) == 1).length > 0;
   }
 
   if (!fs.existsSync('./txt/orders.json') || !fs.existsSync('./txt/groups.json')) {
