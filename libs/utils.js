@@ -153,7 +153,7 @@ async function syncPaidFileStatuses() {
 //    let orders = await fetchPaidFile();
     const orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
     let openOrders = orders.filter(order => (parseInt(order.okl) === 1) && (new Date(order.begin) <= new Date() && new Date() <= new Date(order.end)));
-    let closedOrders = orders.filter(order => (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 || parseInt(order.okl) === 4) && (new Date(order.begin) > new Date() || new Date() > new Date(order.end)));
+    let closedOrders = orders.filter(order => (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 || parseInt(order.okl) === 4) && (new Date() > new Date(order.end)));
 
     let openOrderLinks = openOrders.map(order => {
   //    const id = orders.findIndex(o => o.id == order.id) + 2;
