@@ -89,7 +89,7 @@ function getLecturesStats(data) {
     let times = user.map(rec => rec.date);
     let totalmin = parseInt((new Date(times[times.length-1]).getTime() - new Date(times[0]).getTime())/60000);
 
-    return { name, email, totalmin, lectureTitle: lecture.title, lectureAbbr: `${lecture.courseLetters}-${lecture.number}` };
+    return { name, email, totalmin, lectureTitle: lecture.title, lectureAbbr: `${lecture.courseLetters}-${pad(lecture.number)}` };
 
     return user.map(rec => rec.date).join(',')
   });
