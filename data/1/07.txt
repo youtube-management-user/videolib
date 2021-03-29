@@ -1,0 +1,20 @@
+﻿title
+Аристотель. Категории. Логика. Поэтика. Метафора. Метафизика. Мимесис
+
+description
+Аристотеля можно считать основателем онтологии, теории познания, логики, психологии, космологии, физики, зоологии, политики, педагогики, риторики, этики, эстетики. И конечно же, для нас очень важно, что именно с "Поэтики" Аристотеля возникает язык теории искусства.
+
+date
+Образовательный центр музея «Гараж». 16.11.2014
+
+presentation
+https://disk.yandex.ru/d/C-udzb0vMMmwWA
+
+literature
+http://lib.ru/POEEAST/ARISTOTEL/metaphiz.txt|Аристотель. Метафизика
+http://philologos.narod.ru/classics/aristotel_poe.htm|Аристотель. Поэтика
+http://lib.ru/POEEAST/ARISTOTEL/kategorii.txt|Аристотель. Категории
+http://www.lib.ru/POEEAST/ARISTOTEL/nikomah.txt|Аристотель. Никомахова этика
+http://kant.narod.ru/lakoff.htm|Дж. Лакофф, М. Джонсон. Метафоры, которыми мы живем
+
+movies

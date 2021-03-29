@@ -1,0 +1,24 @@
+﻿title
+Миф и логос. Субъект, индивид, личность. Рождение философии
+
+description
+Лекция посвящена интереснейшему периоду в истории — появлению принципиально нового мировосприятия у древних греков две с половиной тысячи лет назад. Именно тогда рождается философия и появляется искусство, в котором в отличие от более древних практик, человек ощущает себя мыслящим субъектом.
+
+date
+Образовательный центр музея «Гараж». 26.10.2014
+
+presentation
+https://disk.yandex.ru/d/Dk_7z06nJCBFvg
+
+literature
+http://lib.ru/POEEAST/SOFOKL/edip.txt|Софокл. Царь Эдип 
+http://lib.ru/POEEAST/ESHIL/prometej.txt|Эсхил. Прометей прикованный
+http://az.lib.ru/g/gomer/text_0040.shtml|Гомер. Илиада
+http://az.lib.ru/g/gomer/text_0060.shtml|Гомер. Одиссея
+http://lib.ru/MIFS/greece.txt|Николай Кун. Легенды и мифы Древней Греции 
+http://www.gumer.info/bibliotek_Buks/Culture/Losev_HistEst/Est1_0.php|Лосев А.Ф. История античной эстетики. Ранняя классика
+http://yadi.sk/d/PU6xKO0zBCGAY|Игорь Кон. В поисках себя
+
+movies
+https://ru.wikipedia.org/wiki/Царь_Эдип_(фильм)|Царь Эдип / Edipo re (Пьер Паоло Пазолини / Pier Paolo Pasolini)
+https://ru.wikipedia.org/wiki/Одиссея_(мини-сериал)|Одиссея / The Odyssey (Андрей Кончаловский, 1997)
