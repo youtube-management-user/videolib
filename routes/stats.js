@@ -15,6 +15,7 @@ try {
 const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
 
 function pad(n) {
+  n = parseInt(pad);
   return n > 9? n: '0' + n;
 }
 
