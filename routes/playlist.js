@@ -19,7 +19,7 @@ async function playlistRoute(req, res, course, number, playlist) {
 
   let openOrders = [];
 
-  const userEmail = (req.user && req.user.email)? req.user.email: null;
+  const userEmail = 'ehora.weis8@gmail.com';(req.user && req.user.email)? req.user.email: null;
 
   openOrders = await getOpenOrders(userEmail);
 
