@@ -86,7 +86,6 @@ async function getOpenOrders(email) {
 //      console.log(orders.filter(o => o.name.indexOf('group') >=0))
 
       let openOrders = [];
-      console.log(email)
       openOrders = orders.filter(order => {
         const isTime = new Date(order.begin) <= new Date() && new Date() <= new Date(order.end);
         const isPersonalOrder = order.gmail && email && order.gmail.toLowerCase() == email.toLowerCase() && (parseInt(order.okl) === 1 || parseInt(order.okl) === 2 || parseInt(order.okl) === 6);
