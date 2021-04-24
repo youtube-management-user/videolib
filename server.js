@@ -12,6 +12,7 @@ const { buildPlaylist, reloadPaidFile, syncPaidFileStatuses, csvLogger, convertT
 
 const playlistRoute     = require('./routes/playlist.js');
 const videoRoute        = require('./routes/video.js');
+const publicRoute       = require('./routes/public.js');
 const logoutRoute       = require('./routes/logout.js');
 const googleAuthRoute   = require('./routes/google-auth.js');
 const cssRoute          = require('./routes/css.js');
@@ -112,6 +113,8 @@ const server = http.createServer(async function (req, res) {
     statsRoute(req, res, query);
   } else if (route == 'video' && playlist[token[0]]) {
     videoRoute(req, res, playlist[token[0]], token[1], serverData);
+  } else if (route == 'public' && token[0]) {
+    publicRoute(req, res, token[0]);
   } else {
     notFoundRoute(req, res, route);
   }
