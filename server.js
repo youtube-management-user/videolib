@@ -17,6 +17,7 @@ const logoutRoute       = require('./routes/logout.js');
 const googleAuthRoute   = require('./routes/google-auth.js');
 const cssRoute          = require('./routes/css.js');
 const imgRoute          = require('./routes/img.js');
+const pdfRoute          = require('./routes/pdf.js');
 const notFoundRoute     = require('./routes/not-found.js');
 const healthRoute       = require('./routes/health.js');
 const statsRoute        = require('./routes/stats.js');
@@ -99,6 +100,8 @@ const server = http.createServer(async function (req, res) {
     cssRoute(req, res, token[0]);
   } else if (route == 'img') {
     imgRoute(req, res, token[0]);
+  } else if (route == 'pdf') {
+    pdfRoute(req, res, token[0]);
   } else if (route == 'test') {
     testRoute(req, res);
   } else if (route == 'health') {
