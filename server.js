@@ -81,7 +81,7 @@ const server = http.createServer(async function (req, res) {
     query = querystring.parse(req.url.split('?')[1])
   }
 
-  log.info(`Video server: access from ${req.headers["x-forwarded-for"]} for ${route}, ${req.url}`);
+//  log.info(`Video server: access from ${req.headers["x-forwarded-for"]} for ${route}, ${req.url}`);
 
   if (route == 'playlist' || route == 'video') {
     await initAuth(req, res);
