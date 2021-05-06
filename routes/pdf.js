@@ -3,7 +3,12 @@ const fs = require('fs');
 
 async function pdfRoute(req, res, filename) {
 
-  const path = decodeURI(`./pdf/${filename}`);
+  let path = '';
+  try {
+    path = decodeURI(`./pdf/${filename}`).split('?')[0];
+  } catch(ex) {
+    console.log(`Broken URL {path}`);
+  }
 
   if (fs.existsSync(path)) {
     res.setHeader("Content-Type", "application/pdf");
