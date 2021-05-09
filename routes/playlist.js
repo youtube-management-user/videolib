@@ -43,7 +43,7 @@ async function playlistRoute(req, res, course, number, playlist) {
     lectureData.poster = `/img/${lectureData.video}.png`;
     console.log(`Found poster ${lectureData.video}.png`)
   } else {
-    console.log(`Not found poster ${lectureData.video}.png`)    
+    console.log(`Not found poster ${lectureData.video}.png`)
   }
 
   if (lectureData && lectureData.video)
