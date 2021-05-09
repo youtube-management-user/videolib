@@ -39,6 +39,10 @@ async function playlistRoute(req, res, course, number, playlist) {
 
   let playlistItem;
 
+  if (fs.existsSync(`./templates/img/${lectureData.video}.png`)) {
+    lectureData.poster = `/img/${lectureData.video}.png`;
+  }
+
   if (lectureData && lectureData.video)
     playlistItem = playlist[lectureData.video]
 
