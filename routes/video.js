@@ -7,12 +7,12 @@ var { getYouTubeURL, getChunkHeader } = require('../libs/video.js');
 function local(req, res, item, quality) {
 
   let path;
-  if (!quality || quality == 'q1') {
+  if (!quality || quality == 'q3') {
     path = item.path;
+  } else if (quality == 'q1') {
+    path = item.high;
   } else if (quality == 'q2') {
     path = item.medium;
-  } else if (quality == 'q3') {
-    path = item.low;
   }
 
   if (!path) {
