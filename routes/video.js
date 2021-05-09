@@ -8,7 +8,7 @@ function local(req, res, item, quality) {
 
   let path;
   if (!quality || quality == 'q3') {
-    path = item.path;
+    path = item.low;
   } else if (quality == 'q1') {
     path = item.high;
   } else if (quality == 'q2') {
