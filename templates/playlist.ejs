@@ -188,13 +188,13 @@
     <% if (playlistItem && (playlistItem.path || playlistItem.medium || playlistItem.low)) { %>
       качество
       <% if (playlistItem.path) { %>
-        <a href="javascript:switchSource('q1');" id="q1" class="p active">3.0</a>,
+        <a href="javascript:switchSource('q1');" id="q1" class="p <% if (!playlistItem.path) { %>active<% } %>">3.0</a>,
       <% } %>
       <% if (playlistItem.medium) { %>
         <a href="javascript:switchSource('q2');" id="q2" class="p <% if (!playlistItem.path) { %>active<% } %>">1.5</a>,
       <% } %>
       <% if (playlistItem.low) { %>
-        <a href="javascript:switchSource('q3');" id="q3" class="p">0.8</a>
+        <a href="javascript:switchSource('q3');" id="q3" class="p active">0.8</a>
       <% } %>
     <% } %>
 
