@@ -15,6 +15,8 @@ function local(req, res, item, quality) {
     path = item.medium;
   }
 
+  console.log(111, item)
+
   if (!path) {
     path = item.medium;
   }
