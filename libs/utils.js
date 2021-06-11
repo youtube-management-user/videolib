@@ -18,7 +18,7 @@ function csv(file, fields) {
 
   records = records.map(rec => {
     let res = {};
-    let values = rec.replace(/[\n\r]+/g, '').split(/[|,]/);
+    let values = rec.replace(/[\n\r]+/g, '').split('|');
     values.forEach((val, ind) => res[fields[ind]] = values[ind]);
     return res;
   });
@@ -110,6 +110,7 @@ async function fetchPaidFile() {
     const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
     let body = await response.buffer();
     body = body.toString('utf16le');
+//    body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
     let orders = csv(body);
     orders = orders
     .map(rec => {
