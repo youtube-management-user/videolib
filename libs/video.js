@@ -22,6 +22,7 @@ function getYouTubeURL(filename, onSuccess, onError) {
     onError(`Incorrect YouTube video ${filename}`);
   } else {
     superagent.get('https://www.youtube.com/watch?v=' + filename).then(response => {
+      console.log('https://www.youtube.com/watch?v=' + filename)
 //      console.log(111, filename)
       var soup = new JSSoup(response.text);
       var scriptElements = soup.findAll("script");
@@ -31,6 +32,12 @@ function getYouTubeURL(filename, onSuccess, onError) {
 //      console.log(scriptElements)
 
 //      fs.writeFileSync('resp.html', scriptElementsFiltered[0].text)
+      if (!scriptElementsFiltered[0] || !scriptElementsFiltered[0].text) {
+        const err = 'Cannot extract URL. Video is private or unreachable.';
+        onError(err);
+        console.error(err);
+        return;
+      }
 
       var window = {}, document = {};
       document.createElement = function() { return {} };
