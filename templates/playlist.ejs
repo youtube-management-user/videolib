@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 
 <head>
@@ -153,10 +153,55 @@
 
    </div>
 
-    <% if (lectureData.date) { %>
 
-      <span style="font-size:12px;"><%= lectureData.date %></span>
+
+
+
+<span style="font-size:12px;">
+<table  width="600" >
+<tr>
+
+	<td	<% if (lectureData.date) { %>      <span style="font-size:12px;"><%= lectureData.date %></span>    <% } %></td>
+
+	<td align="right"  id="playerQualityControls">
+
+    <% if (playlistItem && (playlistItem.path || playlistItem.medium || playlistItem.low)) { %>
+      качество:
+      <% if (playlistItem.path) { %>
+        <a href="javascript:switchSource('q1');" id="q1" class="p <% if (!playlistItem.path) { %>active<% } %>"><span style="font-size:12px;">3.0</span></a><span style="font-size:12px;">,</span>
+      <% } %>
+      <% if (playlistItem.medium) { %>
+        <a href="javascript:switchSource('q2');" id="q2" class="p <% if (!playlistItem.path) { %>active<% } %>"><span style="font-size:12px;">1.5</span></a><span style="font-size:12px;">,</span>
+      <% } %>
+      <% if (playlistItem.low) { %>
+        <a href="javascript:switchSource('q3');" id="q3" class="p active"><span style="font-size:12px;">0.8</span></a>
+      <% } %>
     <% } %>
+
+	</td>
+
+
+</tr>
+</table>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <% if (lectureData.presentation) { %>
       <br><br>
@@ -183,20 +228,9 @@
 
     </td>
 
-    <td valign="top" id="playerQualityControls">
+    <td>
 
-    <% if (playlistItem && (playlistItem.path || playlistItem.medium || playlistItem.low)) { %>
-      качество
-      <% if (playlistItem.path) { %>
-        <a href="javascript:switchSource('q1');" id="q1" class="p <% if (!playlistItem.path) { %>active<% } %>">3.0</a>,
-      <% } %>
-      <% if (playlistItem.medium) { %>
-        <a href="javascript:switchSource('q2');" id="q2" class="p <% if (!playlistItem.path) { %>active<% } %>">1.5</a>,
-      <% } %>
-      <% if (playlistItem.low) { %>
-        <a href="javascript:switchSource('q3');" id="q3" class="p active">0.8</a>
-      <% } %>
-    <% } %>
+
 
     </td>
     </tr>
@@ -268,7 +302,8 @@
 
   <% if (lectureData.courseHeader) { %>
     <br><br>
-    <a href="http://velikanov.ru/lecture<%= lectureData.courseGlobalNum%>.asp" class="p">Заказать другие лекции курса «<%= lectureData.courseHeader%>»</a>
+
+    <a href="http://velikanov.ru/lecture<%= lectureData.courseGlobalNum%>.asp" class="p"><span style="font-size:12px;">Заказать другие лекции курса «<%= lectureData.courseHeader%>»</span></a>
   <% } %>
 
 <% } %>
