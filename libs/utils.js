@@ -265,4 +265,15 @@ function convertGroupFiles() {
   fs.writeFileSync('./txt/groups.json', JSON.stringify(groups, null, 2));
 }
 
-module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses, convertTextFiles, convertGroupFiles }
+function getOrderByURL(orders, url) {
+  const coursesLatinMapping = { 'FI': 'ФИ', 'YK': 'ЯК' ,'AE': 'АЭ', 'IO': 'ИО', 'HM': 'HM' };
+  if (orders && url && url!='' && url.indexOf('/') >=0) {
+    const [course, number] = url.split('/')[2].split('-');
+//    console.log(333, course, number, orders)
+    return orders.find(order => { return order.course == coursesLatinMapping[course] && parseInt(order.number) == parseInt(number) });
+  } else {
+    return null;
+  }
+}
+
+module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses, convertTextFiles, convertGroupFiles, getOrderByURL }
