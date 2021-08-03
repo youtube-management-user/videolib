@@ -2,18 +2,22 @@
 const fs = require('fs');
 const superagent = require('superagent');
 
+const { getOpenOrders, getOrderByURL } = require('../libs/utils.js');
+
 var { getYouTubeURL, getChunkHeader } = require('../libs/video.js');
 
 function local(req, res, item, quality) {
 
   let path;
-  if (!quality || quality == 'q1') {
+  if (!quality || quality == 'q3') {
+    path = item.low;
+  } else if (quality == 'q1') {
     path = item.path;
   } else if (quality == 'q2') {
     path = item.medium;
-  } else if (quality == 'q3') {
-    path = item.low;
   }
+
+//  console.log(111, item)
 
   if (!path) {
     path = item.medium;
@@ -76,6 +80,21 @@ function youtube(req, res, item) {
 }
 
 async function videoRoute(req, res, item, quality, serverData) {
+
+  const userEmail = (req.user && req.user.email)? req.user.email: null;
+
+  openOrders = await getOpenOrders(userEmail);
+
+  const currentOrder = getOrderByURL(openOrders, req.url);
+
+  /* Check order and expiration time */
+
+  if (!currentOrder || !currentOrder.end || new Date(currentOrder.end) < new Date()) {
+    console.log(`Video was not ordered or expired`);
+    res.writeHead(404);
+    res.end(`Video is expired`);
+    return;
+  }
 
   if (serverData.connectionsCount > 50) {
     console.log(`Too many connections ${serverData.connectionsCount}`)

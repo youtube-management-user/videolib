@@ -39,8 +39,15 @@ async function playlistRoute(req, res, course, number, playlist) {
 
   let playlistItem;
 
-  if (lectureData && lectureData.video)
+  if (lectureData && lectureData.video) {
     playlistItem = playlist[lectureData.video]
+    if (fs.existsSync(`./templates/img/${lectureData.video}.png`)) {
+      lectureData.poster = `/img/${lectureData.video}.png`;
+      console.log(`Found poster ${lectureData.video}.png`)
+    } else {
+      console.log(`Not found poster ${lectureData.video}.png`)
+    }
+  }
 
   let showAuthorisationLink = true;
 

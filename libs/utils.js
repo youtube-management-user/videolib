@@ -18,7 +18,7 @@ function csv(file, fields) {
 
   records = records.map(rec => {
     let res = {};
-    let values = rec.replace(/[\n\r]+/g, '').split(/[|,]/);
+    let values = rec.replace(/[\n\r]+/g, '').split('|');
     values.forEach((val, ind) => res[fields[ind]] = values[ind]);
     return res;
   });
@@ -110,6 +110,7 @@ async function fetchPaidFile() {
     const response = await fetch('http://velikanov.ru/txt/paid_h.txt');
     let body = await response.buffer();
     body = body.toString('utf16le');
+//    body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
     let orders = csv(body);
     orders = orders
     .map(rec => {
@@ -264,4 +265,15 @@ function convertGroupFiles() {
   fs.writeFileSync('./txt/groups.json', JSON.stringify(groups, null, 2));
 }
 
-module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses, convertTextFiles, convertGroupFiles }
+function getOrderByURL(orders, url) {
+  const coursesLatinMapping = { 'FI': 'ФИ', 'YK': 'ЯК' ,'AE': 'АЭ', 'IO': 'ИО', 'HM': 'HM' };
+  if (orders && url && url!='' && url.indexOf('/') >=0) {
+    const [course, number] = url.split('/')[2].split('-');
+//    console.log(333, course, number, orders)
+    return orders.find(order => { return order.course == coursesLatinMapping[course] && parseInt(order.number) == parseInt(number) });
+  } else {
+    return null;
+  }
+}
+
+module.exports = { csv, buildPlaylist, getOpenOrders, reloadPaidFile, syncPaidFileStatuses, convertTextFiles, convertGroupFiles, getOrderByURL }
