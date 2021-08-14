@@ -23,7 +23,11 @@ async function playlistRoute(req, res, course, number, playlist) {
 
   openOrders = await getOpenOrders(userEmail);
 
-  let openLectures = _.uniq(openOrders.map(order => { return lectures.find(l => l.courseLetters == order.course && l.number == order.number ) || order }));
+  let openLectures = _.uniq(openOrders.map(order => {
+    let lecture = lectures.find(l => l.courseLetters == order.course && l.number == order.number )
+    lecture.speedChangeAllowed = parseInt(order.v) === 1;
+    return lecture || order;
+  }));
 
   let lectureData = {};
 

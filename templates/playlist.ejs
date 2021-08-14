@@ -18,6 +18,18 @@
   body {
     background-color: #f1f1f1;
   }
+  .f12, .f12 a {
+    font-size: 12px;
+  }
+  .f12 a {
+    color: #fff;
+    background-color: #000;
+    padding: 0 2px;
+  }
+  .f12 a.active {
+    color: #000;
+    background-color: #fff;
+  }
   .videoBox {
     position: relative;
     margin: 0px; padding: 0px;
@@ -163,7 +175,11 @@
 
 	<td	<% if (lectureData.date) { %>      <span style="font-size:12px;"><%= lectureData.date %></span>    <% } %></td>
 
-	<td align="right"  id="playerQualityControls">
+  <% if (lectureData.speedChangeAllowed === true) { %>
+    <td class="f12" id="playerSpeedControls">скорость: <a href="javascript:switchSpeed('s1');" id="s1" class="active">1</a>, <a href="javascript:switchSpeed('s2')" id="s2">1.5</a>, <a href="javascript:switchSpeed('s3')" id="s3">2</a></td>
+  <% } %>
+
+	<td align="right" id="playerQualityControls">
 
     <% if (playlistItem && (playlistItem.path || playlistItem.medium || playlistItem.low)) { %>
       качество:
@@ -260,6 +276,21 @@
           document.getElementById(quality).className = document.getElementById(quality).className + ' active';
         }
         return false;
+      }
+
+      function switchSpeed(speed, context) {
+        const rates = { 's1': 1, 's2': 1.5, 's3': 2 };
+        const rate = rates[speed];
+        if (rate && video) {
+          video.playbackRate = rate;
+        }
+        const links = document.getElementById('playerSpeedControls').children;
+        if (links) {
+          for (let l of links) { l.className = l.className.replace('active', ''); };
+        }
+        if (document.getElementById(speed)) {
+          document.getElementById(speed).className = document.getElementById(speed).className + ' active';
+        }
       }
 
       if (localStorage && localStorage['VL-<%= lectureData.video %>']) {

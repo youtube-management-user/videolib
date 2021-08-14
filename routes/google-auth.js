@@ -13,8 +13,6 @@ async function googleAuthRoute(req, res, query) {
 
 //  if (redirect.match(/\/playlist\/\d+\/\d+\//))
 
-  console.log(333, redirect)
-
 //  console.log(222, query)
   if (query.code) {
     const resp = await getAccessToken({ code: query.code});

@@ -45,7 +45,6 @@ function buildPlaylist() {
       })
     }
   }
-  console.log(playlist)
   return playlist;
 }
 
@@ -112,6 +111,7 @@ async function fetchPaidFile() {
     body = body.toString('utf16le');
 //    body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
     let orders = csv(body);
+    console.log(orders[orders.length-1])
     orders = orders
     .map(rec => {
       rec.begin = parse(rec.begin.split(' ')[0]);
