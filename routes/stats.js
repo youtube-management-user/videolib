@@ -3,7 +3,7 @@ const ejs = require("ejs");
 const fs = require('fs');
 const _  = require('lodash');
 
-const { csv, reloadPaidFile } = require('../libs/utils.js');
+const { csv, reloadPaidFile, convertTextFiles } = require('../libs/utils.js');
 
 let orders = [];
 try {
@@ -12,7 +12,12 @@ try {
   reloadPaidFile();
 }
 
-const lectures = JSON.parse(fs.readFileSync('./txt/lectures.json', 'UTF-8'));
+const lPath = './txt/lectures.json';
+if (fs.existsSync(lPath)) {
+  const lectures = JSON.parse(fs.readFileSync(lPath, 'UTF-8'));
+} else {
+  convertTextFiles();
+}
 
 function pad(n) {
   return n > 9? n: '0' + n;

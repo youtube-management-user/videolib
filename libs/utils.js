@@ -39,13 +39,13 @@ function buildPlaylist() {
       youtubeMapping[lecturesMapping[i-1]] = youtubeIds;
       youtubeIds.forEach((id,ind) => {
         const [youtube, local, medium, low] = id.split('|');
-//        console.log(111, local, youtube)
-        const type = (youtube=='' && (local!='' || medium!=''))? { type: 'local', path: local? './videos/' + local: null, medium: medium? './videos/' + medium: null, low: low? './videos/' + low: null }: { type: 'youtube', url: youtube }
+        const type = (youtube=='' && (local!='' || medium!='' || low!=''))? { type: 'local', path: local? './videos/' + local: null, medium: medium? './videos/' + medium: null, low: low? './videos/' + low: null }: { type: 'youtube', url: youtube }
         const paddedNum = ind+1 < 10? `0${ind+1}`: ind+1
         playlist[`${coursesLatinMapping[lecturesMapping[i-1]]}-${paddedNum}`] = type;
       })
     }
   }
+  console.log(playlist)
   return playlist;
 }
 
