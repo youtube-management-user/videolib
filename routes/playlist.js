@@ -53,6 +53,11 @@ async function playlistRoute(req, res, course, number, playlist) {
     }
   }
 
+  playlistItem.amount = 0;
+  if (playlistItem.low) playlistItem.amount++;
+  if (playlistItem.medium) playlistItem.amount++;
+  if (playlistItem.path) playlistItem.amount++;
+
   let showAuthorisationLink = true;
 
   const googleLink = urlGoogle({ redirect: req.url });
