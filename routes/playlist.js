@@ -51,12 +51,13 @@ async function playlistRoute(req, res, course, number, playlist) {
     } else {
       console.log(`Not found poster ${lectureData.video}.png`)
     }
-  }
 
-  playlistItem.amount = 0;
-  if (playlistItem.low) playlistItem.amount++;
-  if (playlistItem.medium) playlistItem.amount++;
-  if (playlistItem.path) playlistItem.amount++;
+    playlistItem.amount = 0;
+    if (playlistItem.low) playlistItem.amount++;
+    if (playlistItem.medium) playlistItem.amount++;
+    if (playlistItem.path) playlistItem.amount++;
+    
+  }
 
   let showAuthorisationLink = true;
 
