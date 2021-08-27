@@ -64,6 +64,8 @@ async function playlistRoute(req, res, course, number, playlist) {
 
   const googleLink = urlGoogle({ redirect: req.url });
 
+  console.log(111, lectureData, playlistItem)
+
   var contents = ejs.render(fs.readFileSync("./templates/playlist.ejs", 'UTF-8'), { user: req.user, openLectures, playlistItem, googleLink, lectureData, pageTitle, showAuthorisationLink });
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");

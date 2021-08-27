@@ -10,14 +10,12 @@ function local(req, res, item, quality) {
 
   let path;
   if (!quality || quality == 'q3') {
-    path = item.low;
+    path = item.low || item.path;
   } else if (quality == 'q1') {
     path = item.path;
   } else if (quality == 'q2') {
-    path = item.medium;
+    path = item.medium || item.path;
   }
-
-//  console.log(111, item)
 
   if (!path) {
     path = item.medium;
