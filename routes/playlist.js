@@ -25,8 +25,9 @@ async function playlistRoute(req, res, course, number, playlist) {
 
   let openLectures = _.uniq(openOrders.map(order => {
     let lecture = lectures.find(l => l.courseLetters == order.course && l.number == order.number )
-    lecture.speedChangeAllowed = parseInt(order.v) === 1;
-    return lecture || order;
+    const res = lecture || order
+    res.speedChangeAllowed = parseInt(order.v) === 1;
+    return res;
   }));
 
   let lectureData = {};
@@ -56,7 +57,7 @@ async function playlistRoute(req, res, course, number, playlist) {
     if (playlistItem.low) playlistItem.amount++;
     if (playlistItem.medium) playlistItem.amount++;
     if (playlistItem.path) playlistItem.amount++;
-    
+
   }
 
   let showAuthorisationLink = true;
