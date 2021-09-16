@@ -1,30 +1,68 @@
-
 const ejs = require("ejs");
-const fs = require('fs');
-const _  = require('lodash');
+const fs = require("fs");
+const _ = require("lodash");
 
-const { csv, reloadPaidFile, convertTextFiles } = require('../libs/utils.js');
+const { reloadPaidFile, convertTextFiles } = require("../libs/utils.js");
+
+function csv(file, fields) {
+  if (!file) {
+    console.error("empty file");
+    return null;
+  }
+  let records;
+  if (!fields) {
+    [fields, ...records] = file.split(/\n/).filter(l => l != "");
+    fields = fields.replace(/[\n\r\s]+/g, "").split(/[|,]/);
+  } else {
+    records = file.split(/\n/).filter(l => l != "");
+  }
+
+  if (!records || records.length < 1) return null;
+
+  records = records.map(rec => {
+    let res = {};
+    let values = rec.replace(/[\n\r]+/g, "").split(/[|,]/);
+    values.forEach((val, ind) => (res[fields[ind]] = values[ind]));
+    return res;
+  });
+
+  return records;
+}
 
 let orders = [];
 try {
-  orders = JSON.parse(fs.readFileSync('./txt/orders.json', 'UTF-8'));
-} catch(ex) {
+  orders = JSON.parse(fs.readFileSync("./txt/orders.json", "UTF-8"));
+} catch (ex) {
   reloadPaidFile();
 }
 
-const lPath = './txt/lectures.json';
+const lPath = "./txt/lectures.json";
+let lectures = [];
 if (fs.existsSync(lPath)) {
-  const lectures = JSON.parse(fs.readFileSync(lPath, 'UTF-8'));
+  lectures = JSON.parse(fs.readFileSync(lPath, "UTF-8"));
 } else {
   convertTextFiles();
 }
 
 function pad(n) {
-  return n > 9? n: '0' + n;
+  return n > 9 ? n : "0" + n;
 }
 
 function shortDate(d) {
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
   return `${d.getDate()} ${monthNames[d.getMonth()]} ${d.getFullYear()}`;
 }
 
@@ -37,7 +75,7 @@ function longDate(d) {
 function shortDate2(d) {
   const h = pad(d.getHours());
   const m = pad(d.getMinutes());
-  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 }
 
 function add(obj, key1, key2, elem) {
@@ -47,7 +85,7 @@ function add(obj, key1, key2, elem) {
 }
 
 function parseViewUrl(view) {
-  const coursesLatinMapping = { 'FI': 1, 'YK': 2, 'AE': 3, 'IO': 4, 'HM': 5 };
+  const coursesLatinMapping = { FI: 1, YK: 2, AE: 3, IO: 4, HM: 5 };
   let url, c, l;
 
   [noop, c, l] = view.url.match(/video\/(\w+)\-(\d+)/);
@@ -57,91 +95,130 @@ function parseViewUrl(view) {
   return [c, l, url];
 }
 
-function groupBy( array , f )
-{
+function groupBy(array, f) {
   var groups = {};
-  array.forEach( function( o )
-  {
-    var group = JSON.stringify( f(o) );
+  array.forEach(function(o) {
+    var group = JSON.stringify(f(o));
     groups[group] = groups[group] || [];
-    groups[group].push( o );
+    groups[group].push(o);
   });
-  return Object.keys(groups).map( function( group )
-  {
+  return Object.keys(groups).map(function(group) {
     return groups[group];
-  })
+  });
 }
 
 function getLecturesStats(data) {
-
   data = data.map(rec => {
     let [c, l, parsedUrl] = parseViewUrl(rec);
-    return { c, l, parsedUrl, ...rec }
+    return { c, l, parsedUrl, ...rec };
   });
 
-  let grouped = groupBy(data, rec => { return [rec.parsedUrl, rec.user] });
+  let grouped = groupBy(data, rec => {
+    return [rec.parsedUrl, rec.user];
+  });
 
   let usersDataByEmail = {};
-  orders.forEach(o => { if (!usersDataByEmail[o.gmail]) usersDataByEmail[o.gmail] = o.name });
+  orders.forEach(o => {
+    if (!usersDataByEmail[o.gmail]) usersDataByEmail[o.gmail] = o.name;
+  });
 
   let lecturesByUrl = {};
-  lectures.forEach(l => { const url = `${l.course}/${l.number}`; if (!lecturesByUrl[url]) lecturesByUrl[url] = l });
+  lectures.forEach(l => {
+    const url = `${l.course}/${l.number}`;
+    if (!lecturesByUrl[url]) lecturesByUrl[url] = l;
+  });
 
   grouped = grouped.map(user => {
     let email = user[0].user;
     let name = usersDataByEmail[email] || email;
-    let lecture = lecturesByUrl[user[0].parsedUrl] || { title: user[0].parsedUrl, courseLetters: 'AAA', number: 111 };
+    let lecture = lecturesByUrl[user[0].parsedUrl] || {
+      title: user[0].parsedUrl,
+      courseLetters: "AAA",
+      number: 111
+    };
     let times = user.map(rec => rec.date);
-    let totalmin = parseInt((new Date(times[times.length-1]).getTime() - new Date(times[0]).getTime())/60000);
+    let totalmin = parseInt(
+      (new Date(times[times.length - 1]).getTime() -
+        new Date(times[0]).getTime()) /
+        60000
+    );
 
-    return { name, email, totalmin, lectureTitle: lecture.title, lectureAbbr: `${lecture.courseLetters}-${pad(lecture.number)}` };
+    return {
+      name,
+      email,
+      totalmin,
+      lectureTitle: lecture.title,
+      lectureAbbr: `${lecture.courseLetters}-${pad(lecture.number)}`
+    };
 
-    return user.map(rec => rec.date).join(',')
+    return user.map(rec => rec.date).join(",");
   });
 
-  grouped = grouped.filter(rec => rec.totalmin>1)
+  grouped = grouped.filter(rec => rec.totalmin > 1);
 
   return grouped;
-
 }
 
 async function statsRoute(req, res, query) {
+  let data = csv(fs.readFileSync("./logs/access-stats.csv", "UTF-8"));
 
-  let data = csv(fs.readFileSync('./logs/access-stats.csv', 'UTF-8'));
+  data = data.filter(rec =>
+    _.get(rec, "url") ? rec.url.match(/video\/(\w+)\-(\d+)/) : false
+  );
 
-  data = data.filter(rec => _.get(rec, 'url')? rec.url.match(/video\/(\w+)\-(\d+)/): false );
-
-  const times = data.filter(rec => parseInt(rec.date)>0).map(rec => new Date(rec.date).getTime());
+  const times = data
+    .filter(rec => parseInt(rec.date) > 0)
+    .map(rec => new Date(rec.date).getTime());
 
   if (query && query.from && query.to) {
-    data = data.filter(record => { return new Date(record.date) >= new Date(query.from) && new Date(record.date) <= new Date(query.to  + ' 23:59:00') });
+    data = data.filter(record => {
+      return (
+        new Date(record.date) >= new Date(query.from) &&
+        new Date(record.date) <= new Date(query.to + " 23:59:00")
+      );
+    });
   }
 
-  let lecturesStat = _.uniq(data.map(d => shortDate2(new Date(d.date)))).map(day => {
-    let thisDayData = data.filter(r => { return shortDate2(new Date(r.date)) == shortDate2(new Date(day)) });
-    let recs = getLecturesStats(thisDayData);
-    let totalmin = recs.reduce((acc, curr) => { return acc + curr.totalmin }, 0);
-    return { data: recs, day: shortDate(new Date(day)), totalmin };
-  });
+  let lecturesStat = _.uniq(data.map(d => shortDate2(new Date(d.date)))).map(
+    day => {
+      let thisDayData = data.filter(r => {
+        return shortDate2(new Date(r.date)) == shortDate2(new Date(day));
+      });
+      let recs = getLecturesStats(thisDayData);
+      let totalmin = recs.reduce((acc, curr) => {
+        return acc + curr.totalmin;
+      }, 0);
+      return { data: recs, day: shortDate(new Date(day)), totalmin };
+    }
+  );
 
   lecturesStat = lecturesStat.filter(l => l.totalmin > 0);
 
-//  console.log(lecturesStat[lecturesStat.length-1])
-
   let period;
   if (query && query.from && query.to) {
-    period = shortDate(new Date(query.from)) + ' - ' + shortDate(new Date(query.to));
+    period =
+      shortDate(new Date(query.from)) + " - " + shortDate(new Date(query.to));
   }
 
-  let date_start = (query && query.from)? query.from: shortDate2(new Date(Math.min(...times)));
-  let date_end = (query && query.to)? query.to: shortDate2(new Date(Math.max(...times)));
+  let date_start =
+    query && query.from ? query.from : shortDate2(new Date(Math.min(...times)));
+  let date_end =
+    query && query.to ? query.to : shortDate2(new Date(Math.max(...times)));
 
   let pickerStart = shortDate2(new Date(Math.min(...times)));
   let pickerEnd = shortDate2(new Date(Math.max(...times)));
 
   let date_today = shortDate2(new Date());
 
-  var contents = ejs.render(fs.readFileSync("./templates/stats.ejs", 'UTF-8'), { lecturesStat, period, date_start, date_today, date_end, pickerStart, pickerEnd });
+  var contents = ejs.render(fs.readFileSync("./templates/stats.ejs", "UTF-8"), {
+    lecturesStat,
+    period,
+    date_start,
+    date_today,
+    date_end,
+    pickerStart,
+    pickerEnd
+  });
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.writeHead(200);
