@@ -1,0 +1,12 @@
+﻿1|Попова|Мария|popova.mariy@gmail.com
+2|Анненко|Ксения|annenkoksenia@gmail.com
+3|Калугина|Дарья|dar.kalugin@gmail.com
+4|Знаменская|Анна|zapekanskaya@gmail.com
+5|Егорова|Катерина|haskityiya@gmail.com
+6|Авилова|Юлия|julyavilova@gmail.com
+7|Луговская|Анастасия|ehora.weis8@gmail.com
+8|Балакирева|Елена|el.balakireva@ya.ru
+9|Барабанова|Александра|miraly13@mail.ru
+10|Глушкова|Елизавета|elizaveta.glushkova@gmail.com
+11|Назаров|Виктор|4vicnazarov@gmail.com
+12|Каштанова|Евгения|kashtanovaevga@gmail.com
