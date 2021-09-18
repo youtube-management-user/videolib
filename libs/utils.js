@@ -95,9 +95,11 @@ async function getOpenOrders(email) {
       console.error("emailInGroup email is empty");
       return false;
     }
+    //    console.log(111, groups[0].);
     return (
       groups[0].members.filter(
         m =>
+          m.email &&
           m.email.toLowerCase() == email.toLowerCase() &&
           parseInt(statuses[parseInt(m.num) - 1]) == 1
       ).length > 0
