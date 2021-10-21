@@ -1,5 +1,5 @@
 const ejs = require("ejs");
-const fs = require("fs");
+const fs = require("graceful-fs");
 const _ = require("lodash");
 
 const { reloadPaidFile, convertTextFiles } = require("../libs/utils.js");

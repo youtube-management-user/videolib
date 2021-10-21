@@ -1,5 +1,4 @@
-
-const fs = require('fs');
+const fs = require("graceful-fs");
 
 async function imgRoute(req, res, filename) {
   res.setHeader("Content-Type", "image/png");

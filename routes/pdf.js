@@ -1,12 +1,10 @@
-
-const fs = require('fs');
+const fs = require("graceful-fs");
 
 async function pdfRoute(req, res, filename) {
-
-  let path = '';
+  let path = "";
   try {
-    path = decodeURI(`./pdf/${filename}`).split('?')[0];
-  } catch(ex) {
+    path = decodeURI(`./pdf/${filename}`).split("?")[0];
+  } catch (ex) {
     console.log(`Broken URL {path}`);
   }
 
@@ -15,7 +13,6 @@ async function pdfRoute(req, res, filename) {
     res.writeHead(200);
     res.end(fs.readFileSync(path));
     return;
-
   } else {
     res.writeHead(404);
     res.end(`File ${path} is not found`);
