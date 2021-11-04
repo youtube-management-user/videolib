@@ -8,7 +8,7 @@ async function pdfRoute(req, res, filename) {
     console.log(`Broken URL {path}`);
   }
 
-  if (fs.existsSync(path)) {
+  if (fs.existsSync(path) && !fs.lstatSync(path).isDirectory()) {
     res.setHeader("Content-Type", "application/pdf");
     res.writeHead(200);
     res.end(fs.readFileSync(path));
