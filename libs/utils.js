@@ -163,7 +163,7 @@ async function getOpenOrders(email) {
 async function fetchPaidFile() {
   let orders = [];
   try {
-    const response = await fetch("http://velikanov.ru/txt/paid_h.txt");
+    const response = await fetch("https://velikanov.ru/txt/paid_h.txt");
     let body = await response.buffer();
     body = body.toString("utf16le");
     //    body = fs.readFileSync('./txt/paid_h.txt', 'UTF-8')
