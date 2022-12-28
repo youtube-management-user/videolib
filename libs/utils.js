@@ -194,7 +194,7 @@ let syncPaidFileStatusesRunning = false;
 
 async function syncPaidFileStatuses() {
   // const domain = 'http://localhost:9300/test';
-  const domain = "http://velikanov.ru";
+  const domain = "https://velikanov.ru";
 
   try {
     const response = await fetch(domain);
