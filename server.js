@@ -1,4 +1,4 @@
-var https = require("http"),
+var http = require("http"),
   querystring = require("querystring"),
   fs = require("fs"),
   process = require("process"),
