@@ -1,4 +1,4 @@
-var http = require("http"),
+var https = require("https"),
   querystring = require("querystring"),
   fs = require("fs"),
   process = require("process"),
@@ -67,8 +67,13 @@ setInterval(syncPaidFileStatuses, 1000 * 60 * 5);
 
 let connectionsCount = 0;
 
-const server = http
-  .createServer(async function(req, res) {
+const options = {
+  key: fs.readFileSync('ssl/velikanov.ru-key.pem'),
+  cert: fs.readFileSync('ssl/velikanov.ru-crt.pem')
+};
+
+const server = https
+  .createServer(options, async function(req, res) {
     //  connectionsCount++;
 
     function countConn() {
