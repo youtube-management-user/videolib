@@ -9,3 +9,7 @@ description
 
 date
 Центр Авангарда. 17.03.2013	
+
+video
+http://video.velikanov.ru/public/2_31_0.8y.mp4
+

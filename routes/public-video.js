@@ -8,7 +8,13 @@ async function publicVideoRoute(req, res, title) {
 
     let data = {}
 
-    config.split(/\r\n\r\n|\n\n/).filter(l => {return l!=''}).map(l => { f = l.split(/\n|\r/); data[f[0]]=f[1]  });
+    config.split(/\r\n\r\n|\n\n/).filter(l => {return l!=''}).map(l => { 
+      f = l.split(/\n|\r/);
+      const key = f[0].trim(); 
+      data[key]=f[1];  
+    });
+
+    console.log(data.video)
 
     var contents = ejs.render(fs.readFileSync("./templates/public.ejs", "UTF-8"), data);
 
