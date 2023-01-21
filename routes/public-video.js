@@ -14,7 +14,7 @@ async function publicVideoRoute(req, res, title) {
       data[key]=f[1];  
     });
 
-    console.log(data.video)
+    console.log('video', data.video)
 
     var contents = ejs.render(fs.readFileSync("./templates/public.ejs", "UTF-8"), data);
 
