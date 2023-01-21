@@ -69,8 +69,9 @@ function getYouTubeURL(filename, onSuccess, onError) {
           eval(scriptElementsFiltered[0].text);
           var data = ytInitialPlayerResponse.streamingData.formats[0];
           video = data.url;
-          contentLength = data.contentLength || 393902698 * 2;
-          //        console.log(222, contentLength)
+          contentLength = data.contentLength || 1393902698 * 2;
+          console.log(222, contentLength)
+          console.log(333, data)
           onSuccess({ video, contentLength });
         } catch (ex) {
           console.log(ex);

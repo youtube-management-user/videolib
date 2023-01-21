@@ -2,8 +2,15 @@ const fs = require("graceful-fs");
 
 async function imgRoute(req, res, filename) {
   res.setHeader("Content-Type", "image/png");
-  res.writeHead(200);
-  res.end(fs.readFileSync(`./templates/img/${filename}`));
+  try {
+    const content = fs.readFileSync(`./templates/img/${filename}`);
+    res.writeHead(200);
+    res.end(content);
+  }
+  catch(ex) {
+    res.writeHead(404);
+    res.end();
+  }
   return;
 }
 

@@ -1,0 +1,25 @@
+const ejs = require("ejs");
+const fs = require("fs");
+
+async function publicVideoRoute(req, res, title) {
+
+  try {
+    const config = fs.readFileSync(`./data/public/${title}.txt`, 'UTF-8');
+
+    let data = {}
+
+    config.split(/\r\n\r\n|\n\n/).filter(l => {return l!=''}).map(l => { f = l.split(/\n|\r/); data[f[0]]=f[1]  });
+
+    var contents = ejs.render(fs.readFileSync("./templates/public.ejs", "UTF-8"), data);
+
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.writeHead(200);
+    res.end(contents);
+  } catch(ex) {
+    console.log(ex);
+    res.writeHead(404);
+    res.end();
+  }
+}
+
+module.exports = publicVideoRoute;

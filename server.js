@@ -31,6 +31,8 @@ const djvuRoute = require("./routes/djvu.js");
 const notFoundRoute = require("./routes/not-found.js");
 const healthRoute = require("./routes/health.js");
 const statsRoute = require("./routes/stats.js");
+const htmlRoute = require("./routes/html.js");
+const publicVideoRoute = require("./routes/public-video.js");
 
 const initAuth = require("./routes/auth.js");
 
@@ -40,21 +42,21 @@ let playlist;
 
 chokidar.watch("./data/*/*.txt").on("all", (event, path) => {
   if (event == "add" || event == "change") {
-    console.log("Generating new data cache...");
+//    console.log("Generating new data cache...");
     convertTextFiles();
   }
 });
 
 chokidar.watch("./local_id/*.txt").on("all", (event, path) => {
   if (event == "add" || event == "change") {
-    console.log("Generating new playlist cache...");
+ //   console.log("Generating new playlist cache...");
     playlist = buildPlaylist();
   }
 });
 
 chokidar.watch("./groups/*.txt").on("all", (event, path) => {
   if (event == "add" || event == "change") {
-    console.log("Generating new groups cache...");
+//    console.log("Generating new groups cache...");
     convertGroupFiles();
   }
 });
@@ -67,10 +69,10 @@ setInterval(syncPaidFileStatuses, 1000 * 60 * 5);
 
 let connectionsCount = 0;
 
-const options = {
-  key: fs.readFileSync('ssl/localhost.key'),
-  cert: fs.readFileSync('ssl/localhost.crt')
-};
+// const options = {
+//   key: fs.readFileSync('ssl/localhost.key'),
+//   cert: fs.readFileSync('ssl/localhost.crt')
+// };
 
 const server = http
   .createServer(async function(req, res) {
@@ -148,6 +150,12 @@ const server = http
       videoRoute(req, res, playlist[token[0]], token[1], serverData);
     } else if (route == "public" && token[0]) {
       publicRoute(req, res, token[0]);
+    } else if (route == "public-video" && token[0]) {
+      publicVideoRoute(req, res, token[0]);
+    } else if (route == "html" && token[0] && token[0].match(/\.\w+$/)) {
+      htmlRoute(req, res, token[0]);
+    } else if (route == "favicon.ico") {
+      res.end(200);
     } else {
       notFoundRoute(req, res, route);
     }

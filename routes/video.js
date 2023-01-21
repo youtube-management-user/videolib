@@ -44,6 +44,7 @@ function remote(req, res, item) {
 
     if (req.headers["range"]) {
       var chunkHeaders = getChunkHeader(req.headers.range, total);
+      console.log({chunkHeaders})
       res.writeHead(206, chunkHeaders.headers);
       superagent
         .get(path)
