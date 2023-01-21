@@ -11,7 +11,7 @@ async function publicVideoRoute(req, res, title) {
     console.log(config.split(/\r\n\r\n|\n\n/))
 
     config.split(/\r\n\r\n|\n\n/).filter(l => {return l!=''}).map(l => { 
-      f = l.split(/\n|\r/);
+      f = l.split(/\r\n/);
       const key = f[0].trim(); 
       data[key]=f[1];  
     });
